@@ -95,6 +95,7 @@
 /* Hero buttons container */
 .hero-buttons {
   display: flex;                /* Use flexbox for layout */
+  justify-content: center;
   gap: var(--spacing-md);      /* Space between buttons */
   flex-wrap: wrap; 
   margin-bottom: 0;             /* Wrap on smaller screens */
