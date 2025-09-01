@@ -75,9 +75,10 @@ const About = () => {
           >
             <h1 className="section-title">About EngageHub</h1>
             <p className="section-subtitle">
-             Empowering Futures for Over 18 Years
-
-For nearly two decades, our dedicated team has guided thousands of students of all backgrounds towards academic excellence and successful global admissions.<br>
+            Empowering Students for over 18 Years
+            </p>
+<p className="section-subtitle">
+            For nearly two decades, our dedicated team has guided thousands of students of all backgrounds towards academic excellence and successful global admissions.<br>
   Our holistic, personalized approach is built on experience, integrity, and a passion for student achievement.
             </p>
           </motion.div>
