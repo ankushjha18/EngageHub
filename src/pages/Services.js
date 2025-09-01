@@ -22,37 +22,37 @@ const Services = () => {
     {
       icon: <FaGraduationCap />,
       title: "Exam Preparation",
-      description: "Personalized one-on-one and group tutoring sessions in all subjects from elementary to university level.",
+      description: "We offer tailored coaching for a wide range of competitive and international exams, focusing on strategy, practice, and confidence-building.",
       features: ["Subject-specific tutoring",  "Study skills development"]
     },
     {
       icon: <FaBook />,
       title: "Admission Consultancy",
-      description: "Comprehensive preparation for standardized tests including SAT, ACT, IELTS, TOEFL, and more.",
+      description: "Expert advice and step-by-step support for college applications—whether for universities in the USA, UK, Canada, Australia, or beyond.",
       features: ["Practice tests", "Mock exams"]
     },
     {
       icon: <FaLaptop />,
       title: "Tutoring Center",
-      description: "Flexible online courses and virtual tutoring sessions accessible from anywhere in the world.",
+      description: "In-depth academic support for all major subjects, covering personalized tutoring, enrichment, and remedial instruction to foster lifetime learning skills.",
       features: ["Virtual classrooms", "24/7 support"]
     },
     {
       icon: <FaUsers />,
-      title: "Internship",
-      description: "Professional guidance to help students make informed decisions about their academic and career paths.",
+      title: "Internship & Research Placement",
+      description: "Gain real-world exposure and develop essential soft skills. Our consultancy matches you with top-rated internship programs and research projects that add value to your CV and future studies.",
       features: ["Career assessment", "Interview preparation"]
     },
     {
       icon: <FaChartLine />,
-      title: "Research",
-      description: "Develop essential study techniques and time management skills for academic success.",
+      title: "Our Approach",
+      description: "Personalized Planning: Every student receives an individualized roadmap to match their unique goals and strengths.",
       features: ["Note-taking methods",  "Goal setting"]
     },
     {
       icon: <FaGlobe />,
-      title: "Career Counseling",
-      description: "Support for international students and those seeking education opportunities abroad.",
+      title: "Expert Faculty",
+      description: "Qualified mentors and counselors with years of academic and industry experience.",
       features: ["Visa guidance", "University partnerships"]
     }
   ];
@@ -117,22 +117,22 @@ const Services = () => {
   const features = [
     {
       icon: <FaCertificate />,
-      title: "Certified Tutors",
+      title: "Exceptional Faculty",
       description: "All our tutors are certified educators with extensive experience in their respective fields."
     },
     {
       icon: <FaCalendarAlt />,
-      title: "Flexible Scheduling",
+      title: "100+ Teaching Hours",
       description: "Sessions available at times that work for you, including evenings and weekends."
     },
     {
       icon: <FaUsers />,
-      title: "Personalized Approach",
+      title: "Past Paper Practice & Exam Prep",
       description: "Customized learning plans tailored to each student's unique needs and learning style."
     },
     {
       icon: <FaChartLine />,
-      title: "Progress Tracking",
+      title: "Proven Results",
       description: "Regular assessments and detailed progress reports to monitor student improvement."
     }
   ];
