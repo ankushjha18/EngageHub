@@ -54,7 +54,7 @@ const Services = () => {
       title: "Expert Faculty",
       description: "Qualified mentors and counselors with years of academic and industry experience.",
       features: ["Visa guidance", "University partnerships"]
-    }
+    },
   ];
 
   const services2 = [
