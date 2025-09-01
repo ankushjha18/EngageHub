@@ -199,7 +199,7 @@ const About = () => {
                 <div className="stat-label">Success Rate</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">10+</div>
+                <div className="stat-number">18+</div>
                 <div className="stat-label">Years Experience</div>
               </div>
             </motion.div>
