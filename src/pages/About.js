@@ -78,7 +78,7 @@ const About = () => {
             Empowering Students for over 18 Years
             </p>
 <p className="section-subtitle">
-            For nearly two decades, our dedicated team has guided thousands of students of all backgrounds towards academic excellence and successful global admissions.<br>
+            For nearly two decades, our dedicated team has guided thousands of students of all backgrounds towards academic excellence and successful global admissions.
   Our holistic, personalized approach is built on experience, integrity, and a passion for student achievement.
             </p>
           </motion.div>
