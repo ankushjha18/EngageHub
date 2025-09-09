@@ -97,7 +97,8 @@
   display: flex;                /* Use flexbox for layout */
   gap: var(--spacing-md);      /* Space between buttons */
   flex-wrap: wrap; 
-  margin-bottom: 0;             /* Wrap on smaller screens */
+  margin-bottom: 0;    
+  justify-content: center;
 }
 
 .hero-buttons a{
@@ -341,7 +342,8 @@
 /* Author role */
 .author-role {
   color: var(--gray);          /* Gray text color */
-  font-size: 0.9rem;           /* Role text size */
+  font-size: 0.9rem;    
+  padding: 16px 16px; /* Role text size */
 }
 
 /* Testimonial rating */

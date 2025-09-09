@@ -92,7 +92,7 @@ function Footer() {
   const socialLinks = [
     { name: 'Facebook', icon: <FaFacebook />, url: 'https://facebook.com' },
     { name: 'Twitter', icon: <FaTwitter />, url: 'https://twitter.com' },
-    { name: 'Instagram', icon: <FaInstagram />, url: 'https://instagram.com' },
+    { name: 'Instagram', icon: <FaInstagram />, url: 'https://www.instagram.com/engagehub_llc/' },
     { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://linkedin.com' }
   ];
 
@@ -222,11 +222,11 @@ function Footer() {
               <FaEnvelope className="contact-icon-email" />
               <div>
                 <span className="contact-label">Email</span>
-                <span className="contact-value">info@engagehub.com</span>
+                <span className="contact-value">divya@engagehub.me</span>
               </div>
             </div>
             
-            {/* Address */}
+            {/* Address *
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon-address" />
               <div>
@@ -236,7 +236,7 @@ function Footer() {
                   Learning City, LC 12345
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

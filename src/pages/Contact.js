@@ -56,6 +56,9 @@ function Contact() {
     studentEmail: '',
     studentPhone: '',
     studentClass: '',
+    subjects: '',            // NEW
+    preferredCountry: '',    // NEW
+    graduationYear: '' ,
     parentName: '',
     parentPhone: '',
     address: ''
@@ -283,21 +286,21 @@ function Contact() {
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      value: 'info@engagehub.com',
+      value: 'divya@engagehub.me',
       description: 'Send us an email anytime'
     },
-    {
-      icon: <FaMapMarkerAlt />,
-      title: 'Address',
-      value: '123 Education Street, Learning City, LC 12345',
-      description: 'Visit our center'
-    },
-    {
-      icon: <FaClock />,
-      title: 'Office Hours',
-      value: 'Monday - Friday: 8:00 AM - 6:00 PM',
-      description: 'Saturday: 9:00 AM - 2:00 PM'
-    }
+   // {
+    //  icon: <FaMapMarkerAlt />,
+     // title: 'Address',
+      //value: '123 Education Street, Learning City, LC 12345',
+      //description: 'Visit our center'
+    //},
+   // {
+     // icon: <FaClock />,
+      //title: 'Office Hours',
+      //value: 'Monday - Friday: 8:00 AM - 6:00 PM',
+      //description: 'Saturday: 9:00 AM - 2:00 PM'
+    //}
   ];
 
   // Return the JSX (HTML-like structure) for the contact page
@@ -435,27 +438,62 @@ function Contact() {
 
                   {/* Student Class Field */}
                   <div className="form-group">
-                    <label htmlFor="studentClass" className="form-label">
+                      <label htmlFor="studentClass" className="form-label">
+                        <FaGraduationCap className="field-icon" />
+                        Class/Grade *
+                      </label>
+                      <input
+                        type="text"
+                        id="studentClass"
+                        name="studentClass"
+                        value={formData.studentClass}
+                        onChange={handleInputChange}
+                        className="form-input"
+                        required
+                        placeholder="e.g. 10 / High School / College Year 2"
+                      />
+                    </div>
+                  </div>
+                 
+                 {/* Subjects Field */}
+                 <div className="form-row">
+                  <div className="form-group ">
+                    <label htmlFor="subjects" className="form-label">
                       <FaGraduationCap className="field-icon" />
-                      Class/Grade *
+                      Subjects of Interest *
                     </label>
-                    <select
-                      id="studentClass"
-                      name="studentClass"
-                      value={formData.studentClass}
+                    <input
+                      type="text"
+                      id="subjects"
+                      name="subjects"
+                      value={formData.subjects || ""}
                       onChange={handleInputChange}
                       className="form-input"
                       required
-                    >
-                      <option value="">Select class/grade</option>
-                      <option value="Elementary">Elementary School</option>
-                      <option value="Middle">Middle School</option>
-                      <option value="High">High School</option>
-                      <option value="College">College/University</option>
-                      <option value="Adult">Adult Education</option>
-                    </select>
+                      placeholder="e.g. Mathematics, Computer Science, Economics"
+                    />
+                  </div>
+
+                  {/* Preferred Country Field */}
+                  <div className="form-group ">
+                    <label htmlFor="preferredCountry" className="form-label">
+                      <FaMapMarkerAlt className="field-icon" />
+                      Preferred Country for Higher Studies
+                    </label>
+                    <input
+                      type="text"
+                      id="preferredCountry"
+                      name="preferredCountry"
+                      value={formData.preferredCountry || ""}
+                      onChange={handleInputChange}
+                      className="form-input"
+                      placeholder="e.g. USA, UK, Canada, Germany"
+                    />
                   </div>
                 </div>
+
+                
+
 
                 {/* Parent Information Row */}
                 <div className="form-row">
@@ -495,9 +533,29 @@ function Contact() {
                     />
                   </div>
                 </div>
+               
+                  {/* Year of Graduation Field */}
+               <div className="form-row">
+                  <div className="form-group ">
+                    <label htmlFor="graduationYear" className="form-label">
+                      <FaGraduationCap className="field-icon" />
+                      Year of Graduation
+                    </label>
+                    <input
+                      type="number"
+                      id="graduationYear"
+                      name="graduationYear"
+                      value={formData.graduationYear || ""}
+                      onChange={handleInputChange}
+                      className="form-input"
+                      placeholder="e.g. 2026"
+                      min="1900"
+                      max="2100"
+                    />
+                  </div>
 
                 {/* Address Field */}
-                <div className="form-group full-width">
+                <div className="form-group ">
                   <label htmlFor="address" className="form-label">
                     <FaMapMarkerAlt className="field-icon" />
                     Address *
@@ -513,6 +571,7 @@ function Contact() {
                     rows="3"
                   ></textarea>
                 </div>
+              </div>
 
                 {/* Error Message Display */}
                 {emailError && (

@@ -9,7 +9,7 @@ const EventsWorkshops = () => {
   const [eventsRef, eventsInView] = useInView({ threshold: 0.3, triggerOnce: true });
   const [workshopsRef, workshopsInView] = useInView({ threshold: 0.3, triggerOnce: true });
 
-  const events = [
+ /* const events = [
     {
       title: 'College Application Workshop',
       date: 'December 15, 2024',
@@ -46,7 +46,27 @@ const EventsWorkshops = () => {
       attendees: '30/35',
       category: 'Seminar'
     }
-  ];
+  ]; */
+
+  const upcomingEvent = {
+    title: 'Boost Your College Profile with Research!',
+    speaker: 'Mr. Alok Bansal',
+    date: '20th September 2025',
+    time: '4:00 PM (GST)',
+    location: 'Online (Live Webinar)',
+    capacity: 'Unlimited (Open to High School Students & Parents)',
+    description:
+      '📢 Big News for Students & Parents! 📢 Struggling to make your college application stand out? Join our FREE Live Webinar with expert Mr. Alok Bansal and learn how to Boost Your College Profile with Research!',
+    highlights: [
+      '✅ Clarity on the admissions process',
+      '✅ Expert guidance',
+      '✅ A global perspective',
+    ],
+    contact: '📞 +971552728339',
+    registerLink: 'http://bit.ly/3HVTNEs',
+    banner: './eventbanner.jpg',
+  };
+  
 
   const workshops = [
     {
@@ -103,7 +123,73 @@ const EventsWorkshops = () => {
         </div>
       </section>
 
-      {/* Events Grid */}
+      <section className="upcoming-event section">
+  <div className="container">
+    <motion.div
+      className="section-header"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="section-title">Upcoming Event</h2>
+    </motion.div>
+
+    <motion.div
+      className="event-card card"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Banner */}
+      <div className="event-banner">
+        <img src={upcomingEvent.banner} alt={upcomingEvent.title} />
+      </div>
+
+      {/* Details */}
+      <div className="event-content">
+        <h3 className="event-title">{upcomingEvent.title}</h3>
+        <p className="event-speaker">Speaker: {upcomingEvent.speaker}</p>
+
+        <div className="event-details">
+          <div className="event-info">
+            <FaCalendarAlt /> <span>{upcomingEvent.date}</span>
+          </div>
+          <div className="event-info">
+            <FaClock /> <span>{upcomingEvent.time}</span>
+          </div>
+          <div className="event-info">
+            <FaMapMarkerAlt /> <span>{upcomingEvent.location}</span>
+          </div>
+          <div className="event-info">
+            <FaUsers /> <span>{upcomingEvent.capacity}</span>
+          </div>
+        </div>
+
+        <p className="event-description">{upcomingEvent.description}</p>
+
+        <ul className="event-highlights">
+          {upcomingEvent.highlights.map((point, index) => (
+            <li key={index}>{point}</li>
+          ))}
+        </ul>
+
+        <a
+          href={upcomingEvent.registerLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
+          Register for Free
+        </a>
+
+        <p className="event-contact">Got questions? {upcomingEvent.contact}</p>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+      {/* Events Grid 
       <section className="events-grid section" ref={eventsRef}>
         <div className="container">
           <motion.div
@@ -151,7 +237,7 @@ const EventsWorkshops = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Workshops Grid */}
       <section className="workshops-grid section" ref={workshopsRef}>
