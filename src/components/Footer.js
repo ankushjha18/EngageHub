@@ -246,7 +246,7 @@ function Footer() {
         <div className="footer-bottom-container">
           {/* Copyright information */}
           <div className="copyright">
-            <p>&copy; 2024 EngageHub. All rights reserved.</p>
+            <p>&copy; 2025 EngageHub. All rights reserved.</p>
           </div>
           
           {/* Scroll to top button - only visible when scrolled */}

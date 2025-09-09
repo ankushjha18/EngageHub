@@ -111,12 +111,12 @@ function Home() {
               <motion.button className="btn btn-primary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a href="./contact">Get Started Today</a>
                 <FaArrowRight />
-              </motion.button>
-              <motion.button className="btn btn-secondary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                Learn More
-              </motion.button>
-            </div>
-          </motion.div>
+             </motion.button>
+             {/*} <motion.button className="btn btn-secondary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                Learn More 
+              </motion.button> */}
+            </div> 
+          </motion.div> 
         </div>
       </section>
 
