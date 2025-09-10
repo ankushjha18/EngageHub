@@ -8,7 +8,7 @@ const Blogs = () => {
   const [blogsRef, blogsInView] = useInView({ threshold: 0.1, triggerOnce: true });
 
 
-  const blogs = [
+/*  const blogs = [
     {
       title: "10 Effective Study Techniques for College Students",
       author: "Dr. Sarah Johnson",
@@ -57,7 +57,7 @@ const Blogs = () => {
       excerpt: "Understanding how parents can support their children's educational journey without being overbearing.",
       readTime: "5 min read"
     }
-  ];
+  ]; */
 
   return (
     <div className="blogs-page">
@@ -70,15 +70,19 @@ const Blogs = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="section-title">Educational Blog</h1>
+            <h1 className="section-title">Stay Updated!</h1>
             <p className="section-subtitle">
-              Insights, tips, and advice to help you succeed in your academic journey.
+            This page is currently being updated. Please check back soon for the latest content.
             </p>
           </motion.div>
         </div>
       </section>
+      </div>);
+};
 
-      <section className="blogs-grid section" ref={blogsRef}>
+export default Blogs;
+
+     {/* <section className="blogs-grid section" ref={blogsRef}>
         <div className="container">
           <div className="blogs-container">
             {blogs.map((blog, index) => (
@@ -121,4 +125,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs; 
+export default Blogs; */}

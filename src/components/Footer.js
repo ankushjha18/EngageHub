@@ -213,7 +213,7 @@ function Footer() {
               <FaPhone className="contact-icon-phone" />
               <div>
                 <span className="contact-label">Phone</span>
-                <span className="contact-value">+1 (555) 123-4567</span>
+                <span className="contact-value">+971 55 272 8339</span>
               </div>
             </div>
             

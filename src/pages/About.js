@@ -40,7 +40,7 @@ const About = () => {
     }
   ];
 
-  const team = [
+ /* const team = [
     {
       name: "Dr. Sarah Johnson",
       role: "Founder & CEO",
@@ -59,7 +59,7 @@ const About = () => {
       description: "Certified counselor with a passion for helping students navigate their educational journey.",
       image: "/team/emily.jpg"
     }
-  ];
+  ];*/
 
   return (
     <div className="about-page">
@@ -82,7 +82,7 @@ const About = () => {
       </section>
 
             {/* Team Section */}
-            <section className="team section" ref={teamRef}>
+          {/*}  <section className="team section" ref={teamRef}>
         <div className="container">
           <motion.div 
             className="section-header"
@@ -132,23 +132,23 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="ceo-text">
-              <h2>CEO's Message</h2>
-              <p className="ceo-quote">18 Years of Excellence, 10,000+ Success Stories,Your Future,Powered Here</p>
+              <h2>Founder's Message</h2>
+              {/*<p className="ceo-quote">18 Years of Excellence, 10,000+ Success Stories,Your Future,Powered Here</p> */}
               <p className="ceo-message-text">
-              For 18 years, we’ve been the benchmark. Over 10,000 students transformed their ambitions into achievements.
-              Now, it’s your turn. This is where your potential meets our proven path and together, we’ll make the impossible happen.
+              At Engage Hub, we aspire to empower every student to reach their dream university. Our passion lies in guiding, supporting, and illuminating each individual 
+              journey—helping students turn ambitions into achievements and building futures filled with possibility.
 
               </p>
-              <p className="ceo-message-text">
+             {/*} <p className="ceo-message-text">
               This isn’t just your opportunity,it’s your breakthrough. With the weight of our legacy behind you and your potential 
               lighting the way, the impossible is now within reach.
-              </p>
+              </p> */}
               <p className="ceo-closing">Your story isn't written yet. Pick up the pen.</p>
             </div>
             <div className="ceo-image">
               <div className="ceo-image-container">
                 <img 
-                  src="/ceo.jpg" 
+                  src="/founderspic.jpg" 
                   alt="CEO Speaking at Event" 
                   className="ceo-image-actual"
                 />

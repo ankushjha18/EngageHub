@@ -28,9 +28,9 @@ function Home() {
   const itemsPerSlide = 3;
 
   const features = [
-    { icon: <FaGraduationCap />, title: 'Expert Tutoring', description: 'Personalized learning with certified educators and subject matter experts.' },
-    { icon: <FaUsers />, title: 'Small Group Classes', description: 'Interactive learning in small groups for better engagement and support.' },
-    { icon: <FaChartLine />, title: 'Progress Tracking', description: 'Monitor academic progress with detailed reports and analytics.' },
+    { icon: <FaGraduationCap />, title: 'Exceptional Faculty', description: 'Personalized learning with certified educators and subject matter experts.' },
+    { icon: <FaUsers />, title: '100+ Teaching Hours', description: 'Interactive learning in small groups for better engagement and support.' },
+    { icon: <FaChartLine />, title: 'Past Paper Practice & Exam', description: 'Monitor academic progress with detailed reports and analytics.' },
     { icon: <FaAward />, title: 'Proven Results', description: 'Consistent improvement in grades and test scores for our students.' }
   ];
 
@@ -89,7 +89,7 @@ function Home() {
       {/* Hero Section */}
       <section ref={heroRef} className="hero">
         <div className="hero-background">
-          <img src="./banner.avif" alt="Hero Background" className="hero-bg-image" />
+          <img src="./ClasroomStudents.jpg" alt="Hero Background" className="hero-bg-image" />
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-container">
@@ -217,10 +217,15 @@ function Home() {
             <p className="cta-subtitle">
               Join hundreds of successful students who have achieved their goals with EngageHub.
             </p>
-            <motion.button className="btn btn-primary cta-button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a href="./contact">Start Your Success Story</a>
-              <FaArrowRight />
-            </motion.button>
+            <div className="hero-buttons">
+              <motion.button className="btn btn-primary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <a href="./contact">Start Your Success Story</a>
+                <FaArrowRight />
+             </motion.button>
+             {/*} <motion.button className="btn btn-secondary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                Learn More 
+              </motion.button> */}
+            </div> 
           </motion.div>
         </div>
       </section>

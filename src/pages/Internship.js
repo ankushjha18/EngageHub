@@ -98,23 +98,23 @@ function Internship() {
             animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="section-title">Internship Opportunities</h1>
+            <h1 className="section-title">Stay Updated!</h1>
             <p className="section-subtitle">
-              Join our team and gain valuable experience while contributing to our mission of empowering students through quality education.
+            This page is currently being updated. Please check back soon for the latest content.
             </p>
-            <motion.button 
+           {/*} <motion.button 
               className="btn btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Apply Now
               <FaArrowRight />
-            </motion.button>
+            </motion.button>*/}
           </motion.div>
         </div>
       </section>
 
-      {/* Opportunities Section */}
+      {/* Opportunities Section }
       <section ref={opportunitiesRef} className="opportunities section">
         <div className="container">
           <motion.div 
@@ -179,7 +179,7 @@ function Internship() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Benefits Section }
       <section ref={benefitsRef} className="benefits section">
         <div className="container">
           <motion.div 
@@ -215,7 +215,7 @@ function Internship() {
         </div>
       </section>
 
-      {/* Application Section */}
+      {/* Application Section }
       <section ref={applicationRef} className="application section">
         <div className="container">
           <motion.div 
@@ -255,7 +255,7 @@ function Internship() {
             </motion.button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

@@ -65,7 +65,7 @@ function Header() {
     setIsMobileMenuOpen(false);
   };
 
-  // Array of navigation links
+  // Array of navigation links (excluding Enquire Now for desktop navigation)
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
@@ -73,7 +73,12 @@ function Header() {
     { name: 'Events & Workshops', path: '/events' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Newsletter', path: '/newsletter' },
-    { name: 'Internship', path: '/internship' },
+    { name: 'Internship', path: '/internship' }
+  ];
+
+  // Array for mobile menu (includes Enquire Now)
+  const mobileNavLinks = [
+    ...navLinks,
     { name: 'Enquire Now', path: '/contact', isHighlighted: true }
   ];
 
@@ -86,11 +91,11 @@ function Header() {
         {/* Logo section - positioned completely to the left */}
         <div className="logo">
           {/* Logo image - replace 'logo.png' with your actual logo file */}
-          <img src="/logo.png" alt="EngageHub Logo" />
+          <img src="/logoengage.png" alt="EngageHub Logo" />
           {/* Company name */}
         </div>
 
-        {/* Desktop navigation menu - hidden on mobile */}
+        {/* Desktop navigation menu - centered (excludes Enquire Now) */}
         <nav className="nav-desktop">
           {/* Map through navigation links to create menu items */}
           {navLinks.map((link) => (
@@ -103,13 +108,28 @@ function Header() {
               {/* Navigation link */}
               <a
                 href={link.path}
-                className={`${(location.pathname === link.path || (link.path === '/events' && location.pathname === '/workshops')) ? 'active' : ''} ${link.isHighlighted ? 'highlighted' : ''}`}
+                className={`${(location.pathname === link.path || (link.path === '/events' && location.pathname === '/workshops')) ? 'active' : ''}`}
               >
                 {link.name}
               </a>
             </motion.div>
           ))}
         </nav>
+
+        {/* Enquire Now button - positioned to the right on desktop only */}
+        <div className="enquire-now-desktop">
+        <motion.a
+          href="/contact"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`enquire-now-desktop highlighted ${
+            location.pathname === '/contact' ? 'active' : ''
+          }`}
+        >
+          Enquire Now
+        </motion.a>
+
+        </div>
 
         {/* Mobile menu button - only visible on mobile */}
         <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
@@ -124,13 +144,13 @@ function Header() {
             // Motion.div for smooth slide-in animation
             <motion.div
               className="mobile-menu"
-              initial={{ opacity: 0, x: '100%' }}  // Start invisible and off-screen
-              animate={{ opacity: 1, x: 0 }}       // Animate to visible and on-screen
-              exit={{ opacity: 0, x: '100%' }}     // Animate out when closing
+              initial={{ opacity: 0, y: -20 }}     // Start invisible and slightly up
+              animate={{ opacity: 1, y: 0 }}       // Animate to visible and normal position
+              exit={{ opacity: 0, y: -20 }}        // Animate out when closing
               transition={{ duration: 0.3 }}        // Animation duration
             >
-              {/* Mobile navigation links */}
-              {navLinks.map((link) => (
+              {/* Mobile navigation links (includes Enquire Now) */}
+              {mobileNavLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.path}
@@ -161,4 +181,4 @@ function Header() {
 }
 
 // Export the Header component so it can be used in other files
-export default Header; 
+export default Header;

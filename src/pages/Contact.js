@@ -280,7 +280,7 @@ function Contact() {
     {
       icon: <FaPhone style={{ transform: "rotate(90deg)"}} />,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+971 55 272 8339',
       description: 'Call us during business hours'
     },
     {

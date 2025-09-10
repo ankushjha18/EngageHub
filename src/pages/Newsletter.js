@@ -33,13 +33,13 @@ const Newsletter = () => {
           >
             <h1 className="section-title">Stay Updated</h1>
             <p className="section-subtitle">
-              Subscribe to our newsletter for the latest educational insights, tips, and updates.
+            This page is currently being updated. Please check back soon for the latest content.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="newsletter-content section">
+     {/*} <section className="newsletter-content section">
         <div className="container">
           <div className="newsletter-container">
             <motion.div 
@@ -146,7 +146,7 @@ const Newsletter = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

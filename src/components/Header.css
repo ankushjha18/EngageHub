@@ -26,7 +26,7 @@
 .header-container {
   max-width: 100%;             /* Full width to allow logo to touch edge */
   margin: 0;                   /* Remove auto margins */
-  padding: 0;                  /* Remove padding */
+  padding: 0 1rem;             /* Add padding for spacing */
   display: flex;               /* Use flexbox for layout */
   align-items: center;         /* Center items vertically */
   justify-content: space-between; /* Distribute items evenly */
@@ -44,8 +44,7 @@
   font-size: 1.4rem;         /* Slightly smaller font size */
   transition: all var(--transition-normal); /* Smooth transitions */
   flex-shrink: 0;             /* Prevent logo from shrinking */
-  padding-left: 0;            /* No padding to position completely to the left */
-  margin-left: 0;             /* No margin to position completely to the left */
+  order: 1;                   /* Ensure logo comes first */
 }
 
 /* Logo hover effect */
@@ -56,7 +55,7 @@
 
 /* Logo image */
 .logo img {
-  height: 250px;               /* Slightly smaller height for better fit */
+  height: 65px;               /* Reasonable height for header */
   width: auto;                /* Maintain aspect ratio */
 }
 
@@ -69,6 +68,7 @@
   flex: 1;                    /* Take up remaining space */
   flex-wrap: nowrap;          /* Prevent wrapping to new lines */
   margin: 0 var(--spacing-lg); /* Equal margins on both sides */
+  order: 2;                   /* Navigation in the middle */
 }
 
 /* Desktop navigation links */
@@ -100,7 +100,7 @@
   font-weight: 600;           /* Semi-bold for active link */
 }
 
-/* Highlighted navigation link (Enquire now) */
+/* Highlighted navigation link (Enquire now) - only visible on desktop */
 .nav-desktop a.highlighted {
   background: var(--white);    /* White background */
   color: var(--dark-gray);     /* Dark text color */
@@ -128,55 +128,38 @@
   transform: translateY(-1px);  /* Slight lift effect */
 }
 
-/* Highlighted link active state */
-/*.nav-desktop a.highlighted.active {
-  /*background: linear-gradient(135deg, var(--accent-color), var(--primary-color), var(--secondary-color)); /* Different gradient for active */
-  /*box-shadow: 0 8px 25px rgba(0, 90, 115, 0.6), 0 3px 12px rgba(0, 167, 181, 0.5); /* Enhanced shadow for active */
-  /*transform: translateY(-1px); /* Slight lift */
-/*}*/
+/* Container for "Enquire Now" button on desktop - positioned to the right */
+.enquire-now-desktop {
+  display: flex;
+  align-items: center;
+  order: 3;                   /* Position to the right */
+  flex-shrink: 0;            /* Prevent shrinking */
+  margin-left: auto;         /* Push to the right */
+}
 
-/* Highlighted link before pseudo-element for shine effect */
-/*.nav-desktop a.highlighted::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
-}*/
+/* Enquire Now Button Styles */
+.enquire-now-desktop a.highlighted {
+  background: #ffffff;
+  color: #333333;
+  border: 2px solid #000000;
+  font-weight: 400;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
 
-/* Shine effect on hover */
-/*.nav-desktop a.highlighted:hover::before {
-  left: 100%;
-}*/
-
-/* Highlighted link after pseudo-element for glow effect */
-/*.nav-desktop a.highlighted::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-  border-radius: 27px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}*/
-
-/* Glow effect on hover */
-/*.nav-desktop a.highlighted:hover::after {
-  opacity: 0.7;
-}*/
-
-/* Contact information section */
-
-
-/* Individual contact item */
-
+.enquire-now-desktop a.highlighted:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  color: #333333;
+}
 
 /* Mobile menu button - hidden on desktop */
 .mobile-menu-btn {
@@ -189,6 +172,7 @@
   padding: var(--spacing-sm); /* Internal spacing */
   border-radius: var(--border-radius-md); /* Rounded corners */
   transition: all var(--transition-normal); /* Smooth transitions */
+  order: 3;                   /* Position to the right */
 }
 
 /* Mobile menu button hover effect */
@@ -253,7 +237,6 @@
   box-shadow: none;           /* Remove shadow for clean look */
   position: relative;         /* For pseudo-element */
   overflow: hidden;           /* Hide overflow for pseudo-element */
-  border: 1px solid var(--black); /* Thin black border */
   transition: all var(--transition-normal); /* Smooth transition */
   text-transform: none;       /* Remove uppercase transform to match desktop */
   letter-spacing: 0.2px;     /* Normal letter spacing to match desktop */
@@ -329,14 +312,6 @@
     font-size: 0.7rem;        /* Smaller font size */
   }
   
-  .contact-info {
-    gap: var(--spacing-sm);   /* Less space between contact items */
-  }
-  
-  .contact-item {
-    font-size: 0.8rem;       /* Smaller font size */
-  }
-  
   .mobile-menu {
     top: 65px;               /* Position below smaller header */
   }
@@ -346,25 +321,28 @@
 @media (max-width: 768px) {
   .header-container {
     height: 60px;             /* Even smaller height on mobile */
+    padding: 0 1rem;          /* Keep padding for spacing */
   }
   
   .logo {
     font-size: 1.2rem;       /* Smaller logo text */
+    order: 1;                /* Keep logo on the left */
   }
   
   .logo img {
-    height: 250px;            /* Smaller logo image */
+    height: 35px;            /* Smaller logo image for mobile */
   }
   
-  /* Hide desktop navigation and contact info on mobile */
+  /* Hide desktop navigation on mobile */
   .nav-desktop,
-  .contact-info {
+  .enquire-now-desktop {
     display: none;
   }
   
   /* Show mobile menu button on mobile */
   .mobile-menu-btn {
     display: block;
+    order: 3;                /* Position to the right */
   }
   
   .mobile-menu {
@@ -375,23 +353,29 @@
 /* For very small mobile devices */
 @media (max-width: 480px) {
   .header-container {
-    padding: 0;               /* Remove padding to allow logo to touch edge */
+    padding: 0 0.5rem;       /* Less padding on very small screens */
+    height: 65px;            /* Slightly smaller but still accommodating */
   }
   
   .logo {
     font-size: 1rem;         /* Even smaller logo text */
-    padding-left: var(--spacing-sm); /* Add padding only to logo */
   }
   
   .logo img {
-    height: 250px;           /* Even smaller logo image */
+    height: 50px;            /* Still clearly visible on very small screens */
   }
   
   .mobile-menu {
     padding: var(--spacing-md); /* Less padding */
+    top: 65px;               /* Position below smaller header */
   }
   
   .mobile-menu a {
     font-size: 0.95rem;      /* Smaller font size */
   }
-} 
+  
+  .mobile-menu a.highlighted {
+    padding: 12px 24px;      /* Adjusted padding for small screens */
+    font-size: 0.9rem;       /* Adjusted font size */
+  }
+}

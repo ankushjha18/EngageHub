@@ -117,22 +117,22 @@ const Services = () => {
   const features = [
     {
       icon: <FaCertificate />,
-      title: "Certified Tutors",
+      title: "Exceptional Faculty",
       description: "All our tutors are certified educators with extensive experience in their respective fields."
     },
     {
       icon: <FaCalendarAlt />,
-      title: "Flexible Scheduling",
+      title: "100+ Teaching hours",
       description: "Sessions available at times that work for you, including evenings and weekends."
     },
     {
       icon: <FaUsers />,
-      title: "Personalized Approach",
+      title: "Past Paper Practice & Exam Prep",
       description: "Customized learning plans tailored to each student's unique needs and learning style."
     },
     {
       icon: <FaChartLine />,
-      title: "Progress Tracking",
+      title: "Proven Results",
       description: "Regular assessments and detailed progress reports to monitor student improvement."
     }
   ];

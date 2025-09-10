@@ -239,7 +239,7 @@ const EventsWorkshops = () => {
         </div>
       </section> */}
 
-      {/* Workshops Grid */}
+      {/* Workshops Grid }
       <section className="workshops-grid section" ref={workshopsRef}>
         <div className="container">
           <motion.div
