@@ -180,25 +180,6 @@ const About = () => {
                 we help students unlock their full potential.
               </p>
             </motion.div>
-            <motion.div 
-              className="mission-stats"
-              initial={{ opacity: 0, x: 50 }}
-              animate={missionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="stat-item">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Students Helped</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">95%</div>
-                <div className="stat-label">Success Rate</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">10+</div>
-                <div className="stat-label">Years Experience</div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -240,7 +221,7 @@ const About = () => {
 
 
 
-      {/* Story Section */}
+      {/* Story Section 
       <section className="story section">
         <div className="container">
           <motion.div 
@@ -267,7 +248,7 @@ const About = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 };
