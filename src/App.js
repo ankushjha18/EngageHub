@@ -27,7 +27,22 @@ import Newsletter from './pages/Newsletter'; // Newsletter subscription page
 import Internship from './pages/Internship'; // Internship opportunities page
 import Contact from './pages/Contact';     // Contact form page
 import ContactSuccess from './pages/ContactSuccess'; // Success page after form submission
-import Admin from './pages/Admin';         // Admin dashboard page
+import Admin from './pages/Admin';     
+
+import SAT from './pages/sat';
+import ACT from './pages/act';
+import AP from './pages/ap';
+import MYP from './pages/myp';
+import AMC from './pages/amc';
+import IGCSE from './pages/igcse';
+import ALEVEL from './pages/alevel';
+import GMAT from './pages/gmat';
+import GRE from './pages/gre';
+
+import Research from './pages/research';
+import Tutoring from './pages/tutoring';
+import Consultancy from './pages/consultancy';
+
 
 // Import the CSS file for this component
 import './App.css';
@@ -73,6 +88,23 @@ function App() {
             
             {/* Contact success page - shown after form is submitted */}
             <Route path="/contact-success" element={<ContactSuccess />} />
+
+            <Route path='/sat' element={<SAT />} />
+            <Route path='/act' element={<ACT />} />
+            <Route path='/ap' element={<AP />} />
+            <Route path='/myp' element={<MYP />} />
+            <Route path='/amc' element={<AMC />} />
+            <Route path='/igcse' element={<IGCSE />} />
+            <Route path='/alevel' element={<ALEVEL />} />
+            <Route path='/gmat' element={<GMAT />} />
+            <Route path='/gre' element={<GRE />} />
+
+
+            <Route path='/research' element={<Research />} />
+            <Route path='/tutoring' element={<Tutoring />} />
+            <Route path='/consultancy' element={<Consultancy />} />
+
+
             
             {/* Admin page - password-protected admin dashboard */}
             <Route path="/admin" element={<Admin />} />

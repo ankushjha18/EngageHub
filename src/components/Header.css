@@ -93,6 +93,48 @@
   transform: translateY(-1px); /* Slight lift effect */
 }
 
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-link:hover {
+  background: #f5f5f5;
+}
+
+/* Nested dropdowns (appear to the right of parent) */
+.dropdown-item .dropdown {
+  top: 0;
+  left: 100%;
+  margin-left: 5px;
+}
+
+
+
 /* Active navigation link (current page) */
 .nav-desktop a.active {
   color: var(--primary-color); /* Brand color for active link */

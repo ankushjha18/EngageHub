@@ -1,0 +1,1023 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #334155;
+  background: #ffffff;
+}
+
+.research-container {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hero Section - Blue Theme */
+.research-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+  color: white;
+  padding: 120px 20px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.research-hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.research-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.research-highlight {
+  color: var(--secondary-color); /* Secondary color for highlight */
+  background: linear-gradient(45deg, var(--secondary-color), #ffffff); 
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.research-hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  line-height: 1.6;
+  animation: slideUp 1s ease-out 0.3s both;
+}
+
+.research-hero-highlight {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 1s ease-out 0.6s both;
+  transition: transform 0.3s ease;
+}
+
+.research-hero-highlight:hover {
+  transform: translateY(-5px);
+}
+
+.research-hero-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.research-cta-button {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24, #fb923c);
+  background-size: 200% 200%;
+  color: #1e3a8a;
+  border: none;
+  padding: 20px 45px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+  margin-top: 30px;
+  animation: slideUp 1s ease-out 0.9s both;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.research-cta-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+  background-position: 100% 100%;
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateY(-4px) scale(1.05); }
+  50% { transform: translateY(-4px) scale(1.08); }
+}
+
+/* Light Background Sections */
+.research-section {
+  padding: 100px 20px;
+  background: white;
+  position: relative;
+}
+
+.research-section:nth-child(even) {
+  background: #f8fafc;
+}
+
+.research-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.research-section-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  color: #1e3a8a;
+  position: relative;
+}
+
+.research-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  border-radius: 2px;
+}
+
+.research-section-subtitle {
+  font-size: 1.3rem;
+  color: #64748b;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Statistics Section 
+.research-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.research-stat-card {
+  background: white;
+  border-radius: 25px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4, #10b981);
+}
+
+.research-stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.research-stat-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.research-stat-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.research-stat-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.research-stat-description {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Benefits Section */
+.research-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.research-benefit-card {
+  background: white;
+  border-radius: 25px;
+  padding: 0px 0px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-benefit-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.research-benefit-card:hover::before {
+  opacity: 1;
+}
+
+.research-benefit-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.research-benefit-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.research-benefit-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.research-benefit-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.research-benefit-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: #1e3a8a;
+}
+
+.research-benefit-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Research Fields Section */
+.research-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.research-field-card {
+  background: white;
+  border-radius: 25px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-field-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--field-color, #3b82f6);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.research-field-card:hover::before {
+  transform: scaleX(1);
+}
+
+.research-field-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--field-color, #3b82f6);
+}
+
+.research-field-icon {
+  font-size: 4rem;
+  margin-bottom: 25px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.research-field-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--field-color, #3b82f6);
+}
+
+.research-field-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Research Process Section */
+.research-process-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.research-process-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #3b82f6, #06b6d4, #10b981);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.research-step-card {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.research-step-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.research-step-card:nth-child(even) .research-step-content {
+  margin-right: 60px;
+  margin-left: 0;
+}
+
+.research-step-number {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.research-step-content {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-left: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.research-step-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+}
+
+.research-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.research-step-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  line-height: 1.3;
+}
+
+.research-step-duration {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.research-step-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.research-step-tips {
+  background: #f1f5f9;
+  border-left: 4px solid #3b82f6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.research-step-tips strong {
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.research-step-tips ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.research-step-tips li {
+  margin-bottom: 8px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Research Opportunities Section 
+.research-opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.research-opportunity-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-opportunity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4, #10b981);
+}
+
+.research-opportunity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.research-opportunity-header {
+  margin-bottom: 25px;
+}
+
+.research-opportunity-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.research-opportunity-type {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.research-opportunity-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.research-opportunity-details {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.research-opportunity-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.research-opportunity-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.research-opportunity-value {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.research-opportunity-button {
+  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.research-opportunity-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Success Stories Section /
+.research-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.research-story-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.research-story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: #10b981;
+}
+
+.research-story-header {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.research-story-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.research-story-university {
+  background: linear-gradient(45deg, #10b981, #06b6d4);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.research-story-project,
+.research-story-outcome {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background: #f1f5f9;
+  border-radius: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.research-story-project strong,
+.research-story-outcome strong {
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.research-story-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #475569;
+  border-left: 4px solid #10b981;
+  padding: 20px;
+  background: linear-gradient(45deg, rgba(16, 185, 129, 0.05), rgba(6, 182, 212, 0.05));
+  border-radius: 15px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* FAQ Section 
+.research-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.research-faq-item {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.research-faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+}
+
+.research-faq-question {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.research-faq-answer {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Final CTA Section */
+.research-final-cta {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+  color: white;
+  text-align: center;
+}
+
+.research-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.research-cta-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.research-cta-description {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+.research-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.research-cta-primary {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24, #fb923c);
+  background-size: 200% 200%;
+  color: #1e3a8a;
+  border: none;
+  padding: 20px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.research-cta-secondary {
+  background: transparent;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  padding: 17px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.research-cta-primary:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+  background-position: 100% 100%;
+}
+
+.research-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.research-contact-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 40px;
+}
+
+.research-contact-text {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.research-contact-link {
+  color: #fbbf24;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.research-contact-link:hover {
+  color: #f59e0b;
+  transform: scale(1.1);
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .research-process-timeline::before {
+    left: 40px;
+    transform: none;
+  }
+
+  .research-step-card {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+
+  .research-step-card:nth-child(even) .research-step-content {
+    margin-right: 0;
+    margin-left: 100px;
+  }
+
+  .research-step-content {
+    margin-left: 100px;
+  }
+
+  .research-step-number {
+    position: absolute;
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-hero {
+    padding: 80px 15px 60px;
+  }
+  
+  .research-section {
+    padding: 80px 15px;
+  }
+  
+  .research-section-header {
+    margin-bottom: 60px;
+  }
+
+  .research-stats-grid,
+  .research-benefits-grid,
+  .research-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .research-opportunities-grid,
+  .research-stories-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .research-process-timeline::before {
+    left: 25px;
+  }
+
+  .research-step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    left: 0;
+  }
+
+  .research-step-content {
+    margin-left: 80px;
+    padding: 30px 25px;
+  }
+
+  .research-step-card:nth-child(even) .research-step-content {
+    margin-left: 80px;
+  }
+
+  .research-step-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .research-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .research-cta-primary,
+  .research-cta-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .research-opportunity-details {
+    gap: 10px;
+  }
+
+  .research-opportunity-detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .research-hero {
+    padding: 60px 10px 50px;
+  }
+
+  .research-hero-highlight {
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+  
+  .research-section {
+    padding: 60px 10px;
+  }
+  
+  .research-stat-card,
+  .research-benefit-card,
+  .research-field-card,
+  .research-opportunity-card,
+  .research-story-card,
+  .research-faq-item {
+    padding: 30px 20px;
+  }
+
+  .research-step-content {
+    margin-left: 60px;
+    padding: 25px 20px;
+  }
+
+  .research-step-card:nth-child(even) .research-step-content {
+    margin-left: 60px;
+  }
+
+  .research-stat-number {
+    font-size: 3rem;
+  }
+
+  .research-benefit-number {
+    font-size: 2.5rem;
+  }
+
+  .research-contact-link {
+    font-size: 1.3rem;
+  }
+}
+
+/* Additional animations for enhanced user experience */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll animations */
+.research-stat-card,
+.research-benefit-card,
+.research-field-card,
+.research-step-card,
+.research-opportunity-card,
+.research-story-card,
+.research-faq-item {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Stagger animations */
+.research-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.research-stat-card:nth-child(2) { animation-delay: 0.2s; }
+.research-stat-card:nth-child(3) { animation-delay: 0.3s; }
+.research-stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.research-benefit-card:nth-child(1) { animation-delay: 0.1s; }
+.research-benefit-card:nth-child(2) { animation-delay: 0.2s; }
+.research-benefit-card:nth-child(3) { animation-delay: 0.3s; }
+.research-benefit-card:nth-child(4) { animation-delay: 0.4s; }

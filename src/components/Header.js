@@ -1,167 +1,229 @@
-// This is the Header component - it creates the navigation bar that appears on all pages
-// It includes the logo, navigation menu, and mobile menu functionality
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaBars, FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
+import "./Header.css";
 
-// Import React and necessary hooks
-// useState: Manages component state (data that can change)
-// useEffect: Handles side effects (like adding event listeners)
-import React, { useState, useEffect } from 'react';
-
-// Import routing hook to detect current page
-import { useLocation } from 'react-router-dom';
-
-// Import animation components from Framer Motion
-// motion: Creates animated HTML elements
-// AnimatePresence: Handles animations when elements appear/disappear
-import { motion, AnimatePresence } from 'framer-motion';
-
-// Import icons from react-icons library
-// FaBars: Hamburger menu icon for mobile
-// FaTimes: X icon to close mobile menu
-// FaPhone: Phone icon for contact info
-// FaEnvelope: Email icon for contact info
-import { FaBars, FaTimes, FaPhone, FaEnvelope } from 'react-icons/fa';
-
-// Import the CSS file for this component
-import './Header.css';
-
-// Header component function
-function Header() {
-  // State management using React hooks
-  // isScrolled: Tracks if user has scrolled down (for header styling)
-  // isMobileMenuOpen: Tracks if mobile menu is open/closed
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Get current page location for active link highlighting
+  // NEW: path array to keep track of open menu chain, e.g. ['Services','Exam Preparation','SAT']
+  const [openPath, setOpenPath] = useState([]);
+
+  // Mobile accordion open keys (strings like "Services" or "Services>Exam Preparation")
+  const [mobileOpenKeys, setMobileOpenKeys] = useState([]);
+
   const location = useLocation();
 
-  // useEffect hook - runs code when component mounts or when dependencies change
   useEffect(() => {
-    // Function to handle scroll events
-    const handleScroll = () => {
-      // Check if user has scrolled more than 50 pixels
-      const scrolled = window.scrollY > 50;
-      // Update the isScrolled state
-      setIsScrolled(scrolled);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    // Add scroll event listener to window
-    window.addEventListener('scroll', handleScroll);
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    {
+      name: "Services",
+      path: "/services",
+      children: [
+        {
+          name: "Exam Preparation",
+          path: "#",
+          children: [
+            { name: "SAT", path: "/sat" },
+            { name: "ACT", path: "/act" },
+            { name: "AP", path: "/ap" },
+            { name: "MYP/IB", path: "/myp" },
+            { name: "AMC", path: "/amc" },
+            { name: "IGCSE", path: "/igcse" },
+            { name: "A LEVEL", path: "/alevel" },
+            { name: "GMAT", path: "gmat" },
+            { name: "GRE", path: "/gre" }
+          ]
+        },
+        { name: "Admission Consultancy", path: "/consultancy" },
+        { name: "Tutoring Center", path: "/tutoring" },
+        { name: "Research", path: "/research" }
+      ]
+    },
+    { name: "Events & Workshops", path: "/events" },
+    { name: "Blogs", path: "/blogs" },
+    { name: "Newsletter", path: "/newsletter" },
+    { name: "Internship", path: "/internship" }
+  ];
 
-    // Cleanup function - removes event listener when component unmounts
-    // This prevents memory leaks
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array means this effect runs only once when component mounts
+  const mobileNavLinks = [...navLinks, { name: "Enquire Now", path: "/contact", isHighlighted: true }];
 
-  // Function to toggle mobile menu open/closed
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Desktop: when mouse enters a top-level nav item, set openPath to [name]
+  const handleNavMouseEnter = (name) => setOpenPath([name]);
+  const handleNavMouseLeave = () => setOpenPath([]);
+
+  // When entering a dropdown item at any depth, set full path
+  const handleDropdownEnter = (pathArray) => setOpenPath(pathArray);
+
+  // Mobile open toggle (keys like "Services" or "Services>Exam Preparation")
+  const toggleMobileKey = (key) => {
+    setMobileOpenKeys((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
   };
 
-  // Function to close mobile menu when a link is clicked
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+    setMobileOpenKeys([]);
   };
 
-  // Array of navigation links (excluding Enquire Now for desktop navigation)
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Events & Workshops', path: '/events' },
-    { name: 'Blogs', path: '/blogs' },
-    { name: 'Newsletter', path: '/newsletter' },
-    { name: 'Internship', path: '/internship' }
-  ];
+  // Recursive renderer for desktop dropdowns
+  const renderDropdown = (links, level = 1, parentPath = []) => {
+    // level 1 = first dropdown under a top-level nav
+    return (
+      <motion.div
+        className="dropdown"
+        initial={{ opacity: 0, y: -6 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -6 }}
+        transition={{ duration: 0.14 }}
+        // add data-level for CSS targeting if you want
+        data-level={level}
+      >
+        {links.map((child) => {
+          const currentPath = [...parentPath, child.name]; // e.g. ['Services','Exam Preparation']
+          return (
+            <div
+              key={child.name}
+              className="dropdown-item"
+              onMouseEnter={() => handleDropdownEnter(currentPath)}
+              onMouseLeave={() => {}}
+            >
+              <a
+                href={child.path}
+                className={`dropdown-link ${location.pathname === child.path ? "active" : ""}`}
+              >
+                {child.name}
+              </a>
 
-  // Array for mobile menu (includes Enquire Now)
-  const mobileNavLinks = [
-    ...navLinks,
-    { name: 'Enquire Now', path: '/contact', isHighlighted: true }
-  ];
+              {/* If this child has children, show nested dropdown when openPath[level] === child.name */}
+              {child.children && openPath[level] === child.name && (
+                <AnimatePresence>
+                  {renderDropdown(child.children, level + 1, currentPath)}
+                </AnimatePresence>
+              )}
+            </div>
+          );
+        })}
+      </motion.div>
+    );
+  };
 
-  // Return the JSX (HTML-like structure) for the header
+  // Recursive renderer for mobile menu (accordion)
+  const renderMobileLinks = (links, parentKey = "") => {
+    return links.map((link) => {
+      const key = parentKey ? `${parentKey}>${link.name}` : link.name;
+      const hasChildren = !!link.children?.length;
+      const isOpen = mobileOpenKeys.includes(key);
+
+      if (hasChildren) {
+        return (
+          <div key={key} className="mobile-link-group">
+            <button
+              type="button"
+              className="mobile-link-toggle"
+              onClick={() => toggleMobileKey(key)}
+            >
+              <span>{link.name}</span>
+              <span className="mobile-toggle-icon">{isOpen ? "−" : "+"}</span>
+            </button>
+
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  className="mobile-submenu"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.18 }}
+                >
+                  {renderMobileLinks(link.children, key)}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      }
+
+      // simple link (no children)
+      return (
+        <a
+          key={key}
+          href={link.path}
+          className={`mobile-link ${(location.pathname === link.path) ? "active" : ""} ${link.isHighlighted ? "highlighted" : ""}`}
+          onClick={closeMobileMenu}
+        >
+          {link.name}
+        </a>
+      );
+    });
+  };
+
   return (
-    // Header element with dynamic class based on scroll state
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      {/* Container div for centering and max-width */}
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-container">
-        {/* Logo section - positioned completely to the left */}
         <div className="logo">
-          {/* Logo image - replace 'logo.png' with your actual logo file */}
           <img src="/logoengage.png" alt="EngageHub Logo" />
-          {/* Company name */}
         </div>
 
-        {/* Desktop navigation menu - centered (excludes Enquire Now) */}
+        {/* Desktop nav */}
         <nav className="nav-desktop">
-          {/* Map through navigation links to create menu items */}
           {navLinks.map((link) => (
-            // Each link is a motion.div for smooth animations
             <motion.div
               key={link.name}
-              whileHover={{ scale: 1.05 }}  // Slightly enlarge on hover
-              whileTap={{ scale: 0.95 }}     // Slightly shrink when clicked
+              className="nav-item"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onMouseEnter={() => handleNavMouseEnter(link.name)}
+              onMouseLeave={handleNavMouseLeave}
             >
-              {/* Navigation link */}
-              <a
-                href={link.path}
-                className={`${(location.pathname === link.path || (link.path === '/events' && location.pathname === '/workshops')) ? 'active' : ''}`}
-              >
+              <a href={link.path} className={`${location.pathname === link.path ? "active" : ""}`}>
                 {link.name}
               </a>
+
+              {/* render dropdown when top-level name matches openPath[0] */}
+              {link.children && openPath[0] === link.name && (
+                <AnimatePresence>{renderDropdown(link.children, 1, [link.name])}</AnimatePresence>
+              )}
             </motion.div>
           ))}
         </nav>
 
-        {/* Enquire Now button - positioned to the right on desktop only */}
         <div className="enquire-now-desktop">
-        <motion.a
-          href="/contact"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`enquire-now-desktop highlighted ${
-            location.pathname === '/contact' ? 'active' : ''
-          }`}
-        >
-          Enquire Now
-        </motion.a>
-
+          <motion.a
+            href="/contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`enquire-now-desktop highlighted ${location.pathname === "/contact" ? "active" : ""}`}
+          >
+            Enquire Now
+          </motion.a>
         </div>
 
-        {/* Mobile menu button - only visible on mobile */}
-        <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
-          {/* Show hamburger icon when menu is closed, X icon when open */}
+        {/* Mobile button */}
+        <button className="mobile-menu-btn" onClick={() => { setIsMobileMenuOpen((s) => !s); setOpenPath([]); }}>
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Mobile navigation menu - animated with AnimatePresence */}
+        {/* Mobile menu */}
         <AnimatePresence>
-          {/* Only show mobile menu when isMobileMenuOpen is true */}
           {isMobileMenuOpen && (
-            // Motion.div for smooth slide-in animation
             <motion.div
               className="mobile-menu"
-              initial={{ opacity: 0, y: -20 }}     // Start invisible and slightly up
-              animate={{ opacity: 1, y: 0 }}       // Animate to visible and normal position
-              exit={{ opacity: 0, y: -20 }}        // Animate out when closing
-              transition={{ duration: 0.3 }}        // Animation duration
+              initial={{ opacity: 0, y: -14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={{ duration: 0.22 }}
             >
-              {/* Mobile navigation links (includes Enquire Now) */}
-              {mobileNavLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  className={`${(location.pathname === link.path || (link.path === '/events' && location.pathname === '/workshops')) ? 'active' : ''} ${link.isHighlighted ? 'highlighted' : ''}`}
-                  onClick={closeMobileMenu}  // Close menu when link is clicked
-                >
-                  {link.name}
-                </a>
-              ))}
-              
-              {/* Mobile contact information */}
+              {renderMobileLinks(mobileNavLinks)}
+
               <div className="mobile-contact">
                 <div className="contact-item">
                   <FaPhone className="contact-icon" />
@@ -179,6 +241,3 @@ function Header() {
     </header>
   );
 }
-
-// Export the Header component so it can be used in other files
-export default Header;

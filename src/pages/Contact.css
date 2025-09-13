@@ -29,6 +29,7 @@
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 1rem;
+  padding-top: 50px;
 }
 
 .contact-info > p {

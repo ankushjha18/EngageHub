@@ -227,10 +227,12 @@
   transform: translateX(var(--spacing-xs)); /* Slight slide effect */
 }
 
+
 /* Contact icon */
 
 .contact-icon-phone {
    transform: rotate(90deg);
+   
 }
 .contact-icon,
 .contact-icon-phone,

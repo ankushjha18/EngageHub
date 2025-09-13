@@ -1,0 +1,971 @@
+/* Tutoring Component Wrapper - Prevents Global CSS Conflicts */
+.tutoring-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: #334155;
+    background: #ffffff;
+  }
+  
+  .tutoring-wrapper *,
+  .tutoring-wrapper *::before,
+  .tutoring-wrapper *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .tutoring-wrapper .tutoring-page {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section - Blue Theme */
+  .tutoring-wrapper .hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+    color: white;
+    padding: 120px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tutoring-wrapper .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    animation: tutoring-float 8s ease-in-out infinite;
+  }
+  
+  @keyframes tutoring-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+  }
+  
+  .tutoring-wrapper .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .tutoring-wrapper .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: tutoring-slideUp 1s ease-out;
+  }
+  
+  @keyframes tutoring-slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .tutoring-wrapper .highlight {
+    background: linear-gradient(45deg, #ececec, #fafafa, #f1f1f1);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: tutoring-shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes tutoring-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .tutoring-wrapper .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: tutoring-slideUp 1s ease-out 0.3s both;
+  }
+  
+  .tutoring-wrapper .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    animation: tutoring-slideUp 1s ease-out 0.6s both;
+  }
+  
+  .tutoring-wrapper .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .tutoring-wrapper .stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fbbf24;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tutoring-wrapper .stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+  
+  .tutoring-wrapper .cta-btn {
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: tutoring-slideUp 1s ease-out 0.9s both;
+  }
+  
+  .tutoring-wrapper .cta-btn.primary {
+    background: linear-gradient(45deg, #f59e0b, #fbbf24, #fb923c);
+    background-size: 200% 200%;
+    color: #1e3a8a;
+    box-shadow: 0 8px 25px rgba(249, 249, 249, 0.4);
+  }
+  
+  .tutoring-wrapper .cta-btn.primary:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+    background-position: 100% 100%;
+  }
+  
+  .tutoring-wrapper .cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .tutoring-wrapper .cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-4px) scale(1.05);
+  }
+  
+  /* Light Background Sections */
+  .tutoring-wrapper .tutoring-section {
+    padding: 100px 20px;
+    background: white;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .tutoring-section:nth-child(even) {
+    background: #f8fafc;
+  }
+  
+  .tutoring-wrapper .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+  }
+  
+  .tutoring-wrapper .section-title {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    color: #1e3a8a;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f59e0b, #fbbf24);
+    border-radius: 2px;
+  }
+  
+  .tutoring-wrapper .section-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: center;     /* centers text inside */
+    display: block;         /* make it a block element */
+    margin: 0 auto;         /* centers the block horizontally */
+  }
+  
+  /* Statistics Section 
+  .tutoring-wrapper .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .stat-card {
+    background: white;
+    border-radius: 25px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tutoring-wrapper .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(45deg, #3b82f6, #06b6d4, #10b981);
+  }
+  
+  .tutoring-wrapper .stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+  }
+  
+  .tutoring-wrapper .stat-card .stat-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .tutoring-wrapper .stat-card .stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tutoring-wrapper .stat-card .stat-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 10px;
+  }
+  
+  .tutoring-wrapper .stat-card .stat-description {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+  
+  /* Features Section */
+  .tutoring-wrapper .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .feature-card {
+    background: white;
+    border-radius: 25px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tutoring-wrapper .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--feature-color, #3b82f6);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+  
+  .tutoring-wrapper .feature-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .tutoring-wrapper .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--feature-color, #3b82f6);
+  }
+  
+  .tutoring-wrapper .feature-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  .tutoring-wrapper .feature-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--feature-color, #3b82f6);
+  }
+  
+  .tutoring-wrapper .feature-desc {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+  }
+  
+  /* Subjects Section */
+  .tutoring-wrapper .subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .subject-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .tutoring-wrapper .subject-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+  }
+  
+  .tutoring-wrapper .subject-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .tutoring-wrapper .subject-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+  
+  .tutoring-wrapper .subject-info {
+    flex: 1;
+  }
+  
+  .tutoring-wrapper .subject-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+  }
+  
+  .tutoring-wrapper .subject-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .tutoring-wrapper .subject-level,
+  .tutoring-wrapper .subject-duration {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .tutoring-wrapper .subject-desc {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .tutoring-wrapper .subject-btn {
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+    
+  }
+  
+  .tutoring-wrapper .subject-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+  }
+  
+  /* Exam Prep Section */
+  .tutoring-wrapper .exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .exam-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .exam-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: #10b981;
+  }
+  
+  .tutoring-wrapper .exam-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+  }
+  
+  .tutoring-wrapper .exam-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  .tutoring-wrapper .exam-desc {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .tutoring-wrapper .exam-details {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tutoring-wrapper .exam-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .tutoring-wrapper .detail-label {
+    font-weight: 600;
+    color: #475569;
+  }
+  
+  .tutoring-wrapper .detail-value {
+    font-weight: 700;
+    color: #10b981;
+  }
+  
+  .tutoring-wrapper .exam-btn {
+    background: linear-gradient(45deg, #10b981, #06b6d4);
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+  }
+  
+  .tutoring-wrapper .exam-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5);
+  }
+  
+  /* How it Works Section */
+  .tutoring-wrapper .steps-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .steps-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    bottom: 50px;
+    width: 4px;
+    background: linear-gradient(to bottom, #3b82f6, #06b6d4, #10b981);
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  .tutoring-wrapper .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .step:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  
+  .tutoring-wrapper .step:nth-child(even) .step-content {
+    margin-right: 60px;
+    margin-left: 0;
+    text-align: right;
+  }
+  
+  .tutoring-wrapper .step-number {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  
+  .tutoring-wrapper .step-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-left: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .tutoring-wrapper .step-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+  }
+  
+  .tutoring-wrapper .step-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+  }
+  
+  .tutoring-wrapper .step-desc {
+    font-size: 1.2rem;
+    color: #64748b;
+    line-height: 1.6;
+  }
+  
+  /* Testimonials Section */
+  .tutoring-wrapper .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .testimonial-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: #10b981;
+  }
+  
+  .tutoring-wrapper .testimonial-content {
+    margin-bottom: 30px;
+  }
+  
+  .tutoring-wrapper .testimonial-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #475569;
+    line-height: 1.6;
+    position: relative;
+  }
+  
+  .tutoring-wrapper .testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .tutoring-wrapper .testimonial-avatar {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+  
+  .tutoring-wrapper .testimonial-info {
+    flex: 1;
+  }
+  
+  .tutoring-wrapper .testimonial-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 5px;
+  }
+  
+  .tutoring-wrapper .testimonial-details {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+  
+  .tutoring-wrapper .testimonial-improvement {
+    background: linear-gradient(45deg, #10b981, #06b6d4);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+  
+  /* Pricing Section */
+  .tutoring-wrapper .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .pricing-card {
+    background: white;
+    border-radius: 25px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+    text-align: center;
+  }
+  
+  .tutoring-wrapper .pricing-card.popular {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+  }
+  
+  .tutoring-wrapper .popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+  }
+  
+  .tutoring-wrapper .pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tutoring-wrapper .pricing-card.popular:hover {
+    transform: translateY(-8px) scale(1.05);
+  }
+  
+  .tutoring-wrapper .pricing-header {
+    margin-bottom: 40px;
+  }
+  
+  .tutoring-wrapper .plan-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  .tutoring-wrapper .plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .tutoring-wrapper .price {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #3b82f6;
+  }
+  
+  .tutoring-wrapper .period {
+    font-size: 1.2rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  
+  .tutoring-wrapper .pricing-features {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  .tutoring-wrapper .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .tutoring-wrapper .feature-check {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .tutoring-wrapper .feature-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+  
+  .tutoring-wrapper .pricing-btn {
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .tutoring-wrapper .pricing-btn.primary {
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    color: white;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .tutoring-wrapper .pricing-btn.secondary {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+  }
+  
+  .tutoring-wrapper .pricing-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .tutoring-wrapper .pricing-btn.primary:hover {
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+  }
+  
+  .tutoring-wrapper .pricing-btn.secondary:hover {
+    background: #3b82f6;
+    color: white;
+  }
+  
+  /* FAQs Section */
+  .tutoring-wrapper .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .faq-item {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .tutoring-wrapper .faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+  }
+  
+  .tutoring-wrapper .faq-question {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  
+  .tutoring-wrapper .faq-answer {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+  }
+  
+  /* CTA Section */
+  .tutoring-wrapper .cta-section {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .tutoring-wrapper .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .tutoring-wrapper .cta-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tutoring-wrapper .cta-description {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tutoring-wrapper .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tutoring-wrapper .hero {
+      padding: 80px 20px 60px;
+    }
+    
+    .tutoring-wrapper .hero-stats {
+      gap: 20px;
+    }
+    
+    .tutoring-wrapper .tutoring-section {
+      padding: 60px 20px;
+    }
+    
+    .tutoring-wrapper .section-header {
+      margin-bottom: 50px;
+    }
+    
+    .tutoring-wrapper .stats-grid,
+    .tutoring-wrapper .features-grid,
+    .tutoring-wrapper .subject-grid,
+    .tutoring-wrapper .exam-grid,
+    .tutoring-wrapper .testimonial-grid,
+    .tutoring-wrapper .pricing-grid {
+      gap: 30px;
+    }
+    
+    .tutoring-wrapper .steps-container::before {
+      display: none;
+    }
+    
+    .tutoring-wrapper .step {
+      flex-direction: column !important;
+      text-align: center;
+    }
+    
+    .tutoring-wrapper .step:nth-child(even) .step-content {
+      margin-right: 0;
+      text-align: center;
+    }
+    
+    .tutoring-wrapper .step-content {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+    
+    .tutoring-wrapper .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .tutoring-wrapper .cta-btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tutoring-wrapper .hero {
+      padding: 60px 15px 40px;
+    }
+    
+    .tutoring-wrapper .tutoring-section {
+      padding: 40px 15px;
+    }
+    
+    .tutoring-wrapper .stat-card,
+    .tutoring-wrapper .feature-card,
+    .tutoring-wrapper .subject-card,
+    .tutoring-wrapper .exam-card,
+    .tutoring-wrapper .testimonial-card,
+    .tutoring-wrapper .pricing-card {
+      padding: 30px 20px;
+    }
+    
+    .tutoring-wrapper .step-number {
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+    }
+  }
