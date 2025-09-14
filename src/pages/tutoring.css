@@ -21,7 +21,7 @@
   
   /* Hero Section - Blue Theme */
   .tutoring-wrapper .hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 120px 20px 100px;
     text-align: center;
@@ -498,7 +498,7 @@
   }
   
   .tutoring-wrapper .exam-btn {
-    background: linear-gradient(45deg, #10b981, #06b6d4);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     text-decoration: none;
     color: white;
     border: none;
@@ -600,7 +600,7 @@
     line-height: 1.6;
   }
   
-  /* Testimonials Section */
+  /* Testimonials Section 
   .tutoring-wrapper .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -675,7 +675,7 @@
     display: inline-block;
   }
   
-  /* Pricing Section */
+  /* Pricing Section 
   .tutoring-wrapper .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -814,7 +814,7 @@
     color: white;
   }
   
-  /* FAQs Section */
+  /* FAQs Section 
   .tutoring-wrapper .faq-container {
     max-width: 900px;
     margin: 0 auto;
@@ -852,7 +852,7 @@
   
   /* CTA Section */
   .tutoring-wrapper .cta-section {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
     padding: 100px 20px;

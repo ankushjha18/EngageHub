@@ -20,6 +20,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5); 
 }
 
 /* Hero background image */
@@ -27,7 +28,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;           /* Cover entire area while maintaining aspect ratio */
-  object-position: center;     /* Center the image */
+  object-position: center; 
+  background-color: rgba(0, 0, 0, 0.5);    /* Center the image */
 }
 
 /* Hero overlay for better text readability */

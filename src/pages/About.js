@@ -73,8 +73,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="section-title">About EngageHub</h1>
-            <p className="section-subtitle">
+            <h1 className="section-title1">About EngageHub</h1>
+            <p className="section-subtitle1">
               Empowering students to achieve their academic dreams through personalized education and comprehensive support.
             </p>
           </motion.div>

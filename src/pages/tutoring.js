@@ -380,7 +380,7 @@ export default function Tutoring() {
                 </div>
               </div>
               <p className="subject-desc">{subject.desc}</p>
-              <button className="subject-btn">Start Learning</button>
+             <a href="/contact" ><button className="subject-btn">Start Learning</button></a>
             </div>
           ))}
         </div>

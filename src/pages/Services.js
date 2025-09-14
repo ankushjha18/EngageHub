@@ -9,7 +9,8 @@ import {
   FaChartLine,
   FaGlobe,
   FaCalendarAlt,
-  FaCertificate
+  FaCertificate,
+  FaAward
 } from 'react-icons/fa';
 import './Services.css';
 
@@ -115,26 +116,18 @@ const Services = () => {
   ];
 
   const features = [
-    {
-      icon: <FaCertificate />,
-      title: "Exceptional Faculty",
-      description: "All our tutors are certified educators with extensive experience in their respective fields."
-    },
-    {
-      icon: <FaCalendarAlt />,
-      title: "100+ Teaching hours",
-      description: "Sessions available at times that work for you, including evenings and weekends."
-    },
-    {
-      icon: <FaUsers />,
-      title: "Past Paper Practice & Exam Prep",
-      description: "Customized learning plans tailored to each student's unique needs and learning style."
-    },
-    {
-      icon: <FaChartLine />,
-      title: "Proven Results",
-      description: "Regular assessments and detailed progress reports to monitor student improvement."
-    }
+    { icon: <FaGraduationCap />,
+      title: 'Comprehensive Solutions',
+      description: 'from mentoring and research guidance to test preparation and career planning.' },
+    { icon: <FaUsers />,
+      title: 'Trusted Expertise', 
+      description: 'partnerships with leading education specialists and organizations.' },
+    { icon: <FaChartLine />, 
+      title: 'Global Reach', 
+      description: 'access to opportunities and resources that open doors worldwide' },
+    { icon: <FaAward />, 
+      title: 'Complete Ecosystem', 
+      description: 'With EngageHub, you don’t just receive support,you gain a complete ecosystem for success.' }
   ];
 
   return (
@@ -149,8 +142,8 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="section-title">Our Services</h1>
-            <p className="section-subtitle">
+            <h1 className="section-title1">Our Services</h1>
+            <p className="section-subtitle1">
               Comprehensive educational services designed to support students at every stage of their academic journey.
             </p>
           </motion.div>

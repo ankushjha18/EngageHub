@@ -4,30 +4,30 @@
   }
   
   /* Hero Section */
-  .consultancy-hero {
-    background: linear-gradient(to right, #2563eb, #1d4ed8);
+  .consultancy-page .consultancy-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 100px 20px;
     text-align: center;
   }
   
-  .hero-title {
+  .consultancy-page .hero-title {
     font-size: 3rem;
     font-weight: 800;
   }
   
-  .hero-title .highlight {
+  .consultancy-page .hero-title .highlight {
     color: #fbbf24;
   }
   
-  .hero-subtitle {
+  .consultancy-page .hero-subtitle {
     margin: 20px auto;
     max-width: 700px;
     font-size: 1.2rem;
     line-height: 1.6;
   }
   
-  .cta-btn {
+  .consultancy-page .cta-btn {
     margin-top: 20px;
     padding: 15px 30px;
     border: none;
@@ -40,30 +40,30 @@
     transition: all 0.3s;
   }
   
-  .cta-btn:hover {
+  .consultancy-page  .cta-btn:hover {
     background: #f59e0b;
     transform: translateY(-3px);
   }
   
   /* Services */
-  .services {
+  .consultancy-page .services {
     padding: 80px 20px;
     text-align: center;
   }
   
-  .section-title {
+  .consultancy-page .section-title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 50px;
   }
   
-  .services-grid {
+  .consultancy-page .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
   }
   
-  .service-card {
+  .consultancy-page .service-card {
     background: #f8fafc;
     padding: 25px;
     border-radius: 15px;
@@ -71,12 +71,12 @@
     transition: all 0.3s;
   }
   
-  .service-card:hover {
+  .consultancy-page .service-card:hover {
     transform: translateY(-8px);
     background: #eff6ff;
   }
   
-  .service-icon {
+  .consultancy-page .service-icon {
     font-size: 2rem;
     margin-bottom: 15px;
   }
@@ -200,19 +200,19 @@
   }
   
   /* CTA Section */
-  .cta-section {
-    background: linear-gradient(to right, #1d4ed8, #2563eb);
+  .consultancy-page .cta-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
     padding: 80px 20px;
   }
   
-  .cta-section h2 {
+  .consultancy-page .cta-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
   }
   
-  .cta-section p {
+  .consultancy-page .cta-section p {
     font-size: 1.2rem;
     margin-bottom: 30px;
   }

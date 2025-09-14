@@ -1,6 +1,6 @@
 // Home.jsx - Fixed testimonials carousel (without testimonial images)
 import React from 'react';
-import  { useState } from 'react';
+import  { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Import EmailJS for sending emails from client-side
@@ -40,13 +40,37 @@ function Home() {
   const isTestimonialsInView = useInView(testimonialsRef, { once: true });
   const isCtaInView = useInView(ctaRef, { once: true });
 
-  const itemsPerSlide = 3;
+  const [itemsPerSlide, setItemsPerSlide] = useState(3); // default desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerSlide(1); // mobile → show 1 testimonial
+      } else if (window.innerWidth < 1024) {
+        setItemsPerSlide(2); // tablet → show 2 testimonials
+      } else {
+        setItemsPerSlide(3); // desktop → show 3 testimonials
+      }
+    };
+  
+    handleResize(); // run on mount
+    window.addEventListener("resize", handleResize);
+  
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const features = [
-    { icon: <FaGraduationCap />, title: 'Exceptional Faculty', description: 'Personalized learning with certified educators and subject matter experts.' },
-    { icon: <FaUsers />, title: '100+ Teaching Hours', description: 'Interactive learning in small groups for better engagement and support.' },
-    { icon: <FaChartLine />, title: 'Past Paper Practice & Exam', description: 'Monitor academic progress with detailed reports and analytics.' },
-    { icon: <FaAward />, title: 'Proven Results', description: 'Consistent improvement in grades and test scores for our students.' }
+    { icon: <FaGraduationCap />,
+      title: 'Comprehensive Solutions',
+      description: 'from mentoring and research guidance to test preparation and career planning.' },
+    { icon: <FaUsers />,
+      title: 'Trusted Expertise', 
+      description: 'partnerships with leading education specialists and organizations.' },
+    { icon: <FaChartLine />, 
+      title: 'Global Reach', 
+      description: 'access to opportunities and resources that open doors worldwide' },
+    { icon: <FaAward />, 
+      title: 'Complete Ecosystem', 
+      description: 'With EngageHub, you don’t just receive support,you gain a complete ecosystem for success.' }
   ];
 
   const navigate = useNavigate();
@@ -395,8 +419,8 @@ function Home() {
             <div className="hero-partners">
               <p className="partners-title">Our Partners</p>
               <div className="partners-logos">
+              <img src="./alokbansal.jpg" alt="Company 2" className="partner-logo" />
                 <img src="./rootways.jpg" alt="Company 1" className="partner-logo" />
-                <img src="./alokbansal.jpg" alt="Company 2" className="partner-logo" />
                 <img src="./apguru.jpg" alt="Company 3" className="partner-logo" />
               </div>
             </div>
@@ -410,8 +434,9 @@ function Home() {
           <motion.div className="section-header" initial={{ opacity: 0, y: 30 }} animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <h2 className="section-title">Why Choose EngageHub?</h2>
             <p className="section-subtitle">
-              We provide comprehensive educational services designed to help students 
-              achieve their academic goals and unlock their full potential.
+            At EngageHub, we are committed to delivering world-class educational guidance and support.
+            Through our strategic collaborations we combine expertise, innovation, and global best practices to provide unmatched value to our students.
+           <br/><p><b>Our customers benefit from: </b></p>
             </p>
           </motion.div>
 

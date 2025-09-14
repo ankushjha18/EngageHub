@@ -1,6 +1,6 @@
 /* Events Hero */
 .events-hero {
-  background: linear-gradient(135deg, rgba(0, 90, 115, 0.05), rgba(0, 167, 181, 0.05));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));;
   text-align: center;
   padding-top: 120px;
 }
@@ -10,6 +10,10 @@
   margin: 0 auto;
 }
 
+.events-page .section-title,
+.events-page .section-subtitle{
+  color:white;
+}
 /*upcoming event */
 /* Section Wrapper */
 .upcoming-event {

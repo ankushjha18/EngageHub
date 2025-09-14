@@ -8,7 +8,7 @@
 
 /* Internship Hero Section */
 .internship-hero {
-  background: linear-gradient(135deg, rgba(0, 90, 115, 0.05), rgba(0, 167, 181, 0.05)); /* Gradient background */
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));; /* Gradient background */
   color: var(--white);         /* White text */
   text-align: center;          /* Center text */
   padding: var(--spacing-xxl) 0; /* Vertical padding */
@@ -25,7 +25,8 @@
   font-size: 3rem;             /* Large title */
   font-weight: 700;            /* Bold font weight */
   margin-bottom: var(--spacing-lg); /* Bottom margin */
-  color: var(--black);         /* White text */
+  color: white;  
+         /* White text */
 }
 
 /* Internship hero subtitle */
@@ -33,7 +34,8 @@
   font-size: 1.2rem;           /* Subtitle size */
   margin-bottom: var(--spacing-xl); /* Bottom margin */
   opacity: 0.9;                /* Slightly transparent */
-  line-height: 1.6;            /* Line height */
+  line-height: 1.6;  
+  color: white;          /* Line height */
 }
 
 /* Opportunities Section */

@@ -1,6 +1,6 @@
 /* Contact Header */
 .contact-header {
-  background: linear-gradient(135deg, rgba(0, 90, 115, 0.05), rgba(0, 167, 181, 0.05));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));;
   text-align: center;
   padding-top: 120px;
   padding-bottom: 80px;
@@ -9,6 +9,7 @@
 .contact-header-content {
   max-width: 800px;
   margin: 0 auto;
+  color: white;
 }
 
 /* Contact Form Section */
@@ -16,13 +17,17 @@
   padding: 80px 0;
 }
 
+
+
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 4rem;
   align-items: start;
 }
-
+.contact-page .contact-info-section{
+  padding-top: 18%;
+}
 /* Contact Information */
 .contact-info h2 {
   font-size: 2rem;

@@ -34,7 +34,6 @@ import {
 import './Contact.css';
 
 // Initialize EmailJS with your user ID
-// This is required for EmailJS to work properly
 emailjs.init('VOf9Q1CreblzdZh0b');
 
 // Contact component function
@@ -46,10 +45,7 @@ function Contact() {
   const contactRef = React.useRef(null);
   const isInView = useInView(contactRef, { once: true });
 
-  // State management for form data and submission status
-  // formData: Stores all the form field values
-  // isSubmitting: Tracks if form is currently being submitted
-  // submitSuccess: Tracks if form was successfully submitted
+  // State management for form data and submi
   // emailError: Stores any email sending errors
   const [formData, setFormData] = useState({
     studentName: '',
@@ -315,8 +311,8 @@ function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="contact-title">Get in Touch</h1>
-            <p className="contact-subtitle">
+            <h1 className="contact-title1">Get in Touch</h1>
+            <p className="contact-subtitle1">
               Ready to start your academic journey? Contact us today and let's discuss 
               how we can help you achieve your educational goals.
             </p>

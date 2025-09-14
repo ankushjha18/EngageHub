@@ -9,17 +9,23 @@ html, body {
 
 
 /* About Hero */
-.about-hero {
-  background: linear-gradient(135deg, rgba(0, 90, 115, 0.05), rgba(0, 167, 181, 0.05));
+.about-page .about-hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   text-align: center;
   padding-top: 120px;
 }
 
-.about-hero-content {
+.about-page .container{
+  color: white;
+  padding: 2.5rem;
+}
+.about-page .about-hero-content {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
+
+
 
 /* CEO's Message Section */
 .ceo-message {

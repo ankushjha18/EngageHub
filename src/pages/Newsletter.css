@@ -1,6 +1,6 @@
 /* Newsletter Hero */
 .newsletter-hero {
-  background: linear-gradient(135deg, rgba(0, 90, 115, 0.05), rgba(0, 167, 181, 0.05));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));;
   text-align: center;
   padding-top: 120px;
 }
@@ -9,7 +9,10 @@
   max-width: 800px;
   margin: 0 auto;
 }
-
+.newsletter-page .section-title,
+.newsletter-page .section-subtitle{
+  color: white;
+}
 /* Newsletter Content */
 .newsletter-content {
   background: var(--white);
