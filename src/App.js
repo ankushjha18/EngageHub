@@ -43,6 +43,8 @@ import Research from './pages/research';
 import Tutoring from './pages/tutoring';
 import Consultancy from './pages/consultancy';
 
+import EssayEditingServices from './pages/essay';
+
 
 // Import the CSS file for this component
 import './App.css';
@@ -103,6 +105,7 @@ function App() {
             <Route path='/research' element={<Research />} />
             <Route path='/tutoring' element={<Tutoring />} />
             <Route path='/consultancy' element={<Consultancy />} />
+             <Route path='/essay' element={<EssayEditingServices />} />
 
 
             

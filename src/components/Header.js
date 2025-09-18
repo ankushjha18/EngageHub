@@ -46,7 +46,8 @@ export default function Header() {
         },
         { name: "Admission Consultancy", path: "/consultancy" },
         { name: "Tutoring Center", path: "/tutoring" },
-        { name: "Research", path: "/research" }
+        { name: "Research", path: "/research" },
+        { name: "Essay Editing Services", path: "/essay" }
       ]
     },
     { name: "Events & Workshops", path: "/events" },
