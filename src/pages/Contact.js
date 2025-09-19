@@ -299,7 +299,7 @@ function Contact() {
     //}
   ];
 
-  // Return the JSX (HTML-like structure) for the contact page
+  // Return the JSX (HTML-like structure) for the contact pagp
   return (
     <div className="contact-page">
       {/* Contact Header Section */}
@@ -436,7 +436,7 @@ function Contact() {
                   <div className="form-group">
                       <label htmlFor="studentClass" className="form-label">
                         <FaGraduationCap className="field-icon" />
-                        Class/Grade *
+                        Current Class/Grade *
                       </label>
                       <input
                         type="text"
@@ -474,7 +474,7 @@ function Contact() {
                   <div className="form-group ">
                     <label htmlFor="preferredCountry" className="form-label">
                       <FaMapMarkerAlt className="field-icon" />
-                      Preferred Country for Higher Studies
+                      Preferred Country
                     </label>
                     <input
                       type="text"

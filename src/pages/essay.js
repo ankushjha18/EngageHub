@@ -90,8 +90,8 @@ const EssayEditingServices = () => {
               </ul>
 
               <p>
-                Sage Education provides a complete admission consultancy service and offers the best essay writing
-                services in Dubai. With a team of experienced consultants, Sage Education has been a pioneer in a
+                EngageHub Education provides a complete admission consultancy service and offers the best essay writing
+                services in Dubai. With a team of experienced consultants, EngageHub Education has been a pioneer in a
                 business that has covered a highly detailed niche for itself.
               </p>
             </div>
@@ -99,12 +99,12 @@ const EssayEditingServices = () => {
 
           {/* Services Section */}
           <section className="services-section">
-            <h2>Sage Essay Editing Services in Dubai - What can we edit for you?</h2>
+            <h2>EngageHub Essay Editing Services in Dubai - What can we edit for you?</h2>
             <p>
               We help students apply editing help on all university colleges and courses seeking for various application
               levels in mind. Our college essay editing services span beyond grammar and spelling.
             </p>
-            <p>The college essay editing services at Sage comprises:</p>
+            <p>The college essay editing services at EngageHub comprises:</p>
 
             <ul className="services-list">
               <li>Brainstorming of ideas</li>
@@ -123,8 +123,8 @@ const EssayEditingServices = () => {
 
           {/* Essay Types Section */}
           <section className="essay-types-section">
-            <h2>Essay Editing Services in Dubai from Sage Education</h2>
-            <p>At Sage, we offer editing services for different types of essays.</p>
+            <h2>Essay Editing Services in Dubai from EngageHub Education</h2>
+            <p>At EngageHub, we offer editing services for different types of essays.</p>
 
             <div className="essay-types-grid">
               <div className="essay-type">
@@ -133,9 +133,9 @@ const EssayEditingServices = () => {
                   The editing service is for IB or A-Level IGCSE/GCE essays. The editing includes basic statement
                   editing and proofreading of conclusions, topic sentences, and supporting details. The editing service
                   also includes checking for consistency in writing style, tone, and approach. The expert editors at
-                  Sage Education also feedback on content quality to ensure students understand the weak points in their
+                  EngageHub Education also feedback on content quality to ensure students understand the weak points in their
                   writing and improve their writing skills. The editing service also includes checking what is general
-                  and contextually. The essay editing services offered at Sage cover the spectrum of proofreading that
+                  and contextually. The essay editing services offered at EngageHub cover the spectrum of proofreading that
                   ensure the quality and accuracy of the essay. The editing service also includes checking the hundreds
                   of students to gain credible improvement in their grade points.
                 </p>
@@ -157,12 +157,12 @@ const EssayEditingServices = () => {
               <div className="essay-type">
                 <h3>Research Paper (Dissertation)</h3>
                 <p>
-                  The essay editing and proofreading services offered by Sage for Research Papers (Dissertation) are
+                  The essay editing and proofreading services offered by EngageHub for Research Papers (Dissertation) are
                   flexible, covering all aspects that make a research paper comprehensive and well-structured. The
                   editing service covers all aspects of research paper writing. The editing services is broadly provided
                   to ensure that the entire write-up is coherent and well-formed. The editing services of dissertations
-                  at Sage covers all aspects of research paper writing. The editing service also includes checking for
-                  consistency in writing style, tone, and approach. The expert editors at Sage have helped hundreds of
+                  at EngageHub covers all aspects of research paper writing. The editing service also includes checking for
+                  consistency in writing style, tone, and approach. The expert editors at EngageHub have helped hundreds of
                   scholars with their paper submissions in our time period, we have also developed the knack of
                   understanding what academic institutions expect from research papers submitted in their portals.
                 </p>
@@ -191,10 +191,10 @@ const EssayEditingServices = () => {
                   common application essay writing. The editing service also includes checking for excellent educational
                   and experiential records that can help you with your college application essay. They understand the
                   dynamics of American college admissions and what they are looking for in terms of being fit for
-                  success too. The experts at Sage have mastered the perfect essay. They understand the various crucial
+                  success too. The experts at EngageHub have mastered the perfect essay. They understand the various crucial
                   elements that make up a successful common application essay. The editing service also includes writing
                   being the crux of thoughts, removing redundancy or improving the questions asked, they understand
-                  essay writing service at Sage covers all aspects of common application essay writing. The editing
+                  essay writing service at EngageHub covers all aspects of common application essay writing. The editing
                   service also includes checking the personal and purpose of important answers.
                 </p>
 

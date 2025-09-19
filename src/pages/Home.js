@@ -416,14 +416,7 @@ function Home() {
                 Learn More 
               </motion.button> */}
             </div> 
-            <div className="hero-partners">
-              <p className="partners-title">Our Partners</p>
-              <div className="partners-logos">
-              <img src="./alokbansal.jpg" alt="Company 2" className="partner-logo" />
-                <img src="./rootways.jpg" alt="Company 1" className="partner-logo" />
-                <img src="./apguru.jpg" alt="Company 3" className="partner-logo" />
-              </div>
-            </div>
+            
           </motion.div> 
         </div>
       </section>
@@ -798,6 +791,14 @@ function Home() {
              {/*} <motion.button className="btn btn-secondary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 Learn More 
               </motion.button> */}
+              <div className="hero-partners">
+              <p className="partners-title">Our Partners</p>
+              <div className="partners-logos">
+              <img src="./alokbansal.jpg" alt="Company 2" className="partner-logo" />
+                <img src="./rootways.jpg" alt="Company 1" className="partner-logo" />
+                <img src="./apguru.jpg" alt="Company 3" className="partner-logo" />
+              </div>
+            </div>
             </div> 
           </motion.div>
         </div>

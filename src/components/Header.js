@@ -36,24 +36,24 @@ export default function Header() {
             { name: "SAT", path: "/sat" },
             { name: "ACT", path: "/act" },
             { name: "AP", path: "/ap" },
-            { name: "MYP/IB", path: "/myp" },
+            { name: "MYP", path: "/myp" },
             { name: "AMC", path: "/amc" },
             { name: "IGCSE", path: "/igcse" },
             { name: "A LEVEL", path: "/alevel" },
             { name: "GMAT", path: "gmat" },
-            { name: "GRE", path: "/gre" }
+            { name: "GRE", path: "/gre" },
+            { name: "IB", path: "/ib" },
           ]
         },
-        { name: "Admission Consultancy", path: "/consultancy" },
-        { name: "Tutoring Center", path: "/tutoring" },
+        { name: "Admission Consulting", path: "/consultancy" },
+        { name: "Internship", path: "/internship" },
         { name: "Research", path: "/research" },
         { name: "Essay Editing Services", path: "/essay" }
       ]
     },
     { name: "Events & Workshops", path: "/events" },
     { name: "Blogs", path: "/blogs" },
-    { name: "Newsletter", path: "/newsletter" },
-    { name: "Internship", path: "/internship" }
+    { name: "Newsletter", path: "/newsletter" }
   ];
 
   const mobileNavLinks = [...navLinks, { name: "Enquire Now", path: "/contact", isHighlighted: true }];

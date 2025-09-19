@@ -87,6 +87,44 @@ const itemsPerSlide = 3;
      text: "Instead of spending weeks researching tutors and counsellors, Engagehub helped us find the right match in just a couple of days. The entire process was smooth and stress-free, and our son is thriving academically and personally thanks to the support."}
   ];
 
+  const researchSteps = [
+    {
+      step: 1,
+      title: "Private Tutoring",
+      description: "EnageHub specializes in one-on-one teaching, empowering students with online personalized SAT prep",
+      
+    },
+    {
+      step: 2,
+      title: "Experienced Tutors",
+      description: "Our team of teachers boast top 1% scores for the sections they teach. All of our teachers have demonstrated an exceptional ability to convey material in a fun, personalized, and results-driven way.",
+     
+    },
+    {
+      step: 3,
+      title: "Targeted Assessments",
+      description: "Between each class, you'll get personalized assignments so you master what you learned",
+      
+    },
+    {
+      step: 4,
+      title: "Comprehensive Curriculum",
+      description: "Our comprehensive curriculum, designed to include custom strategies, guides, books, homework sets, and tests, can help students crack the SAT and achieve a high score.",
+      
+    },
+    {
+      step: 5,
+      title: "Mentoring & Support",
+      description: "At EngageHub, we pair you with an experienced mentor to guide you through the SAT prep process.",
+    },
+    {
+      step: 6,
+      title: "SAT Web Portal",
+      description: "The AP Guru online portal contain 100+ hours of SAT content - detailed lesson notes, and additional practice.",
+    }
+  ];
+
+
   const totalSlides = Math.max(1, Math.ceil(testimonials.length / itemsPerSlide));
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
@@ -319,6 +357,39 @@ const itemsPerSlide = 3;
             </div>
           </div>
         </section>
+ {/* how it works */}
+        <section className="research-section research-process">
+        <div className="research-section-header">
+          <h2 className="research-section-title"> Everything You Need To Succeed On Your SAT</h2>
+          <p className="research-section-subtitle">
+            EngageHub provides you
+          </p>
+        </div>
+
+        <div className="research-process-timeline">
+          {researchSteps.map((step, index) => (
+            <div key={index} className="research-step-card">
+              <div className="research-step-number">{step.step}</div>
+              <div className="research-step-content">
+                <div className="research-step-header">
+                  <h3 className="research-step-title">{step.title}</h3>
+                  {/*<span className="research-step-duration">{step.duration}</span> */}
+                </div>
+                <p className="research-step-description">{step.description}</p>
+                {/*<div className="research-step-tips">
+                  <strong>Pro Tips:</strong>
+                  <ul>
+                    {step.tips.map((tip, idx) => (
+                      <li key={idx}>{tip}</li>
+                    ))}
+                  </ul>
+                </div> */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
         {/* Stats Section }
         <section ref={statsRef} className="stats section">

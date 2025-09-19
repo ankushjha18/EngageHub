@@ -29,7 +29,8 @@
   height: 100%;
   object-fit: cover;           /* Cover entire area while maintaining aspect ratio */
   object-position: center; 
-  background-color: rgba(0, 0, 0, 0.5);    /* Center the image */
+  background-color: rgba(255, 255, 255, 0.5);    /* Center the image */
+  filter: brightness(50%);
 }
 
 /* Hero overlay for better text readability */

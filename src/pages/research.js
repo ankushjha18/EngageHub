@@ -62,35 +62,35 @@ const Research = () => {
       title: "Choose a Research Topic",
       description: "Identify a subject area that interests you and has scope for new insights or improvements.",
       tips: ["Pick something you're passionate about", "Ensure resources are available", "Consider real-world impact"],
-      duration: "1-2 weeks"
+      
     },
     {
       step: 2,
       title: "Literature Review",
       description: "Survey existing research works, journals, articles, and credible sources to understand the current state.",
       tips: ["Use Google Scholar and academic databases", "Summarize main findings", "Identify research gaps"],
-      duration: "3-4 weeks"
+     
     },
     {
       step: 3,
       title: "Methodology Design",
       description: "Decide on research methods: qualitative, quantitative, or mixed approaches.",
       tips: ["Pick the right method for your question", "Define clear variables", "Plan data collection carefully"],
-      duration: "2-3 weeks"
+      
     },
     {
       step: 4,
       title: "Data Collection & Analysis",
       description: "Gather the data and analyze them with statistical or thematic tools.",
       tips: ["Maintain data accuracy", "Use appropriate analysis tools", "Create meaningful visualizations"],
-      duration: "6-8 weeks"
+      
     },
     {
       step: 5,
       title: "Drafting & Publishing",
       description: "Write, peer review, revise, and aim for publication or presentation.",
       tips: ["Follow academic formatting", "Get feedback from mentors", "Consider conference presentations"],
-      duration: "4-6 weeks"
+      
     }
   ];
 
@@ -305,7 +305,7 @@ const Research = () => {
               <div className="research-step-content">
                 <div className="research-step-header">
                   <h3 className="research-step-title">{step.title}</h3>
-                  <span className="research-step-duration">{step.duration}</span>
+                  {/*<span className="research-step-duration">{step.duration}</span> */}
                 </div>
                 <p className="research-step-description">{step.description}</p>
                 <div className="research-step-tips">

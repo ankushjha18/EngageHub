@@ -38,6 +38,7 @@ import IGCSE from './pages/igcse';
 import ALEVEL from './pages/alevel';
 import GMAT from './pages/gmat';
 import GRE from './pages/gre';
+import IB from './pages/ib';
 
 import Research from './pages/research';
 import Tutoring from './pages/tutoring';
@@ -100,6 +101,7 @@ function App() {
             <Route path='/alevel' element={<ALEVEL />} />
             <Route path='/gmat' element={<GMAT />} />
             <Route path='/gre' element={<GRE />} />
+            <Route path='/ib' element={<IB />}  />
 
 
             <Route path='/research' element={<Research />} />

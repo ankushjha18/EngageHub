@@ -73,7 +73,7 @@ const Consultancy = () => {
       <section className="consultancy-hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Academic <span className="highlight">Consultancy</span>
+            Academic <span className="highlight">Consulting</span>
           </h1>
           <p className="hero-subtitle">
             Empowering students with expert guidance for admissions, career

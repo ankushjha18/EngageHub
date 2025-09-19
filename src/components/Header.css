@@ -55,7 +55,7 @@
 
 /* Logo image */
 .logo img {
-  height: 65px;               /* Reasonable height for header */
+  height: 90px;               /* Reasonable height for header */
   width: auto;                /* Maintain aspect ratio */
 }
 

@@ -5,7 +5,7 @@
   }
   
   /* Hero Section */
-  .hero-section {
+.essay-editing-page  .hero-section {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     
     color: white;
@@ -14,19 +14,19 @@
     position: relative;
   }
   
-  .hero-content h1 {
+.essay-editing-page  .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: 300;
   }
   
-  .hero-content p {
+.essay-editing-page  .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     font-weight: 300;
   }
   
-  .cta-button {
+.essay-editing-page .cta-button {
     background-color: #007bff;
     color: white;
     padding: 12px 30px;
@@ -37,24 +37,24 @@
     transition: background-color 0.3s;
   }
   
-  .cta-button:hover {
+  .essay-editing-page .cta-button:hover {
     background-color: #0056b3;
   }
   
   /* Main Content */
-  .main-content {
+  .essay-editing-page .main-content {
     background-color: #f8f9fa;
     padding: 60px 0;
   }
   
-  .container {
+  .essay-editing-page .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
   
   /* College Essay Importance Section */
-  .college-essay-importance {
+  .essay-editing-page .college-essay-importance {
     background-color: white;
     padding: 40px;
     border-radius: 8px;
@@ -62,86 +62,86 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .content-with-image {
+  .essay-editing-page .content-with-image {
     display: flex;
     gap: 40px;
     align-items: flex-start;
   }
   
-  .text-content {
+  .essay-editing-page .text-content {
     flex: 2;
   }
   
-  .image-content {
+  .essay-editing-page .image-content {
     flex: 1;
   }
   
-  .image-content img {
+  .essay-editing-page .image-content img {
     width: 100%;
     height: auto;
     border-radius: 8px;
   }
   
-  .college-essay-importance h2 {
+  .essay-editing-page .college-essay-importance h2 {
     color: #2c3e50;
     font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 600;
   }
   
-  .college-essay-importance p {
+  .essay-editing-page .college-essay-importance p {
     margin-bottom: 15px;
     text-align: justify;
     color: #555;
   }
   
   /* Two Column Section */
-  .two-column-section {
+  .essay-editing-page .two-column-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-bottom: 40px;
   }
   
-  .column {
+  .essay-editing-page .column {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .column h3 {
+  .essay-editing-page .column h3 {
     color: #2c3e50;
     font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: 600;
   }
   
-  .column h4 {
+  .essay-editing-page .column h4 {
     color: #34495e;
     font-size: 1.2rem;
     margin: 20px 0 10px 0;
     font-weight: 600;
   }
   
-  .column p {
+  .essay-editing-page .column p {
     margin-bottom: 15px;
     text-align: justify;
     color: #555;
   }
   
-  .column ul {
+  .essay-editing-page .column ul {
     margin: 15px 0;
     padding-left: 20px;
   }
   
-  .column li {
+  .essay-editing-page .column li {
     margin-bottom: 8px;
     color: #555;
   }
   
   /* Services Section */
-  .services-section {
+  .essay-editing-page .services-section {
     background-color: white;
     padding: 40px;
     border-radius: 8px;
@@ -149,20 +149,20 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .services-section h2 {
+  .essay-editing-page .services-section h2 {
     color: #2c3e50;
     font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 600;
   }
   
-  .services-section p {
+  .essay-editing-page .services-section p {
     margin-bottom: 15px;
     text-align: justify;
     color: #555;
   }
   
-  .services-list {
+  .essay-editing-page .services-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
@@ -170,72 +170,72 @@
     padding-left: 20px;
   }
   
-  .services-list li {
+  .essay-editing-page .services-list li {
     color: #555;
     margin-bottom: 8px;
   }
   
   /* Essay Types Section */
-  .essay-types-section {
+  .essay-editing-page .essay-types-section {
     background-color: white;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .essay-types-section h2 {
+  .essay-editing-page .essay-types-section h2 {
     color: #2c3e50;
     font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 600;
   }
   
-  .essay-types-section > p {
+  .essay-editing-page .essay-types-section > p {
     margin-bottom: 30px;
     color: #555;
   }
   
-  .essay-types-grid {
+  .essay-editing-page .essay-types-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-bottom: 30px;
   }
   
-  .essay-type {
+  .essay-editing-page .essay-type {
     padding: 25px;
     border: 1px solid #e9ecef;
     border-radius: 8px;
     background-color: #fafafa;
   }
   
-  .essay-type h3 {
+  .essay-editing-page .essay-type h3 {
     color: #2c3e50;
     font-size: 1.4rem;
     margin-bottom: 15px;
     font-weight: 600;
   }
   
-  .essay-type h4 {
+  .essay-editing-page  .essay-type h4 {
     color: #34495e;
     font-size: 1.1rem;
     margin: 20px 0 10px 0;
     font-weight: 600;
   }
   
-  .essay-type p {
+  .essay-editing-page .essay-type p {
     margin-bottom: 15px;
     text-align: justify;
     color: #555;
     font-size: 0.95rem;
   }
   
-  .essay-type ul {
+  .essay-editing-page .essay-type ul {
     margin: 10px 0;
     padding-left: 20px;
   }
   
-  .essay-type li {
+  .essay-editing-page .essay-type li {
     margin-bottom: 5px;
     color: #555;
     font-size: 0.95rem;
@@ -243,56 +243,56 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .hero-content h1 {
+    .essay-editing-page .hero-content h1 {
       font-size: 2rem;
     }
   
-    .hero-content p {
+    .essay-editing-page.hero-content p {
       font-size: 1rem;
     }
   
-    .content-with-image {
+    .essay-editing-page .content-with-image {
       flex-direction: column;
     }
   
-    .two-column-section {
+    .essay-editing-page .two-column-section {
       grid-template-columns: 1fr;
     }
   
-    .essay-types-grid {
+    .essay-editing-page .essay-types-grid {
       grid-template-columns: 1fr;
     }
   
-    .services-list {
+    .essay-editing-page .services-list {
       grid-template-columns: 1fr;
     }
   
-    .container {
+    .essay-editing-page .container {
       padding: 0 15px;
     }
   
-    .college-essay-importance,
-    .services-section,
-    .essay-types-section {
+    .essay-editing-page .college-essay-importance,
+    .essay-editing-page .services-section,
+    .essay-editing-page .essay-types-section {
       padding: 25px;
     }
   
-    .column,
-    .essay-type {
+    .essay-editing-page .column,
+    .essay-editing-page .essay-type {
       padding: 20px;
     }
   }
   
   @media (max-width: 480px) {
-    .hero-section {
+    .essay-editing-page .hero-section {
       padding: 60px 15px;
     }
   
-    .hero-content h1 {
+    .essay-editing-page .hero-content h1 {
       font-size: 1.8rem;
     }
   
-    .main-content {
+    .essay-editing-page .main-content {
       padding: 30px 0;
     }
   }

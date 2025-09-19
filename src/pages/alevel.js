@@ -45,47 +45,91 @@ function ALEVEL() {
 const itemsPerSlide = 3;
 
  const testimonials = [
-    { name: 'Parent of Grade 11 Student, Dubai',
-      role: 'Parent',
-       rating: 5, 
-       text: "We were overwhelmed with the number of SAT prep options out there. Engagehub helped us connect with a trusted coaching provider within days. My daughter not only improved her SAT score by 200 points but also felt much more confident going into the exam. Engagehub made the whole process stress-free" },
-   { name: 'Parent of Grade 12 Student, Abu Dhabi',
-      role: 'Parent',
-       rating: 5, 
-       text: "Finding the right counsellor was always a challenge. Through Engagehub, we found a counsellor who perfectly understood my son’s aspirations and guided him with college selection, essays, and applications. The personal attention and expertise made a world of difference. We are very grateful to Engagehub for bridging that gap" },
-   { name: 'Parent of High School Junior, Sharjah', 
-     role: 'Parent',
-      rating: 5,
-     text: "As parents, we wanted reliable and well-reviewed services for our child. Engagehub gave us peace of mind by connecting us to vetted SAT prep companies and counsellors. Instead of spending weeks researching, we got the right match in just a couple of conversations. Truly a one-stop solution" },
-   { name: 'Parent of Student ',
-      role: 'Parent',
-       rating: 5,
-       text: "Thanks to Engagehub, my daughter not only secured an excellent SAT score but also got admission counselling that helped her craft a strong application. She has now received offers from her top-choice universities. Engagehub was the perfect partner in this journey." },
-   { name: 'Parent of Grade 12 Student, Abu Dhabi',
-      role: 'Parent',
-      rating: 5,
-      text: "Engagehub made the daunting college admissions process so much easier. The counsellor we were matched with gave clear guidance on essays, applications, and university shortlisting. My daughter has already received offers from her top-choice schools. Couldn’t have asked for a better experience." },
-   { name: 'Parent of IBDP Year 1 Student, Dubai',
-      role: 'Parent',
-     rating: 5,
-     text: "The IB Diploma can be overwhelming, especially with subjects like HL Math and Physics. Through Engagehub, we found an excellent tutor who made complex concepts clear and boosted my son’s confidence. His grades have improved significantly" },
-   { name: ' Parent of Grade 11 Student, Sharjah',
-     role: 'Parent', 
-     rating: 5,
-     text: "My daughter needed help with AP Calculus and AP Biology. Engagehub quickly connected us to specialized tutors who understood the AP curriculum thoroughly. The sessions were structured, effective, and results-driven. She now feels fully prepared for her exams." },
-   { name: 'Parent of High School Junior, UAE',
-     role: 'Parent', 
-     rating: 5,
-     text: "As parents, we were concerned about choosing the right services for our child. Engagehub gave us a list of vetted SAT prep and tutoring providers, making the decision much easier. It was reassuring to know that every recommendation was trustworthy and proven" },
-   { name: 'Parent of Accepted Student, Dubai',
-     role: 'Parent',
+  { name: 'Parent of Grade 11 Student, Dubai',
+    role: 'Parent',
      rating: 5, 
-     text: "From SAT prep to IB tutoring and finally admissions counselling, Engagehub has been with us at every step of our child’s journey. The ecosystem they provide is unmatched – reliable, efficient, and student-focused." },
-     {name: "Parent of Grade 12 Student, Abu Dhabi",
-       role:"Parent",
-       rating: 5,
-       text: "Instead of spending weeks researching tutors and counsellors, Engagehub helped us find the right match in just a couple of days. The entire process was smooth and stress-free, and our son is thriving academically and personally thanks to the support."}
+     text: "We were overwhelmed with the number of SAT prep options out there. Engagehub helped us connect with a trusted coaching provider within days. My daughter not only improved her SAT score by 200 points but also felt much more confident going into the exam. Engagehub made the whole process stress-free" },
+ { name: 'Parent of Grade 12 Student, Abu Dhabi',
+    role: 'Parent',
+     rating: 5, 
+     text: "Finding the right counsellor was always a challenge. Through Engagehub, we found a counsellor who perfectly understood my son’s aspirations and guided him with college selection, essays, and applications. The personal attention and expertise made a world of difference. We are very grateful to Engagehub for bridging that gap" },
+ { name: 'Parent of High School Junior, Sharjah', 
+   role: 'Parent',
+    rating: 5,
+   text: "As parents, we wanted reliable and well-reviewed services for our child. Engagehub gave us peace of mind by connecting us to vetted SAT prep companies and counsellors. Instead of spending weeks researching, we got the right match in just a couple of conversations. Truly a one-stop solution" },
+ { name: 'Parent of Student ',
+    role: 'Parent',
+     rating: 5,
+     text: "Thanks to Engagehub, my daughter not only secured an excellent SAT score but also got admission counselling that helped her craft a strong application. She has now received offers from her top-choice universities. Engagehub was the perfect partner in this journey." },
+ { name: 'Parent of Grade 12 Student, Abu Dhabi',
+    role: 'Parent',
+    rating: 5,
+    text: "Engagehub made the daunting college admissions process so much easier. The counsellor we were matched with gave clear guidance on essays, applications, and university shortlisting. My daughter has already received offers from her top-choice schools. Couldn’t have asked for a better experience." },
+ { name: 'Parent of IBDP Year 1 Student, Dubai',
+    role: 'Parent',
+   rating: 5,
+   text: "The IB Diploma can be overwhelming, especially with subjects like HL Math and Physics. Through Engagehub, we found an excellent tutor who made complex concepts clear and boosted my son’s confidence. His grades have improved significantly" },
+ { name: ' Parent of Grade 11 Student, Sharjah',
+   role: 'Parent', 
+   rating: 5,
+   text: "My daughter needed help with AP Calculus and AP Biology. Engagehub quickly connected us to specialized tutors who understood the AP curriculum thoroughly. The sessions were structured, effective, and results-driven. She now feels fully prepared for her exams." },
+ { name: 'Parent of High School Junior, UAE',
+   role: 'Parent', 
+   rating: 5,
+   text: "As parents, we were concerned about choosing the right services for our child. Engagehub gave us a list of vetted SAT prep and tutoring providers, making the decision much easier. It was reassuring to know that every recommendation was trustworthy and proven" },
+ { name: 'Parent of Accepted Student, Dubai',
+   role: 'Parent',
+   rating: 5, 
+   text: "From SAT prep to IB tutoring and finally admissions counselling, Engagehub has been with us at every step of our child’s journey. The ecosystem they provide is unmatched – reliable, efficient, and student-focused." },
+   {name: "Parent of Grade 12 Student, Abu Dhabi",
+     role:"Parent",
+     rating: 5,
+     text: "Instead of spending weeks researching tutors and counsellors, Engagehub helped us find the right match in just a couple of days. The entire process was smooth and stress-free, and our son is thriving academically and personally thanks to the support."}
   ];
+
+  const researchSteps = [
+    {
+      step: 1,
+      title: "Private Tutoring",
+      description: "EnageHub specializes in one-on-one teaching, empowering students with online personalized A-LEVEL prep",
+      
+    },
+    {
+      step: 2,
+      title: "Experienced Tutors",
+      description: "Our team of teachers boast top 1% scores for the sections they teach. All of our teachers have demonstrated an exceptional ability to convey material in a fun, personalized, and results-driven way.",
+     
+    },
+    {
+      step: 3,
+      title: "Targeted Assessments",
+      description: "Between each class, you'll get personalized assignments so you master what you learned",
+      
+    },
+    {
+      step: 4,
+      title: "School-Aligned Curriculum",
+      description: "Our comprehensive curriculum is school-aligned and follows the structure of the International Specification (Edexcel / CIE / AQA / OCR) in order to ensure improvement on both internal tests and external exams.",
+      
+    },
+    {
+      step: 5,
+      title: "Practice Papers",
+      description: "Practice for the exam with our library of Topic-wise Tests and Past Papers.",
+      
+    },
+    {
+      step: 5,
+      title: "Mentoring & Support",
+      description: "At EngageHub, we pair you with an experienced mentor to guide you through the A-LEVEL prep process.",
+    },
+    {
+      step: 6,
+      title: "Grade Improvement: A-Level Ready",
+      description: "The AP Guru course ensures that each student is A-level ready regardless of the initial academic level at which they stand.",
+    }
+  ];
+
 
   const totalSlides = Math.max(1, Math.ceil(testimonials.length / itemsPerSlide));
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -118,12 +162,12 @@ const itemsPerSlide = 3;
   };
 
 
-  // Array of A LEVEL prep features
+  // Array of SAT prep features
   const features = [
     {
       icon: <FaBookOpen />,
       title: 'Comprehensive Study Materials',
-      description: 'Access thousands of practice questions, detailed explanations, and study guides covering all A LEVEL sections.'
+      description: 'Access thousands of practice questions, detailed explanations, and study guides covering all A-LEVEL sections.'
     },
     {
       icon: <FaBullseye />,
@@ -319,6 +363,39 @@ const itemsPerSlide = 3;
             </div>
           </div>
         </section>
+ {/* how it works */}
+        <section className="research-section research-process">
+        <div className="research-section-header">
+          <h2 className="research-section-title"> Everything You Need To Succeed On Your A-LEVEL</h2>
+          <p className="research-section-subtitle">
+            EngageHub provides you
+          </p>
+        </div>
+
+        <div className="research-process-timeline">
+          {researchSteps.map((step, index) => (
+            <div key={index} className="research-step-card">
+              <div className="research-step-number">{step.step}</div>
+              <div className="research-step-content">
+                <div className="research-step-header">
+                  <h3 className="research-step-title">{step.title}</h3>
+                  {/*<span className="research-step-duration">{step.duration}</span> */}
+                </div>
+                <p className="research-step-description">{step.description}</p>
+                {/*<div className="research-step-tips">
+                  <strong>Pro Tips:</strong>
+                  <ul>
+                    {step.tips.map((tip, idx) => (
+                      <li key={idx}>{tip}</li>
+                    ))}
+                  </ul>
+                </div> */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
         {/* Stats Section }
         <section ref={statsRef} className="stats section">

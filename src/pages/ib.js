@@ -25,7 +25,7 @@ import './sat.css';
 
 
 // SAT component function
-function AMC() {
+function IB() {
   // Check if different sections are in view for animations
   const heroRef = React.useRef(null);
   const featuresRef = React.useRef(null);
@@ -91,7 +91,7 @@ const itemsPerSlide = 3;
     {
       step: 1,
       title: "Private Tutoring",
-      description: "EnageHub specializes in one-on-one teaching, empowering students with online personalized AMC prep",
+      description: "EnageHub specializes in one-on-one teaching, empowering students with online personalized IB prep",
       
     },
     {
@@ -109,7 +109,7 @@ const itemsPerSlide = 3;
     {
       step: 4,
       title: "Mentoring & Support",
-      description: "At EngageHub, we pair you with an experienced mentor to guide you through the AMC prep process.",
+      description: "At EngageHub, we pair you with an experienced mentor to guide you through the IB prep process.",
     },
   ];
 
@@ -150,7 +150,7 @@ const itemsPerSlide = 3;
     {
       icon: <FaBookOpen />,
       title: 'Comprehensive Study Materials',
-      description: 'Access thousands of practice questions, detailed explanations, and study guides covering all AMC sections.'
+      description: 'Access thousands of practice questions, detailed explanations, and study guides covering all IB sections.'
     },
     {
       icon: <FaBullseye />,
@@ -252,11 +252,11 @@ const itemsPerSlide = 3;
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="hero-title">
-                  Master the AMC with
+                  Master the IB with
                   <span className="highlight"> Expert Guidance</span>
                 </h1>
                 <p className="hero-subtitle">
-                  Achieve your dream score with our comprehensive AMC prep program. 
+                  Achieve your dream score with our comprehensive IB prep program. 
                   Join thousands of students who have improved their scores by 200+ points.
                 </p>
                 <div className="hero-actions">
@@ -303,7 +303,7 @@ const itemsPerSlide = 3;
                       <FaStar key={i} />
                     ))}
                   </div>
-                  <p>"Best AMC prep program I've ever used!"</p>
+                  <p>"Best IB prep program I've ever used!"</p>
                 </div>
               </motion.div>
             </div>
@@ -319,7 +319,7 @@ const itemsPerSlide = 3;
               animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="section-title">Why Choose Our AMC Prep?</h2>
+              <h2 className="section-title">Why Choose Our IB Prep?</h2>
               <p className="section-subtitle">
                 Our proven methodology combines personalized learning, expert instruction, 
                 and cutting-edge technology to maximize your score improvement.
@@ -349,7 +349,7 @@ const itemsPerSlide = 3;
  {/* how it works */}
         <section className="research-section research-process">
         <div className="research-section-header">
-          <h2 className="research-section-title"> Everything You Need To Succeed On Your AMC</h2>
+          <h2 className="research-section-title"> Everything You Need To Succeed On Your IB</h2>
           <p className="research-section-subtitle">
             EngageHub provides you
           </p>
@@ -518,10 +518,10 @@ const itemsPerSlide = 3;
               animate={isCtaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="cta-title">Ready to Boost Your AMC Score?</h2>
+              <h2 className="cta-title">Ready to Boost Your IB Score?</h2>
               <p className="cta-subtitle">
                 Join thousands of students who have achieved their dream scores. 
-                Start your journey to success today with our proven AMC prep program.
+                Start your journey to success today with our proven IB prep program.
               </p>
               <div className="cta-actions">
                   <a href="/contact">
@@ -554,4 +554,4 @@ const itemsPerSlide = 3;
 }
 
 // Export the SAT component so it can be used in other files
-export default AMC;
+export default IB;

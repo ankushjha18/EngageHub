@@ -216,4 +216,23 @@
     font-size: 1.2rem;
     margin-bottom: 30px;
   }
+
+  @media(max-width: 768px) {
+    .consultancy-page .step {
+      flex-direction: column !important;
+      text-align: center;
+    }
+    
+    .consultancy-page .step:nth-child(even) .step-content {
+      margin-right: 0;
+      text-align: center;
+    }
+    
+    .consultancy-page .step-content {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    
+  }
   
