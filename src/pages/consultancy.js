@@ -2,7 +2,7 @@ import React from "react";
 import "./consultancy.css";
 
 const Consultancy = () => {
-  const services = [
+ /* const services = [
     {
       title: "University Applications",
       description:
@@ -39,7 +39,7 @@ const Consultancy = () => {
         "Help with structuring research proposals, thesis preparation, and academic writing.",
       icon: "📝",
     },
-  ];
+  ]; */
 
   /*const process = [
     "Initial Consultation & Profile Evaluation",
@@ -73,7 +73,8 @@ const Consultancy = () => {
       <section className="consultancy-hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Academic <span className="highlight">Consulting</span>
+          University Education <span className="highlight">Consultants</span> for
+          Top Universities
           </h1>
           <p className="hero-subtitle">
             Empowering students with expert guidance for admissions, career
@@ -83,7 +84,250 @@ const Consultancy = () => {
         </div>
       </section>
 
-      {/* Services */}
+
+
+
+ <section className="ucas-section">
+      <div className="ucas-container">
+
+    {/* Card 1 */}
+    <article className="ucas-card">
+      <h2>Apply for Universities through UCAS</h2>
+      <p>
+        The UK or the United Kingdom is one of the most popular choices among
+        the students for study abroad programs all over the world. The nation
+        offers a plethora of universities and diverse courses, most of which
+        regularly feature in prestigious QS rankings. Many brilliant
+        educational institutions have a legacy of over a hundred years as far
+        as education and research is concerned.
+      </p>
+      <p>
+        When it comes to studying in the UK, UCAS is a name that automatically
+        garners attention. UCAS stands for Universities and Colleges Admissions
+        Service and is a centralized system catering to the application process
+        for admission in the educational institutions in the UK. Almost all the
+        applicants have to go through the system and apply for Universities
+        through UCAS. Most of the students don’t understand the admissions
+        process and UCAS Application Process. This is where Sage Education comes
+        into the picture. We offer all kinds of assistance, expert guidance and
+        preparation for various standard exams for admissions in UK colleges and
+        universities.
+      </p>
+    </article>
+
+    {/* Card 2 */}
+    <article className="ucas-card">
+      <h2>How to Apply for Universities through UCAS</h2>
+      <p>
+        UCAS Application Process is easy and almost all the steps can be
+        completed online. The steps are as follows:
+      </p>
+      <ul>
+        <li>Research the courses and universities or colleges for them.</li>
+        <li>Read the entry requirements for the courses and institutions.</li>
+        <li>
+          Search the internet or offline resources such as admission experts
+          and study abroad experts for enquiring the career prospects and
+          future of the courses and colleges chosen by you.
+        </li>
+        <li>
+          Submit the details in the online application form and verify them
+          for grammatical and factual errors.
+        </li>
+        <li>
+          Complete the fee remissions and submit the application. Save the
+          registration details and sign-in information for future usage.
+        </li>
+      </ul>
+    </article>
+
+    {/* Card 3 */}
+    <article className="ucas-card">
+      <h2>Things to Check after UCAS Application Submission</h2>
+      <p>
+        Once the UCAS Application Process is over, the following activities are done by the applicants:
+      </p>
+      <ul>
+        <li>Take the English Proficiency Tests</li>
+        <li>Apply for Visas</li>
+        <li>Complete the transcript and documentary work</li>
+        <li>Prepare for the interviews</li>
+        <li>Prepare the letters of recommendation</li>
+        <li>Finalise the courses, colleges and universities</li>
+        <li>Track conservatoire applications and audition preparations</li>
+        <li>Track UCAS Undergraduate Applications</li>
+      </ul>
+    </article>
+
+    {/* Card 4 */}
+    <article className="ucas-card">
+      <h2>How Sage Education can help in Application Procedures</h2>
+      <p>
+        Sage Education is one of the leading UK education consultants in Dubai
+        and tutoring institution for UK university admissions. We offer expert
+        guidance, tutoring, exam preparation modules and also offer end-to-end
+        support to all the students that aim for international education and
+        career.
+      </p>
+      <p>
+        The experts and tutors at Sage have impeccable experience and have
+        helped thousands of students in realising their career and education
+        goals. Offering consistent support and right advice at all the stages
+        of admissions, Sage is one name that you can trust in all pursuits!
+      </p>
+    </article>
+
+    {/* Card 5 */}
+    <article className="ucas-card">
+      <h2>How Does UCAS Work for International Students</h2>
+      <p>
+        For international admissions, the process is almost similar apart from
+        some additional formalities:
+      </p>
+      <ul>
+        <li>
+          Applications can be made independently or via the help of an education
+          consultant.
+        </li>
+        <li>
+          Consultants understand the admission process and job trends, making
+          it less daunting to choose courses and colleges.
+        </li>
+        <li>
+          Many agencies are registered with UCAS and are authorised UCAS centres
+          for authentic and updated information.
+        </li>
+        <li>
+          UK education consultants can help craft a strong, compelling personal
+          statement.
+        </li>
+      </ul>
+    </article>
+
+    {/* Card 6 */}
+    <article className="ucas-card">
+      <h2>How to Get Admissions in UK Universities</h2>
+      <p>
+        UK universities require international students to pass additional tests
+        and exams to be eligible for admission.
+      </p>
+      <ul>
+        <li>
+          English proficiency tests such as IELTS and TOEFL with a valid score.
+        </li>
+        <li>
+          Other standard exams such as GRE, SAT, UCAT, GMAT etc.
+        </li>
+        <li>
+          Paperwork includes verification of educational, residential and
+          financial credentials.
+        </li>
+        <li>
+          Study visa, sponsorships, scholarships and application process steps.
+        </li>
+        <li>
+          UCAS application process involvement and further requirements.
+        </li>
+      </ul>
+    </article>
+        {/* Card 7 */}
+        <article className="ucas-card">
+      <h2>Requirements to Study in the UK</h2>
+      <ul>
+        <li>A valid qualifying score in TOEFL, IELTS or any recognized English proficiency test</li>
+        <li>A valid qualifying score in GRE, GMAT, SAT, UCAT etc.</li>
+        <li>Application confirmation from UCAS and chosen university/college</li>
+        <li>Recognized transcripts</li>
+        <li>Student Visa</li>
+        <li>Financial Statement</li>
+        <li>Letter of Recommendation</li>
+        <li>Paperwork for international students in the UK</li>
+      </ul>
+      <p>
+        Many other steps are involved in the process. We offer the best guidance and
+        support for all these and every step in the entire process.
+      </p>
+    </article>
+
+    {/* Card 8 */}
+    <article className="ucas-card">
+      <h2>Best University Courses to Study in the UK</h2>
+      <p>
+        Find out the most popular university courses the UK offers. These courses are
+        trending and highly relevant as per recent job trends. They open fantastic
+        career avenues for international students. The experts at Sage Education help
+        identify your true calling and choose the best course to kick-start a
+        brilliant career.
+      </p>
+      <p>
+        Best courses to study in the UK are as follows:
+      </p>
+      <ul>
+        <li>Accounting & Finance</li>
+        <li>Art & Design</li>
+        <li>Business & Management Studies</li>
+        <li>Civil Engineering</li>
+        <li>Computer Science</li>
+        <li>Aeronautical & Manufacturing Engineering</li>
+        <li>Architecture</li>
+        <li>Creative Writing</li>
+        <li>Food Science</li>
+        <li>Dentistry</li>
+        <li>Economics</li>
+        <li>Electrical & Electronic Engineering</li>
+        <li>English</li>
+        <li>Law</li>
+        <li>Marketing</li>
+        <li>Education</li>
+        <li>Hospitality, Leisure, Recreation & Tourism</li>
+        <li>Medicine</li>
+        <li>Mechanical Engineering</li>
+        <li>Psychology</li>
+      </ul>
+      <p>
+        Sage Education is the most reputed UK education consultant in Dubai for
+        university admissions. Our brilliant team has helped thousands of students
+        secure admissions in top UK universities.
+      </p>
+    </article>
+
+    {/* Card 9 */}
+    <article className="ucas-card">
+      <h2>Top Universities in the UK</h2>
+      <p>
+        The UK is home to some of the most brilliant educational institutions in the
+        world, known for their culture, academic environment, technical expertise,
+        and learning methodologies. Below are some of the best universities for
+        international students:
+      </p>
+      <ul>
+        <li>University of Cambridge</li>
+        <li>University of Oxford</li>
+        <li>University College London (UCL)</li>
+        <li>Imperial College London</li>
+        <li>University of Edinburgh</li>
+        <li>King’s College London (KCL)</li>
+        <li>University of Manchester</li>
+        <li>London School of Economics and Political Science</li>
+        <li>University of Bristol</li>
+        <li>University of Warwick</li>
+        <li>University of Glasgow</li>
+        <li>University of Essex</li>
+        <li>Anglia Ruskin University</li>
+        <li>University of the Arts London</li>
+        <li>University of Keele</li>
+        <li>Aston University</li>
+        <li>University of Bath</li>
+        <li>Cardiff University</li>
+      </ul>
+    </article>
+
+
+  </div>
+</section>
+
+
+      {/* Services *
       <section className="services">
         <h2 className="section-title">Our Services</h2>
         <div className="services-grid">
