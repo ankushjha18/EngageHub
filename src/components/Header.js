@@ -27,7 +27,7 @@ export default function Header() {
     { name: "About Us", path: "/about" },
     {
       name: "Services",
-      path: "/services",
+      path: "",
       children: [
         {
           name: "Exam Preparation",

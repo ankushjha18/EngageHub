@@ -116,11 +116,6 @@ const itemsPerSlide = 3;
       step: 5,
       title: "Mentoring & Support",
       description: "At EngageHub, we pair you with an experienced mentor to guide you through the ACT prep process.",
-    },
-    {
-      step: 6,
-      title: "ACT Web Portal",
-      description: "The AP Guru online portal contain 100+ hours of ACT content - detailed lesson notes, and additional practice.",
     }
   ];
 
@@ -299,23 +294,7 @@ const itemsPerSlide = 3;
                   </div>
                 </div>
               </motion.div>
-              <motion.div 
-                className="hero-visual"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <div className="score-card">
-                  <div className="score-number">1520</div>
-                  <div className="score-label">Average Student Score</div>
-                  <div className="rating">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                  </div>
-                  <p>"Best ACT prep program I've ever used!"</p>
-                </div>
-              </motion.div>
+              
             </div>
           </div>
         </section>

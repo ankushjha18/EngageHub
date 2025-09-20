@@ -216,7 +216,7 @@ const Research = () => {
           </p>
           <div className="research-hero-highlight">
             <p className="research-hero-text">
-              🌍 For top US & UK universities, a strong research project can make your application truly stand out!
+              🌍 For top  universities, a strong research project can make your application truly stand out!
             </p>
           </div>
           <a href='/contact'>

@@ -108,7 +108,7 @@ const Consultancy = () => {
         for admission in the educational institutions in the UK. Almost all the
         applicants have to go through the system and apply for Universities
         through UCAS. Most of the students don’t understand the admissions
-        process and UCAS Application Process. This is where Sage Education comes
+        process and UCAS Application Process. This is where EngageHub Education comes
         into the picture. We offer all kinds of assistance, expert guidance and
         preparation for various standard exams for admissions in UK colleges and
         universities.
@@ -136,7 +136,7 @@ const Consultancy = () => {
         </li>
         <li>
           Complete the fee remissions and submit the application. Save the
-          registration details and sign-in information for future usage.
+          registration details and sign-in information for future uEngageHub.
         </li>
       </ul>
     </article>
@@ -161,19 +161,19 @@ const Consultancy = () => {
 
     {/* Card 4 */}
     <article className="ucas-card">
-      <h2>How Sage Education can help in Application Procedures</h2>
+      <h2>How EngageHub Education can help in Application Procedures</h2>
       <p>
-        Sage Education is one of the leading UK education consultants in Dubai
+        EngageHub Education is one of the leading UK education consultants in Dubai
         and tutoring institution for UK university admissions. We offer expert
         guidance, tutoring, exam preparation modules and also offer end-to-end
         support to all the students that aim for international education and
         career.
       </p>
       <p>
-        The experts and tutors at Sage have impeccable experience and have
+        The experts and tutors at EngageHub have impeccable experience and have
         helped thousands of students in realising their career and education
         goals. Offering consistent support and right advice at all the stages
-        of admissions, Sage is one name that you can trust in all pursuits!
+        of admissions, EngageHub is one name that you can trust in all pursuits!
       </p>
     </article>
 
@@ -255,7 +255,7 @@ const Consultancy = () => {
       <p>
         Find out the most popular university courses the UK offers. These courses are
         trending and highly relevant as per recent job trends. They open fantastic
-        career avenues for international students. The experts at Sage Education help
+        career avenues for international students. The experts at EngageHub Education help
         identify your true calling and choose the best course to kick-start a
         brilliant career.
       </p>
@@ -285,7 +285,7 @@ const Consultancy = () => {
         <li>Psychology</li>
       </ul>
       <p>
-        Sage Education is the most reputed UK education consultant in Dubai for
+        EngageHub Education is the most reputed UK education consultant in Dubai for
         university admissions. Our brilliant team has helped thousands of students
         secure admissions in top UK universities.
       </p>

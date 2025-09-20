@@ -157,49 +157,45 @@
 
 /* Hero Section */
 .sat .sat-hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  padding: 120px 0 80px;
+  padding: 120px 20px 80px;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  text-align: center;       /* center text */
 }
 
 .sat .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  display: flex;            /* switch from grid to flex */
+  flex-direction: column;   /* stack everything vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically */
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
 }
 
-.sat .hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-.sat .hero-title .highlight {
-  color: #fbbf24;
-}
-
-.sat .hero-subtitle {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+.sat .hero-content {
+  max-width: 700px;
 }
 
 .sat .hero-actions {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
+  justify-content: center;  /* center buttons */
+  flex-wrap: wrap;
 }
 
 .sat .hero-stats {
   display: flex;
   gap: 2rem;
+  justify-content: center;  /* center stats */
+  flex-wrap: wrap;
+  padding-top: 2rem;
 }
+
 
 .sat .stat-item {
   display: flex;
@@ -216,7 +212,7 @@
   display: flex;
   justify-content: center;
 }
-
+/*
 .sat .score-card {
   background: white;
   color: #1f2937;

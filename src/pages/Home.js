@@ -589,7 +589,7 @@ function Home() {
                   <div className="form-group">
                       <label htmlFor="studentClass" className="form-label">
                         <FaGraduationCap className="field-icon" />
-                        Class/Grade *
+                         Current Class/Grade *
                       </label>
                       <input
                         type="text"
@@ -627,7 +627,7 @@ function Home() {
                   <div className="form-group ">
                     <label htmlFor="preferredCountry" className="form-label">
                       <FaMapMarkerAlt className="field-icon" />
-                      Preferred Country for Higher Studies
+                      Preferred Country 
                     </label>
                     <input
                       type="text"

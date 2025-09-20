@@ -116,11 +116,6 @@ const itemsPerSlide = 3;
       step: 5,
       title: "Mentoring & Support",
       description: "At EngageHub, we pair you with an experienced mentor to guide you through the SAT prep process.",
-    },
-    {
-      step: 6,
-      title: "SAT Web Portal",
-      description: "The AP Guru online portal contain 100+ hours of SAT content - detailed lesson notes, and additional practice.",
     }
   ];
 
@@ -300,7 +295,7 @@ const itemsPerSlide = 3;
                   </div>
                 </div>
               </motion.div>
-              <motion.div 
+              {/*<motion.div 
                 className="hero-visual"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
@@ -316,7 +311,7 @@ const itemsPerSlide = 3;
                   </div>
                   <p>"Best SAT prep program I've ever used!"</p>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </section>

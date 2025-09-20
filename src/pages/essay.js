@@ -6,7 +6,7 @@ const EssayEditingServices = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1>Essay Editing Services in Dubai</h1>
+          <h1>Essay Editing Services </h1>
           <p>Get Essay Writing Help from Professionals</p>
           <a href="/contact"><button className="cta-button">Contact Us</button></a>
         </div>
@@ -91,7 +91,7 @@ const EssayEditingServices = () => {
 
               <p>
                 EngageHub Education provides a complete admission consultancy service and offers the best essay writing
-                services in Dubai. With a team of experienced consultants, EngageHub Education has been a pioneer in a
+                services . With a team of experienced consultants, EngageHub Education has been a pioneer in a
                 business that has covered a highly detailed niche for itself.
               </p>
             </div>
@@ -99,7 +99,7 @@ const EssayEditingServices = () => {
 
           {/* Services Section */}
           <section className="services-section">
-            <h2>EngageHub Essay Editing Services in Dubai - What can we edit for you?</h2>
+            <h2>EngageHub Essay Editing Services  - What can we edit for you?</h2>
             <p>
               We help students apply editing help on all university colleges and courses seeking for various application
               levels in mind. Our college essay editing services span beyond grammar and spelling.
@@ -123,7 +123,7 @@ const EssayEditingServices = () => {
 
           {/* Essay Types Section */}
           <section className="essay-types-section">
-            <h2>Essay Editing Services in Dubai from EngageHub Education</h2>
+            <h2>Essay Editing Services  from EngageHub Education</h2>
             <p>At EngageHub, we offer editing services for different types of essays.</p>
 
             <div className="essay-types-grid">
