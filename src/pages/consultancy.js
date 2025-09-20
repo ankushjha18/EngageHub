@@ -1,5 +1,8 @@
+
+import { motion } from 'framer-motion';
 import React from "react";
 import "./consultancy.css";
+
 
 const Consultancy = () => {
  /* const services = [
@@ -85,244 +88,105 @@ const Consultancy = () => {
       </section>
 
 
+      <section className="ceo-message section">
+        <div className="container">
+          <motion.div 
+            className="ceo-message-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="ceo-text">
+              <h2>Education Consultants</h2>
+              {/*<p className="ceo-quote">18 Years of Excellence, 10,000+ Success Stories,Your Future,Powered Here</p> */}
+              <p className="ceo-message-text">
+              Guidance from experienced professionals and expert counsellors is essential to finalize the stream to pursue or the higher education field to choose. Advises from the educational consultants will be pivotal in designing a student’s future. They will comprehend the flaws, strengths, and interests of the aspirant, and help accordingly.
+Instituted to enhance and prepare students to perform exceptionally well during various international competitive and entrance exams, and guide them to select the right higher education course, EngageHub Education Services has been successfully elevating the lives of students. The field of education witnesses constant changes, hence, an approach oriented to analyse the arena is vital to obtain the right insight and avoid precarious moves.
+EngageHub is one of the leading education consultants  and across the UAE providing overseas education consultancy services in UAE for the progress of the students and their bright future. Our handpicked professional tutors, educational counsellors, and consultants ensure that each student, who reaches out to us, succeeds in the path of life by choosing the right field of education and enrolment to the elite universities around the world.
+              </p>
+             {/*} <p className="ceo-message-text">
+              This isn’t just your opportunity,it’s your breakthrough. With the weight of our legacy behind you and your potential 
+              lighting the way, the impossible is now within reach.
+              </p> */}
+            </div>
+            <div className="ceo-image">
+              <div className="ceo-image-container">
+                <img 
+                  src="/education-consultant.jpg" 
+                  alt="CEO Speaking at Event" 
+                  className="ceo-image-actual"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
 
 
  <section className="ucas-section">
       <div className="ucas-container">
 
     {/* Card 1 */}
-    <article className="ucas-card">
-      <h2>Apply for Universities through UCAS</h2>
+    <article className="ucas-card1">
+      <h2>EngageHub Overseas Education Consultants</h2>
       <p>
-        The UK or the United Kingdom is one of the most popular choices among
-        the students for study abroad programs all over the world. The nation
-        offers a plethora of universities and diverse courses, most of which
-        regularly feature in prestigious QS rankings. Many brilliant
-        educational institutions have a legacy of over a hundred years as far
-        as education and research is concerned.
-      </p>
-      <p>
-        When it comes to studying in the UK, UCAS is a name that automatically
-        garners attention. UCAS stands for Universities and Colleges Admissions
-        Service and is a centralized system catering to the application process
-        for admission in the educational institutions in the UK. Almost all the
-        applicants have to go through the system and apply for Universities
-        through UCAS. Most of the students don’t understand the admissions
-        process and UCAS Application Process. This is where EngageHub Education comes
-        into the picture. We offer all kinds of assistance, expert guidance and
-        preparation for various standard exams for admissions in UK colleges and
-        universities.
+        We are happy to find our students coming out with flying colours and conquering greater heights in life. To deliver the best to the students, we constantly monitor and improve upon our services with changes happening in the world of education. EngageHub Education Services has outperformed the competitors and adjudged as the best education consultants  through unparalleled dedication and service. 
+         EngageHub Education Services provide admission consultation for top universities across the globe, including Stanford, Harvard, UCLA, and Cambridge. The student-centric and result-focussed methodology adapted by EngageHub has been fruitful until today. And we have accomplished cent percent success since establishment. 
+         Our professional and experienced abroad education consultants  have more than a decade of experience. They will identify the passion, ambition, and tastes of the students before advising them about the best course. Thereby, the aspirants can accomplish their long-cherished dream without much difficulty. EngageHub offers international education consultation for Bachelors, Masters, and Doctoral programs. The professional support will not only be limited to admission but also will extend during the course. The diligent and caring attitude from EngageHub will act as a guardian angel for you during the course. 
+        Contact EngageHub for education consultation in the UK, USA, Canada, Europe, and Asia. We offer a complete package commencing from the initial application to the conclusion. You can remain unconcerned about the admission and concentrate on your studies once you assign us with the task of admission. Being one of the leading education consultancy , we assure the best services for abroad education and other domestic education purposes. 
       </p>
     </article>
 
     {/* Card 2 */}
-    <article className="ucas-card">
-      <h2>How to Apply for Universities through UCAS</h2>
+    <article className="ucas-card2">
+      <h2>Why EngageHub Education Consultants</h2>
       <p>
-        UCAS Application Process is easy and almost all the steps can be
-        completed online. The steps are as follows:
+      EngageHub Education Services have extensive experience in the field of overseas education consultation, online tutoring for subjects, and competitive exams. EngageHub as an education consultant , UAE plays an active role in preparing road map for students to study abroad.The major benefits of EngageHub education consultants  range from the comprehensive and exclusive support services, help to select Universities, guidance is application and admission procedures, a lot more. Given below are the top reasons to choose EngageHub as your international education consultant , UAE.
       </p>
-      <ul>
-        <li>Research the courses and universities or colleges for them.</li>
-        <li>Read the entry requirements for the courses and institutions.</li>
-        <li>
-          Search the internet or offline resources such as admission experts
-          and study abroad experts for enquiring the career prospects and
-          future of the courses and colleges chosen by you.
-        </li>
-        <li>
-          Submit the details in the online application form and verify them
-          for grammatical and factual errors.
-        </li>
-        <li>
-          Complete the fee remissions and submit the application. Save the
-          registration details and sign-in information for future uEngageHub.
-        </li>
-      </ul>
     </article>
 
     {/* Card 3 */}
-    <article className="ucas-card">
-      <h2>Things to Check after UCAS Application Submission</h2>
+    <article className="ucas-card3">
+      <h2>Comprehensive Assistance </h2>
       <p>
-        Once the UCAS Application Process is over, the following activities are done by the applicants:
+      EngageHub extends comprehensive assistance in education consultation . When it comes to overseas education consultation, it begins with the selection
+       of the right university and concludes in enrolment of the student in the University of his or her choice.
       </p>
-      <ul>
-        <li>Take the English Proficiency Tests</li>
-        <li>Apply for Visas</li>
-        <li>Complete the transcript and documentary work</li>
-        <li>Prepare for the interviews</li>
-        <li>Prepare the letters of recommendation</li>
-        <li>Finalise the courses, colleges and universities</li>
-        <li>Track conservatoire applications and audition preparations</li>
-        <li>Track UCAS Undergraduate Applications</li>
-      </ul>
     </article>
 
     {/* Card 4 */}
-    <article className="ucas-card">
-      <h2>How EngageHub Education can help in Application Procedures</h2>
+    <article className="ucas-card4">
+      <h2>Thorough Analysis for Selection of the University </h2>
       <p>
-        EngageHub Education is one of the leading UK education consultants in Dubai
-        and tutoring institution for UK university admissions. We offer expert
-        guidance, tutoring, exam preparation modules and also offer end-to-end
-        support to all the students that aim for international education and
-        career.
-      </p>
-      <p>
-        The experts and tutors at EngageHub have impeccable experience and have
-        helped thousands of students in realising their career and education
-        goals. Offering consistent support and right advice at all the stages
-        of admissions, EngageHub is one name that you can trust in all pursuits!
+      As an abroad education consultant , we do not just provide a list of universities. On the other hand, we will examine the student’s 
+      performance in various subjects, extracurricular activities, tastes in different fields and subjects, budget limitations, climatic options by the students, 
+      and similar aspects. A complete list of optional universities will be proposed to the student, from the best universities in the UAE, US, UK, Canada, Europe, and Asia.
+       The apt university will be finalized post discussion with the students and parents.
       </p>
     </article>
 
     {/* Card 5 */}
-    <article className="ucas-card">
-      <h2>How Does UCAS Work for International Students</h2>
+    <article className="ucas-card5">
+      <h2>Concerted Efforts to Obtain Admission </h2>
       <p>
-        For international admissions, the process is almost similar apart from
-        some additional formalities:
+      Obtaining admissions in the most sought after universities is not an easy task. It necessitates concerted and calculated steps to narrate the eminence of the student and state 
+      why he or she deserves to be admitted. Our professionals will sit down to prepare a pen picture of the student after detailed and in-depth discussion sessions. The CVs, letters, narratives, recommendations, and interviews will illustrate the student’s unique qualities and will be instrumental in gaining admission
       </p>
-      <ul>
-        <li>
-          Applications can be made independently or via the help of an education
-          consultant.
-        </li>
-        <li>
-          Consultants understand the admission process and job trends, making
-          it less daunting to choose courses and colleges.
-        </li>
-        <li>
-          Many agencies are registered with UCAS and are authorised UCAS centres
-          for authentic and updated information.
-        </li>
-        <li>
-          UK education consultants can help craft a strong, compelling personal
-          statement.
-        </li>
-      </ul>
     </article>
 
     {/* Card 6 */}
-    <article className="ucas-card">
-      <h2>How to Get Admissions in UK Universities</h2>
+    <article className="ucas-card6">
+      <h2>Guidance in Application Process</h2>
       <p>
-        UK universities require international students to pass additional tests
-        and exams to be eligible for admission.
+         Each university and college has its specific application procedure. We will guide the students regarding the same and help the student to pursue the process without any confusion or errors. The timing of universities admission in the UK, USA, Canada, Europe, and Asia will differ. The professionals at EngageHub will aid the students to prepare a calendar with dates of tests, interviews, results etcetera, which will enable the student to monitor the progress. 
+         In addition to the above-mentioned, EngageHub Education Services will assist the students in interview preparation, CV creation, and formatting. And will provide you unlimited email access to clarify doubts at every step of the admission process. 
+         Right from home education to abroad education, EngageHub a one-stop-solution for all your educational requirements . Renowned as one of the popular education consultants  and one of the most reputed international education consultants, EEngageHub offers a platform that links students with universities, helping them select a right decision with minimal effort. Besides overseas educational consultation, we deliever both online and classroom coaching for UCAT, SAT, ACT, GMAT, GRE, and ART. The online and classroom tuitions for Maths, Biology, Physics, Chemistry, English, Business, and Economics, by exceptionally
+         qualified tutors from around the world, will strengthen you to attend any exam with confidence. 
       </p>
-      <ul>
-        <li>
-          English proficiency tests such as IELTS and TOEFL with a valid score.
-        </li>
-        <li>
-          Other standard exams such as GRE, SAT, UCAT, GMAT etc.
-        </li>
-        <li>
-          Paperwork includes verification of educational, residential and
-          financial credentials.
-        </li>
-        <li>
-          Study visa, sponsorships, scholarships and application process steps.
-        </li>
-        <li>
-          UCAS application process involvement and further requirements.
-        </li>
-      </ul>
-    </article>
-        {/* Card 7 */}
-        <article className="ucas-card">
-      <h2>Requirements to Study in the UK</h2>
-      <ul>
-        <li>A valid qualifying score in TOEFL, IELTS or any recognized English proficiency test</li>
-        <li>A valid qualifying score in GRE, GMAT, SAT, UCAT etc.</li>
-        <li>Application confirmation from UCAS and chosen university/college</li>
-        <li>Recognized transcripts</li>
-        <li>Student Visa</li>
-        <li>Financial Statement</li>
-        <li>Letter of Recommendation</li>
-        <li>Paperwork for international students in the UK</li>
-      </ul>
-      <p>
-        Many other steps are involved in the process. We offer the best guidance and
-        support for all these and every step in the entire process.
-      </p>
-    </article>
-
-    {/* Card 8 */}
-    <article className="ucas-card">
-      <h2>Best University Courses to Study in the UK</h2>
-      <p>
-        Find out the most popular university courses the UK offers. These courses are
-        trending and highly relevant as per recent job trends. They open fantastic
-        career avenues for international students. The experts at EngageHub Education help
-        identify your true calling and choose the best course to kick-start a
-        brilliant career.
-      </p>
-      <p>
-        Best courses to study in the UK are as follows:
-      </p>
-      <ul>
-        <li>Accounting & Finance</li>
-        <li>Art & Design</li>
-        <li>Business & Management Studies</li>
-        <li>Civil Engineering</li>
-        <li>Computer Science</li>
-        <li>Aeronautical & Manufacturing Engineering</li>
-        <li>Architecture</li>
-        <li>Creative Writing</li>
-        <li>Food Science</li>
-        <li>Dentistry</li>
-        <li>Economics</li>
-        <li>Electrical & Electronic Engineering</li>
-        <li>English</li>
-        <li>Law</li>
-        <li>Marketing</li>
-        <li>Education</li>
-        <li>Hospitality, Leisure, Recreation & Tourism</li>
-        <li>Medicine</li>
-        <li>Mechanical Engineering</li>
-        <li>Psychology</li>
-      </ul>
-      <p>
-        EngageHub Education is the most reputed UK education consultant in Dubai for
-        university admissions. Our brilliant team has helped thousands of students
-        secure admissions in top UK universities.
-      </p>
-    </article>
-
-    {/* Card 9 */}
-    <article className="ucas-card">
-      <h2>Top Universities in the UK</h2>
-      <p>
-        The UK is home to some of the most brilliant educational institutions in the
-        world, known for their culture, academic environment, technical expertise,
-        and learning methodologies. Below are some of the best universities for
-        international students:
-      </p>
-      <ul>
-        <li>University of Cambridge</li>
-        <li>University of Oxford</li>
-        <li>University College London (UCL)</li>
-        <li>Imperial College London</li>
-        <li>University of Edinburgh</li>
-        <li>King’s College London (KCL)</li>
-        <li>University of Manchester</li>
-        <li>London School of Economics and Political Science</li>
-        <li>University of Bristol</li>
-        <li>University of Warwick</li>
-        <li>University of Glasgow</li>
-        <li>University of Essex</li>
-        <li>Anglia Ruskin University</li>
-        <li>University of the Arts London</li>
-        <li>University of Keele</li>
-        <li>Aston University</li>
-        <li>University of Bath</li>
-        <li>Cardiff University</li>
-      </ul>
-    </article>
-
-
+      </article>
   </div>
 </section>
 
