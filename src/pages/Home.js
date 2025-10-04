@@ -3,8 +3,8 @@ import React from 'react';
 import  { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Import EmailJS for sending emails from client-side
-// emailjs: Main EmailJS library for sending emails
+
+
 import emailjs from 'emailjs-com';
 import { motion, transform, useInView } from 'framer-motion';
 
@@ -33,6 +33,11 @@ function Home() {
   const statsRef = React.useRef(null);
   const testimonialsRef = React.useRef(null);
   const ctaRef = React.useRef(null);
+  const servicesRef = React.useRef(null);
+  const howItWorksRef = React.useRef(null);
+  const isServicesInView = useInView(servicesRef, { once: true });
+  const isHowItWorksInView = useInView(howItWorksRef, { once: true });
+
 
   const isHeroInView = useInView(heroRef, { once: true });
   const isFeaturesInView = useInView(featuresRef, { once: true });
@@ -512,7 +517,131 @@ function Home() {
       </section>
 
                   {/* Contact Form Section */}
-                  <motion.div 
+                 
+      {/* Services Overview Section */}
+        <section ref={servicesRef} className="services section">
+          <div className="container">
+            <motion.div 
+              className="section-header" 
+              initial={{ opacity: 0, y: 30 }} 
+              animate={isServicesInView ? { opacity: 1, y: 0 } : {}} 
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="section-title">Our Services</h2>
+              <p className="section-subtitle">
+                Comprehensive educational solutions tailored to your needs
+              </p>
+            </motion.div>
+
+            <div className="services-grid">
+              <motion.div 
+                className="service-card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="service-icon">📚</div>
+                <h3>SAT/ACT Preparation</h3>
+                <p>Connect with top-rated test prep providers for personalized SAT and ACT coaching</p>
+              </motion.div>
+
+              <motion.div 
+                className="service-card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="service-icon">🎓</div>
+                <h3>College Admissions Counselling</h3>
+                <p>Expert guidance through every step of the university application process</p>
+              </motion.div>
+
+              <motion.div 
+                className="service-card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="service-icon">👨‍🏫</div>
+                <h3>IB & AP Tutoring</h3>
+                <p>Specialized tutors for International Baccalaureate and Advanced Placement courses</p>
+              </motion.div>
+
+              <motion.div 
+                className="service-card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="service-icon">🌍</div>
+                <h3>Study Abroad Guidance</h3>
+                <p>Navigate international education opportunities with confidence</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section ref={howItWorksRef} className="how-it-works section">
+          <div className="container">
+            <motion.div 
+              className="section-header" 
+              initial={{ opacity: 0, y: 30 }} 
+              animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}} 
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="section-title">How EngageHub Works</h2>
+              <p className="section-subtitle">
+                Your path to success in three simple steps
+              </p>
+            </motion.div>
+
+            <div className="steps-container">
+              <motion.div 
+                className="step-card"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isHowItWorksInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="step-number">1</div>
+                <h3>Tell Us Your Needs</h3>
+                <p>Share your academic goals, subjects of interest, and preferred learning style</p>
+              </motion.div>
+
+              <motion.div 
+                className="step-card"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isHowItWorksInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="step-number">2</div>
+                <h3>Get Matched</h3>
+                <p>We connect you with vetted education partners that fit your requirements</p>
+              </motion.div>
+
+              <motion.div 
+                className="step-card"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isHowItWorksInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="step-number">3</div>
+                <h3>Start Learning</h3>
+                <p>Begin your journey with expert guidance and personalized support</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      
+
+        <motion.div 
                    ref={contactRef}
               className="contact-form-section"
               initial={{ opacity: 0, x: 50 }}
@@ -774,6 +903,7 @@ function Home() {
                 )}
               </form>
             </motion.div>
+      
 
       {/* CTA Section */}
       <section ref={ctaRef} className="cta section">

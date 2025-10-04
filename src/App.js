@@ -28,6 +28,7 @@ import Internship from './pages/Internship'; // Internship opportunities page
 import Contact from './pages/Contact';     // Contact form page
 import ContactSuccess from './pages/ContactSuccess'; // Success page after form submission
 import Admin from './pages/Admin';     
+import FloatingEnquiryButton from './components/floatingenquirybutton';
 
 import SAT from './pages/sat';
 import ACT from './pages/act';
@@ -118,6 +119,7 @@ function App() {
         
         {/* Footer component - appears on every page */}
         <Footer />
+        <FloatingEnquiryButton />
       </div>
     </Router>
   );

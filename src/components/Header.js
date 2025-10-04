@@ -29,22 +29,6 @@ export default function Header() {
       name: "Services",
       path: "",
       children: [
-        {
-          name: "Exam Preparation",
-          path: "#",
-          children: [
-            { name: "SAT", path: "/sat" },
-            { name: "ACT", path: "/act" },
-            { name: "AP", path: "/ap" },
-            { name: "MYP", path: "/myp" },
-            { name: "AMC", path: "/amc" },
-            { name: "IGCSE", path: "/igcse" },
-            { name: "A LEVEL", path: "/alevel" },
-            { name: "GMAT", path: "gmat" },
-            { name: "GRE", path: "/gre" },
-            { name: "IB", path: "/ib" },
-          ]
-        },
         { name: "Admission Consulting", path: "/consultancy" },
         { name: "Internship", path: "/internship" },
         { name: "Research", path: "/research" },
@@ -53,6 +37,22 @@ export default function Header() {
     },
     { name: "Events & Workshops", path: "/events" },
     { name: "Blogs", path: "/blogs" },
+    {
+      name: "Exam Preparation",
+      path: "#",
+      children: [
+        { name: "SAT", path: "/sat" },
+        { name: "ACT", path: "/act" },
+        { name: "AP", path: "/ap" },
+        { name: "MYP", path: "/myp" },
+        { name: "AMC", path: "/amc" },
+        { name: "IGCSE", path: "/igcse" },
+        { name: "A LEVEL", path: "/alevel" },
+        { name: "GMAT", path: "gmat" },
+        { name: "GRE", path: "/gre" },
+        { name: "IB", path: "/ib" },
+      ]
+    },
     { name: "Newsletter", path: "/newsletter" }
   ];
 
