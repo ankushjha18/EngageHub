@@ -1,415 +1,451 @@
-/* ===== FOOTER COMPONENT STYLES ===== */
-/* These styles create the footer that appears at the bottom of every page */
+/* ===== UPDATED FOOTER COMPONENT STYLES ===== */
 
 /* Main footer container */
 .footer {
-  background: #ffffff; /* Gradient background */
-  color: #000000;         /* White text color */
-  padding-top: var(--spacing-xxl); /* Top padding */
-  position: relative;          /* For positioning child elements */
+  background: #ffffff;
+  color: #000000;
+  padding-top: var(--spacing-xxl);
+  position: relative;
 }
 
-/* Container for footer content */
+/* Container for footer content - NOW 5 COLUMNS */
 .footer-container {
-  max-width: var(--container-max-width); /* Maximum width */
-  margin: 0 auto;              /* Center the container */
-  padding: 0 var(--spacing-md); /* Horizontal padding */
-  display: grid;               /* Use CSS Grid for layout */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: var(--spacing-xl);     /* Space between grid items */
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--spacing-xl);
 }
 
 /* Individual footer sections */
 .footer-section {
-  display: flex;               /* Use flexbox for layout */
-  flex-direction: column;      /* Stack items vertically */
-  gap: var(--spacing-md);     /* Space between items */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 /* Footer section headings */
 .footer-section h3 {
-  font-size: 1.2rem;          /* Heading font size */
-  font-weight: 600;           /* Semi-bold font weight */
-  margin-bottom: var(--spacing-md); /* Bottom margin */
-  color: #1f1f1f;        /* White text color */
-  position: relative;         /* For pseudo-element */
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: #1f1f1f;
+  position: relative;
 }
 
 /* Underline effect for section headings */
 .footer-section h3::after {
-  content: '';                /* Required for pseudo-element */
-  position: absolute;         /* Position relative to heading */
-  bottom: -8px;              /* Position below text */
-  left: 0;                   /* Start from left */
-  width: 40px;               /* Width of underline */
-  height: 2px;               /* Height of underline */
-  background: var(--secondary-color); /* Secondary color for underline */
-  border-radius: 1px;        /* Rounded corners */
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--secondary-color);
+  border-radius: 1px;
 }
 
 /* Company information section */
 .company-info {
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: column;     /* Stack items vertically */
-  gap: var(--spacing-md);    /* Space between items */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
-
-/* Footer logo */
-
 
 /* Footer logo image */
 .footer-logo img {
-  height: 280px;              /* Fixed height for logo */
+  height: 280px;
   width: auto;
   margin-bottom: -100px;
   margin-top: -70px;
-  padding: 0;               /* Maintain aspect ratio */
+  margin-left: -80px;
 }
 
 /* Company description */
 .company-description {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centers horizontally */
-  justify-content: center; /* centers vertically if you give height */
-  text-align: center;    /* centers the text inside */
-  gap: 1rem;             /* spacing between text and icons */
-  padding: 20px;      /* Smaller font size */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 20px;
 }
 
 /* Social media links container */
 .social-links {
-  display: flex;              /* Use flexbox for layout */
-  gap: var(--spacing-sm);    /* Space between social icons */
-  margin-top: var(--spacing-sm); /* Top margin */
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
 }
 
 /* Individual social media link */
 .social-link {
-  display: flex;              /* Use flexbox for centering */
-  align-items: center;        /* Center vertically */
-  justify-content: center;    /* Center horizontally */
-  width: 40px;               /* Fixed width */
-  height: 40px;              /* Fixed height */
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  border-radius: 50%;        /* Circular shape */
-  color: #212121;       /* White icon color */
-  text-decoration: none;     /* Remove underline */
-  transition: all var(--transition-normal); /* Smooth transitions */
-  font-size: 1.1rem;        /* Icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #212121;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  font-size: 1.1rem;
 }
 
 /* Social media link hover effect */
 .social-link:hover {
-  background: var(--secondary-color); /* Secondary color on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 /* Footer links list */
 .footer-links {
-  list-style: none;           /* Remove bullet points */
-  padding: 0;                 /* Remove default padding */
-  margin: 0;                  /* Remove default margin */
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: column;     /* Stack items vertically */
-  gap: var(--spacing-sm);    /* Space between links */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 /* Footer link items */
 .footer-links li {
-  margin: 0;                  /* Remove default margin */
+  margin: 0;
 }
 
 /* Footer links */
 .footer-links a {
-  color: #212121;        /* White text color */
-  text-decoration: none;      /* Remove underline */
-  opacity: 0.9;              /* Slightly transparent */
-  transition: all var(--transition-normal); /* Smooth transitions */
-  display: block;             /* Full width */
-  padding: var(--spacing-xs) 0; /* Vertical padding */
+  color: #212121;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: all var(--transition-normal);
+  display: block;
+  padding: var(--spacing-xs) 0;
 }
 
 /* Footer link hover effect */
 .footer-links a:hover {
-  opacity: 1;                 /* Fully opaque on hover */
-  color: var(--secondary-color); /* Secondary color on hover */
-  padding-left: var(--spacing-sm); /* Indent on hover */
+  opacity: 1;
+  color: var(--secondary-color);
+  padding-left: var(--spacing-sm);
 }
 
-/* Footer services list */
-.footer-services {
-  list-style: none;           /* Remove bullet points */
-  padding: 0;                 /* Remove default padding */
-  margin: 0;                  /* Remove default margin */
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: column;     /* Stack items vertically */
-  gap: var(--spacing-md);     /* Equal space between items */
-}
+/* ===== NEW: LINKED SERVICES STYLES ===== */
 
-/* Footer info container (Our Services section) */
+/* Footer info container (Our Services & Exam Prep sections) */
 .footer-info {
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: column;     /* Stack items vertically */
-  gap: var(--spacing-md);    /* Equal space between items */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
-/* Footer service items */
-.footer-services li,
+/* Linked service/exam items */
+.footer-service-link,
+.footer-exam-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+  color: #212121;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+/* Hover effect for linked services */
+.footer-service-link:hover,
+.footer-exam-link:hover {
+  opacity: 1;
+  color: var(--secondary-color);
+  padding-left: var(--spacing-sm);
+  transform: translateX(2px);
+}
+
+/* Service icon wrapper */
+.service-icon-wrapper,
+.exam-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
+/* Icon hover effect */
+.footer-service-link:hover .service-icon-wrapper,
+.footer-exam-link:hover .exam-icon-wrapper {
+  transform: scale(1.15);
+  color: var(--primary-color);
+}
+
+/* Service/Exam text */
+.service-text,
+.exam-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ===== OLD STYLES (for non-linked items if needed) ===== */
+
+/* Footer item (non-linked version - keep for backward compatibility) */
 .footer-item {
-  display: flex;              /* Use flexbox for layout */
-  align-items: center;        /* Center items vertically */
-  gap: var(--spacing-sm);    /* Space between icon and text */
-  opacity: 0.9;              /* Slightly transparent */
-  transition: all var(--transition-normal); /* Smooth transitions */
-  padding: var(--spacing-sm) 0; /* Equal vertical padding for better spacing */
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  opacity: 0.9;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-sm) 0;
 }
 
-/* Footer service items hover effect */
-.footer-services li:hover,
 .footer-item:hover {
-  opacity: 1;                 /* Fully opaque on hover */
-  color: var(--secondary-color); /* Secondary color on hover */
-  padding-left: var(--spacing-sm); /* Indent on hover like Quick Links */
-  transform: translateX(var(--spacing-xs)); /* Slight slide effect */
+  opacity: 1;
+  color: var(--secondary-color);
+  padding-left: var(--spacing-sm);
+  transform: translateX(var(--spacing-xs));
 }
 
-/* Service icon */
-.service-icon,
+/* Service icons (old style) */
 .graduationcap,
 .book,
 .fauser,
 .calendar {
-  color: var(--secondary-color); /* Secondary color for icons */
-  font-size: 1.2rem;           /* Reasonable icon size */
-  width: auto;               /* Auto width */
-  text-align: center;        /* Center icon */
-  transition: all var(--transition-normal); /* Smooth transitions for icon */
-  flex-shrink: 0;            /* Prevent icon from shrinking */
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  width: auto;
+  text-align: center;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
 }
 
-/* Service icon hover effect */
-.footer-services li:hover .service-icon,
 .footer-item:hover .graduationcap,
 .footer-item:hover .book,
 .footer-item:hover .fauser,
 .footer-item:hover .calendar {
-  color: var(--secondary-color); /* Keep icon color consistent */
-  transform: scale(1.1); /* Slight scale effect on hover */
+  color: var(--secondary-color);
+  transform: scale(1.1);
 }
 
-
-
-
+/* ===== CONTACT INFORMATION ===== */
 
 /* Contact information container */
 .contact-info {
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: column;     /* Stack items vertically */
-  gap: var(--spacing-md);    /* Space between contact items */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 /* Individual contact item */
 .contact-item {
-  display: flex;              /* Use flexbox for layout */
-  align-items: flex-start;   /* Align items to top */
-  gap: var(--spacing-sm);    /* Space between icon and text */
-  opacity: 0.9;              /* Slightly transparent */
-  transition: all var(--transition-normal); /* Smooth transitions */
-  padding: var(--spacing-xs) 0; /* Vertical padding for hover effect */
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  opacity: 0.9;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-xs) 0;
 }
 
 /* Contact item hover effect */
 .contact-item:hover {
-  opacity: 1;                 /* Fully opaque on hover */
-  color: var(--secondary-color); /* Secondary color on hover */
-  padding-left: var(--spacing-sm); /* Indent on hover like Quick Links */
-  transform: translateX(var(--spacing-xs)); /* Slight slide effect */
+  opacity: 1;
+  color: var(--secondary-color);
+  padding-left: var(--spacing-sm);
+  transform: translateX(var(--spacing-xs));
 }
 
-
-/* Contact icon */
-
+/* Contact icons */
 .contact-icon-phone {
-   transform: rotate(90deg);
-   
+  transform: rotate(90deg);
 }
+
 .contact-icon,
 .contact-icon-phone,
 .contact-icon-email,
 .contact-icon-address {
-  color: var(--secondary-color); /* Secondary color for icons */
-  font-size: 1.2rem;           /* Reasonable icon size */
-  transition: all var(--transition-normal); /* Smooth transitions for icon */
-  flex-shrink: 0;            /* Prevent icon from shrinking */
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
 }
-
 
 /* Contact icon hover effect */
 .contact-item:hover .contact-icon,
 .contact-item:hover .contact-icon-phone,
 .contact-item:hover .contact-icon-email,
 .contact-item:hover .contact-icon-address {
-  color: var(--secondary-color); /* Keep icon color consistent */
-  transform: scale(1.1); /* Slight scale effect on hover */
+  color: var(--secondary-color);
+  transform: scale(1.1);
 }
 
 /* Contact text container */
 .contact-item div {
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: column;     /* Stack label and value vertically */
-  gap: var(--spacing-xs);    /* Space between label and value */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 /* Contact label */
 .contact-label {
-  font-size: 0.8rem;         /* Small font size */
-  opacity: 0.8;              /* More transparent */
-  text-transform: uppercase;  /* Uppercase text */
-  letter-spacing: 0.5px;     /* Letter spacing */
+  font-size: 0.8rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Contact value */
 .contact-value {
-  font-size: 0.95rem;        /* Regular font size */
-  line-height: 1.4;          /* Line height */
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
+
+/* ===== FOOTER BOTTOM ===== */
 
 /* Bottom bar container */
 .footer-bottom {
-  margin-top: var(--spacing-xxl); /* Top margin */
-  padding: var(--spacing-lg) 0; /* Vertical padding */
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Top border */
-  background: rgba(0, 0, 0, 0.1); /* Slightly darker background */
+  margin-top: var(--spacing-xxl);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* Bottom bar content container */
 .footer-bottom-container {
-  max-width: var(--container-max-width); /* Maximum width */
-  margin: 0 auto;            /* Center the container */
-  padding: 0 var(--spacing-md); /* Horizontal padding */
-  display: flex;              /* Use flexbox for layout */
-  justify-content: space-between; /* Space items evenly */
-  align-items: center;        /* Center items vertically */
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Copyright text */
 .copyright p {
-  margin: 0;                  /* Remove default margin */
-  opacity: 0.8;              /* Slightly transparent */
-  font-size: 0.9rem;        /* Smaller font size */
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
 
 /* Scroll to top button */
 .scroll-to-top {
-  position: fixed;            /* Fixed position */
-  bottom: 30px;              /* Distance from bottom */
-  right: 30px;               /* Distance from right */
-  width: 50px;               /* Fixed width */
-  height: 50px;              /* Fixed height */
-  background: var(--primary-color); /* Primary color background */
-  color: var(--white);       /* White icon color */
-  border: none;              /* No border */
-  border-radius: 50%;        /* Circular shape */
-  cursor: pointer;           /* Show pointer cursor */
-  display: flex;             /* Use flexbox for centering */
-  align-items: center;       /* Center vertically */
-  justify-content: center;   /* Center horizontally */
-  font-size: 1.2rem;        /* Icon size */
-  box-shadow: var(--shadow-lg); /* Large shadow */
-  z-index: 1000;            /* High z-index to appear above other content */
-  transition: all var(--transition-normal); /* Smooth transitions */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  transition: all var(--transition-normal);
 }
 
 /* Scroll to top button hover effect */
 .scroll-to-top:hover {
-  background: var(--secondary-color); /* Secondary color on hover */
-  transform: translateY(-3px); /* Lift effect on hover */
-  box-shadow: var(--shadow-xl); /* Larger shadow on hover */
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-/* Media queries for different screen sizes */
 
-/* For tablets and smaller desktops */
-@media (max-width: 1024px) {
+/* For large tablets and smaller desktops (3 columns) */
+@media (max-width: 1200px) {
   .footer-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 4 */
-    gap: var(--spacing-lg);  /* Less space between items */
-  }
-  
-  .footer-bottom-container {
-    flex-direction: column;   /* Stack items vertically */
-    gap: var(--spacing-md);  /* Space between items */
-    text-align: center;       /* Center text */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* For mobile devices */
+/* For tablets (2 columns) */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+}
+
+/* For mobile devices (1 column) */
 @media (max-width: 768px) {
   .footer {
-    padding-top: var(--spacing-xl); /* Less top padding */
+    padding-top: var(--spacing-xl);
   }
   
   .footer-container {
-    grid-template-columns: 1fr; /* Single column */
-    gap: var(--spacing-lg);  /* Space between sections */
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
   
   .footer-section h3 {
-    font-size: 1.1rem;       /* Smaller heading */
-  }
-  
-  .footer-logo {
-    font-size: 1.3rem;       /* Smaller logo text */
+    font-size: 1.1rem;
   }
   
   .footer-logo img {
-    width: 250px; 
+    width: 250px;
     margin-top: -70px;
     margin-bottom: -70px;
-               /* Smaller logo image */
   }
   
   .social-links {
-    justify-content: center;  /* Center social icons */
+    justify-content: center;
   }
   
   .scroll-to-top {
-    bottom: 20px;            /* Closer to bottom */
-    right: 20px;             /* Closer to right */
-    width: 45px;             /* Slightly smaller */
-    height: 45px;            /* Slightly smaller */
-    font-size: 1.1rem;      /* Smaller icon */
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
   }
 }
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
   .footer-container {
-    padding: 0 var(--spacing-sm); /* Less horizontal padding */
+    padding: 0 var(--spacing-sm);
   }
 
   .footer-logo img {
-    width: 250px; 
-    margin-top: -70px;
-    margin-bottom: -70px;
-               /* Smaller logo image */
+    width: 200px;
+    margin-top: -50px;
+    margin-bottom: -50px;
   }
   
   .footer-bottom-container {
-    padding: 0 var(--spacing-sm); /* Less horizontal padding */
+    padding: 0 var(--spacing-sm);
   }
   
   .copyright p {
-    font-size: 0.8rem;      /* Even smaller text */
+    font-size: 0.8rem;
   }
   
   .scroll-to-top {
-    bottom: 15px;            /* Even closer to bottom */
-    right: 15px;             /* Even closer to right */
-    width: 40px;             /* Even smaller */
-    height: 40px;            /* Even smaller */
-    font-size: 1rem;        /* Smaller icon */
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
-} 
+  
+  .service-text,
+  .exam-text {
+    font-size: 0.9rem;
+  }
+}

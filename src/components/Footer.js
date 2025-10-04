@@ -1,21 +1,6 @@
-// This is the Footer component - it creates the footer that appears at the bottom of every page
-// It includes company information, quick links, services, contact details, and a scroll-to-top button
-
-// Import React and necessary hooks
-// useState: Manages component state (data that can change)
+// Updated Footer.jsx - With linked services and exam preparations section
 import React, { useState } from 'react';
-
-// Import animation components from Framer Motion
-// motion: Creates animated HTML elements
-// useInView: Detects when an element comes into view (for scroll animations)
-// AnimatePresence: Handles animations when elements appear/disappear
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-
-// Import icons from react-icons library
-// FaFacebook, FaTwitter, FaInstagram, FaLinkedin: Social media icons
-// FaPhone, FaEnvelope, FaMapMarkerAlt: Contact icons
-// FaArrowUp: Scroll to top icon
-// FaGraduationCap, FaUsers, FaCalendar, FaBook: Service icons
 import { 
   FaFacebook, 
   FaTwitter, 
@@ -28,67 +13,68 @@ import {
   FaGraduationCap,
   FaUsers,
   FaCalendar,
-  FaBook
+  FaBook,
+  FaChalkboardTeacher,
+  FaPencilAlt,
+  FaGlobe
 } from 'react-icons/fa';
-
-// Import the CSS file for this component
 import './Footer.css';
 
-// Footer component function
 function Footer() {
-  // State for scroll-to-top button visibility
-  // isScrollVisible: Tracks if user has scrolled enough to show the button
   const [isScrollVisible, setIsScrollVisible] = useState(false);
-
-  // Check if footer is in view for animations
   const footerRef = React.useRef(null);
   const isInView = useInView(footerRef, { once: true });
 
-  // Function to handle scroll events and show/hide scroll-to-top button
   React.useEffect(() => {
     const handleScroll = () => {
-      // Show button when user scrolls more than 300 pixels
       const scrolled = window.scrollY > 300;
       setIsScrollVisible(scrolled);
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  // Function to scroll to top of page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Smooth scrolling animation
+      behavior: 'smooth'
     });
   };
 
-  // Array of quick links for the footer
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Events', path: '/events' },
-    { name: 'Workshops', path: '/workshops' },
+    { name: 'Event & Workshops', path: '/workshops' },
     { name: 'Blogs', path: '/blogs' },
+    { name: 'Newsletter', path: '/newsletter' },
     { name: 'Contact', path: '/contact' }
   ];
 
-  // Array of services for the footer
+  // Updated services with paths
   const services = [
-    { name: 'Academic Tutoring', icon: <FaGraduationCap /> },
-    { name: 'Test Preparation', icon: <FaBook /> },
-    { name: 'Career Counseling', icon: <FaUsers /> },
-    { name: 'Workshop Programs', icon: <FaCalendar /> }
+    { name: 'Admission Consulting', icon: <FaGraduationCap />, path: '/consultancy' },
+    { name: 'Internship', icon: <FaBook />, path: '/internship' },
+    { name: 'Research', icon: <FaUsers />, path: '/research' },
+    { name: 'Essay Editing Services', icon: <FaCalendar />, path: '/essay' }
   ];
 
-  // Array of social media links
+  // New exam preparations section
+  const examPreparations = [
+    { name: 'SAT Preparation', icon: <FaPencilAlt />, path: '/sat-prep' },
+    { name: 'ACT Preparation', icon: <FaPencilAlt />, path: '/act-prep' },
+    { name: 'AP Preparation', icon: <FaPencilAlt />, path: '/ap-prep' },
+    { name: 'MYP Preparation', icon: <FaPencilAlt />, path: '/myp-prep' },
+    { name: 'AMC Preparation', icon: <FaPencilAlt />, path: '/amc-prep' },
+    { name: 'IGCSE Preparation', icon: <FaPencilAlt />, path: '/igcse-prep' },
+    { name: 'A LEVEL Preparation', icon: <FaPencilAlt />, path: '/alevel-prep' },
+    { name: 'GMAT Preparation', icon: <FaPencilAlt />, path: '/gmat-prep' },
+    { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre-prep' },
+    { name: 'IB Preparation', icon: <FaPencilAlt />, path: '/ib-prep' }
+  ];
+
   const socialLinks = [
     { name: 'Facebook', icon: <FaFacebook />, url: 'https://facebook.com' },
     { name: 'Twitter', icon: <FaTwitter />, url: 'https://twitter.com' },
@@ -96,11 +82,8 @@ function Footer() {
     { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://linkedin.com' }
   ];
 
-  // Return the JSX (HTML-like structure) for the footer
   return (
-    // Footer element with ref for scroll detection
     <footer ref={footerRef} className="footer">
-      {/* Main footer content container */}
       <div className="footer-container">
         {/* Company information section */}
         <motion.div 
@@ -109,20 +92,16 @@ function Footer() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          {/* Company logo and description */}
           <div className="company-info">
-            {/* Logo and company name */}
             <div className="footer-logo">
               <img src="/logo.png" alt="EngageHub Logo" />
             </div>
             
-            {/* Company description */}
             <p className="company-description">
               Empowering students through quality education and comprehensive learning experiences. 
               We are committed to academic excellence and personal growth.
             </p>
             
-            {/* Social media links */}
             <div className="social-links">
               {socialLinks.map((social) => (
                 <motion.a
@@ -130,9 +109,10 @@ function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}  // Slightly enlarge on hover
-                  whileTap={{ scale: 0.9 }}     // Slightly shrink when clicked
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="social-link"
+                  aria-label={social.name}
                 >
                   {social.icon}
                 </motion.a>
@@ -158,7 +138,7 @@ function Footer() {
           </ul>
         </motion.div>
 
-        {/* Services section */}
+        {/* Our Services section - NOW WITH LINKS */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
@@ -167,35 +147,42 @@ function Footer() {
         >
           <h3>Our Services</h3>
           <div className="footer-info">
-            {/* Phone number */}
-            <div className="footer-item">
-              <FaGraduationCap className="graduationcap" />
-              <div>
-                <span className="contact-label">Academic tutoring</span> 
-              </div>
-            </div>
+            {services.map((service) => (
+              <a 
+                key={service.name}
+                href={service.path}
+                className="footer-item footer-service-link"
+              >
+                <span className="service-icon-wrapper">
+                  {service.icon}
+                </span>
+                <span className="service-text">{service.name}</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
 
-            <div className="footer-item">
-              <FaBook className="book" />
-              <div>
-                <span className="contact-label">Test Preparation</span> 
-              </div>
-            </div>
-
-            <div className="footer-item">
-              <FaUsers className="fauser" />
-              <div>
-                <span className="contact-label">Career Counseling</span> 
-              </div>
-            </div>
-
-            <div className="footer-item">
-              <FaCalendar className="calendar" />
-              <div>
-                <span className="contact-label">Workshop Programs</span> 
-              </div>
-            </div>
-
+        {/* NEW: Exam Preparations section */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3>Exam Preparations</h3>
+          <div className="footer-info">
+            {examPreparations.map((exam) => (
+              <a 
+                key={exam.name}
+                href={exam.path}
+                className="footer-item footer-exam-link"
+              >
+                <span className="exam-icon-wrapper">
+                  {exam.icon}
+                </span>
+                <span className="exam-text">{exam.name}</span>
+              </a>
+            ))}
           </div>
         </motion.div>
 
@@ -204,11 +191,10 @@ function Footer() {
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h3>Contact Info</h3>
           <div className="contact-info">
-            {/* Phone number */}
             <div className="contact-item">
               <FaPhone className="contact-icon-phone" />
               <div>
@@ -217,7 +203,6 @@ function Footer() {
               </div>
             </div>
             
-            {/* Email address */}
             <div className="contact-item">
               <FaEnvelope className="contact-icon-email" />
               <div>
@@ -225,31 +210,17 @@ function Footer() {
                 <span className="contact-value">divya@engagehub.me</span>
               </div>
             </div>
-            
-            {/* Address *
-            <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon-address" />
-              <div>
-                <span className="contact-label">Address</span>
-                <span className="contact-value">
-                  123 Education Street<br />
-                  Learning City, LC 12345
-                </span>
-              </div>
-            </div> */}
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom bar with copyright and scroll-to-top button */}
+      {/* Bottom bar */}
       <div className="footer-bottom">
         <div className="footer-bottom-container">
-          {/* Copyright information */}
           <div className="copyright">
             <p>&copy; 2025 EngageHub. All rights reserved.</p>
           </div>
           
-          {/* Scroll to top button - only visible when scrolled */}
           <AnimatePresence>
             {isScrollVisible && (
               <motion.button
@@ -260,6 +231,7 @@ function Footer() {
                 exit={{ opacity: 0, scale: 0 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label="Scroll to top"
               >
                 <FaArrowUp />
               </motion.button>
@@ -271,5 +243,4 @@ function Footer() {
   );
 }
 
-// Export the Footer component so it can be used in other files
-export default Footer; 
+export default Footer;
