@@ -516,9 +516,8 @@ function Home() {
         </div>
       </section>
 
-                  {/* Contact Form Section */}
                  
-      {/* Services Overview Section */}
+      {/* Services Overview Section /}
         <section ref={servicesRef} className="services section">
           <div className="container">
             <motion.div 
@@ -583,9 +582,9 @@ function Home() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* How It Works Section */}
+        {/* How It Works Section /}
         <section ref={howItWorksRef} className="how-it-works section">
           <div className="container">
             <motion.div 
@@ -638,7 +637,7 @@ function Home() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section> */}
       
 
         <motion.div 
