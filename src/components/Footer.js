@@ -88,10 +88,10 @@ function Footer() {
 
   return (
     <footer ref={footerRef} className="footer">
-      <div className="footer-container">
-        {/* Company information section */}
+      {/* Company information section - Full width */}
+      <div className="footer-top-section">
         <motion.div 
-          className="footer-section"
+          className="footer-company-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -124,7 +124,10 @@ function Footer() {
             </div>
           </div>
         </motion.div>
+      </div>
 
+      {/* All footer sections in one row */}
+      <div className="footer-container">
         {/* Quick links section */}
         <motion.div 
           className="footer-section"
@@ -190,7 +193,7 @@ function Footer() {
           </div>
         </motion.div>
 
-        {/* Academic Programs section - FIXED: Changed heading from duplicate "Exam Preparations" */}
+        {/* Academic Programs section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
