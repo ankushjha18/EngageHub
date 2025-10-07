@@ -25,11 +25,32 @@ export default function Header() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
+     {
+      name: "Exam Preparation",
+      path: "#",
+      children: [
+        { name: "SAT", path: "/sat" },
+        { name: "ACT", path: "/act" },
+        { name: "GMAT", path: "gmat" },
+        { name: "GRE", path: "/gre" },
+      ]
+    },
     {
+      name: "Academics",
+      path: "#",
+      children: [
+        { name: "AP Courses", path: "/ap" },
+        { name: "MYP", path: "/myp" },
+        { name: "AMC", path: "/amc" },
+        { name: "IGCSE", path: "/igcse" },
+        { name: "A Level", path: "/alevel" },
+        { name: "IB", path: "/ib" },
+    },
+     {
       name: "Services",
       path: "",
       children: [
-        { name: "Admission Consulting", path: "/consultancy" },
+        { name: "Admission Counselling", path: "/consultancy" },
         { name: "Internship", path: "/internship" },
         { name: "Research", path: "/research" },
         { name: "Essay Editing Services", path: "/essay" }
@@ -37,22 +58,6 @@ export default function Header() {
     },
     { name: "Events & Workshops", path: "/events" },
     { name: "Blogs", path: "/blogs" },
-    {
-      name: "Exam Preparation",
-      path: "#",
-      children: [
-        { name: "SAT", path: "/sat" },
-        { name: "ACT", path: "/act" },
-        { name: "AP", path: "/ap" },
-        { name: "MYP", path: "/myp" },
-        { name: "AMC", path: "/amc" },
-        { name: "IGCSE", path: "/igcse" },
-        { name: "A LEVEL", path: "/alevel" },
-        { name: "GMAT", path: "gmat" },
-        { name: "GRE", path: "/gre" },
-        { name: "IB", path: "/ib" },
-      ]
-    },
     { name: "Newsletter", path: "/newsletter" }
   ];
 
@@ -103,7 +108,6 @@ export default function Header() {
               >
                 {child.name}
               </a>
-
               {/* If this child has children, show nested dropdown when openPath[level] === child.name */}
               {child.children && openPath[level] === child.name && (
                 <AnimatePresence>
