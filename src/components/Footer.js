@@ -50,19 +50,19 @@ function Footer() {
     { name: 'Event & Workshops', path: '/workshops' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Newsletter', path: '/newsletter' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact Us', path: '/contact' }
   ];
 
   // Updated services with paths
   const services = [
-    { name: 'Admission Consulting', icon: <FaGraduationCap />, path: '/consultancy' },
+    { name: 'Admission Counselling', icon: <FaGraduationCap />, path: '/consultancy' },
     { name: 'Internship', icon: <FaBook />, path: '/internship' },
     { name: 'Research', icon: <FaUsers />, path: '/research' },
     { name: 'Essay Editing Services', icon: <FaCalendar />, path: '/essay' }
   ];
 
   // New exam preparations section
-  const examPreparations = [
+  const examPreparation = [
     { name: 'SAT Preparation', icon: <FaPencilAlt />, path: '/sat-prep' },
     { name: 'ACT Preparation', icon: <FaPencilAlt />, path: '/act-prep' },
     { name: 'AP Preparation', icon: <FaPencilAlt />, path: '/ap-prep' },
@@ -72,6 +72,15 @@ function Footer() {
     { name: 'A LEVEL Preparation', icon: <FaPencilAlt />, path: '/alevel-prep' },
     { name: 'GMAT Preparation', icon: <FaPencilAlt />, path: '/gmat-prep' },
     { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre-prep' },
+    { name: 'IB Preparation', icon: <FaPencilAlt />, path: '/ib-prep' }
+  ];
+
+  const academics = [
+    { name: 'AP Courses', icon: <FaPencilAlt />, path: '/ap-prep' },
+    { name: 'MYP Preparation', icon: <FaPencilAlt />, path: '/myp-prep' },
+    { name: 'AMC Preparation', icon: <FaPencilAlt />, path: '/amc-prep' },
+    { name: 'IGCSE Preparation', icon: <FaPencilAlt />, path: '/igcse-prep' },
+    { name: 'A LEVEL Preparation', icon: <FaPencilAlt />, path: '/alevel-prep' },
     { name: 'IB Preparation', icon: <FaPencilAlt />, path: '/ib-prep' }
   ];
 
@@ -171,7 +180,31 @@ function Footer() {
         >
           <h3>Exam Preparations</h3>
           <div className="footer-info">
-            {examPreparations.map((exam) => (
+            {examPreparation.map((exam) => (
+              <a 
+                key={exam.name}
+                href={exam.path}
+                className="footer-item footer-exam-link"
+              >
+                <span className="exam-icon-wrapper">
+                  {exam.icon}
+                </span>
+                <span className="exam-text">{exam.name}</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+{/* Academics section */}
+<motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3>Exam Preparations</h3>
+          <div className="footer-info">
+            {academics.map((exam) => (
               <a 
                 key={exam.name}
                 href={exam.path}
