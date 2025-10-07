@@ -64,33 +64,43 @@
 .company-info {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Footer logo image */
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
 .footer-logo img {
-  height: 280px;
+  height: 120px;
   width: auto;
-  margin-bottom: -100px;
-  margin-top: -70px;
-  margin-left: -80px;
+  object-fit: contain;
 }
 
 /* Company description */
 .company-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0;
+  padding: 0 var(--spacing-md);
 }
 
 /* Social media links container */
 .social-links {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
   margin-top: var(--spacing-sm);
 }
 
@@ -99,20 +109,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
   border-radius: 50%;
-  color: #212121;
+  color: #ffffff;
   text-decoration: none;
   transition: all var(--transition-normal);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.2);
 }
 
 /* Social media link hover effect */
 .social-link:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 /* Footer links list */
@@ -430,13 +442,23 @@
   }
   
   .footer-logo img {
-    width: 250px;
-    margin-top: -70px;
-    margin-bottom: -70px;
+    height: 100px;
+  }
+
+  .company-description {
+    font-size: 0.95rem;
+    padding: 0 var(--spacing-sm);
   }
   
   .social-links {
     justify-content: center;
+    gap: var(--spacing-sm);
+  }
+
+  .social-link {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
   }
   
   .scroll-to-top {
@@ -459,9 +481,17 @@
   }
 
   .footer-logo img {
-    width: 200px;
-    margin-top: -50px;
-    margin-bottom: -50px;
+    height: 80px;
+  }
+
+  .company-description {
+    font-size: 0.9rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
   
   .footer-bottom-container {
