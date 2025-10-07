@@ -8,13 +8,26 @@
   position: relative;
 }
 
-/* Container for footer content - NOW 5 COLUMNS */
+/* NEW: Footer top section - Company info full width */
+.footer-top-section {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.footer-company-section {
+  width: 100%;
+}
+
+/* Container for footer content - UPDATED: 5 COLUMNS IN ONE ROW */
 .footer-container {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--spacing-xl);
 }
 
@@ -23,6 +36,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  min-width: 0; /* Prevents overflow */
 }
 
 /* Footer section headings */
@@ -361,15 +375,27 @@
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* For large tablets and smaller desktops (3 columns) */
+/* For large desktops - maintain 5 columns */
+@media (min-width: 1201px) {
+  .footer-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* For medium desktops and smaller (3 columns) */
 @media (max-width: 1200px) {
   .footer-container {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
   }
 }
 
 /* For tablets (2 columns) */
 @media (max-width: 1024px) {
+  .footer-top-section {
+    margin-bottom: var(--spacing-xl);
+  }
+
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
@@ -387,10 +413,16 @@
   .footer {
     padding-top: var(--spacing-xl);
   }
+
+  .footer-top-section {
+    padding: 0 var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
   
   .footer-container {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
   }
   
   .footer-section h3 {
@@ -418,6 +450,10 @@
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
+  .footer-top-section {
+    padding: 0 var(--spacing-xs);
+  }
+
   .footer-container {
     padding: 0 var(--spacing-sm);
   }
