@@ -1,34 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
 import "./Header.css";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // NEW: path array to keep track of open menu chain, e.g. ['Services','Exam Preparation','SAT']
   const [openPath, setOpenPath] = useState([]);
   const [mobileOpenKeys, setMobileOpenKeys] = useState([]);
-  
-  const headerRef = useRef(null);
+
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (headerRef.current && !headerRef.current.contains(event.target)) {
-        setOpenPath([]);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const navLinks = [
@@ -53,6 +41,8 @@ export default function Header() {
         { name: "AMC", path: "/amc" },
         { name: "IGCSE", path: "/igcse" },
         { name: "A LEVEL", path: "/alevel" },
+        { name: "GMAT", path: "gmat" },
+        { name: "GRE", path: "/gre" },
         { name: "IB", path: "/ib" },
       ]
     },
@@ -73,26 +63,14 @@ export default function Header() {
 
   const mobileNavLinks = [...navLinks, { name: "Enquire Now", path: "/contact", isHighlighted: true }];
 
-  // Desktop: Toggle dropdown on click
-  const handleNavClick = (e, name, hasChildren) => {
-    if (hasChildren) {
-      e.preventDefault();
-      setOpenPath((prev) => (prev[0] === name ? [] : [name]));
-    }
-  };
+  // Desktop: when mouse enters a top-level nav item, set openPath to [name]
+  const handleNavMouseEnter = (name) => setOpenPath([name]);
+  const handleNavMouseLeave = () => setOpenPath([]);
 
-  // Handle nested dropdown clicks
-  const handleDropdownClick = (e, pathArray, hasChildren) => {
-    if (hasChildren) {
-      e.preventDefault();
-      e.stopPropagation();
-      setOpenPath(pathArray);
-    } else {
-      setOpenPath([]);
-    }
-  };
+  // When entering a dropdown item at any depth, set full path
+  const handleDropdownEnter = (pathArray) => setOpenPath(pathArray);
 
-  // Mobile toggle
+  // Mobile open toggle (keys like "Services" or "Services>Exam Preparation")
   const toggleMobileKey = (key) => {
     setMobileOpenKeys((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
   };
@@ -101,6 +79,35 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     setMobileOpenKeys([]);
   };
+
+  // Simple SVG icons
+  const BarsIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+
+  const TimesIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  );
+
+  const PhoneIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+
+  const EnvelopeIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <polyline points="22,6 12,13 2,6" />
+    </svg>
+  );
 
   // Recursive renderer for desktop dropdowns
   const renderDropdown = (links, level = 1, parentPath = []) => {
@@ -114,24 +121,20 @@ export default function Header() {
         data-level={level}
       >
         {links.map((child) => {
-          const currentPath = [...parentPath, child.name];
-          const hasChildren = !!child.children?.length;
-          const isOpen = openPath[level] === child.name;
-
+          const currentPath = [...parentPath, child.name]; // e.g. ['Services','Exam Preparation']
           return (
             <div key={child.name} className="dropdown-item">
               <a
                 href={child.path}
                 className={`dropdown-link ${location.pathname === child.path ? "active" : ""}`}
-                onClick={(e) => handleDropdownClick(e, currentPath, hasChildren)}
               >
                 {child.name}
-                {hasChildren && <span className="dropdown-arrow">›</span>}
               </a>
 
-              {hasChildren && isOpen && (
+              {/* If this child has children, show nested dropdown when openPath[level] === child.name */}
+              {child.children && openPath[level] === child.name && (
                 <AnimatePresence>
-                  {renderDropdown(child.children, level + 1, currentPath)}
+                  {renderDropdown(child.children, level + 1, currentPathArray)}
                 </AnimatePresence>
               )}
             </div>
@@ -181,7 +184,7 @@ export default function Header() {
         <a
           key={key}
           href={link.path}
-          className={`mobile-link ${location.pathname === link.path ? "active" : ""} ${link.isHighlighted ? "highlighted" : ""}`}
+          className={`mobile-link ${(location.pathname === link.path) ? "active" : ""} ${link.isHighlighted ? "highlighted" : ""}`}
           onClick={closeMobileMenu}
         >
           {link.name}
@@ -199,34 +202,25 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="nav-desktop">
-          {navLinks.map((link) => {
-            const hasChildren = !!link.children?.length;
-            const isOpen = openPath[0] === link.name;
+          {navLinks.map((link) => (
+            <motion.div
+              key={link.name}
+              className="nav-item"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onMouseEnter={() => handleNavMouseEnter(link.name)}
+              onMouseLeave={handleNavMouseLeave}
+            >
+              <a href={link.path} className={`${location.pathname === link.path ? "active" : ""}`}>
+                {link.name}
+              </a>
 
-            return (
-              <motion.div
-                key={link.name}
-                className="nav-item"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <a
-                  href={link.path}
-                  className={`${location.pathname === link.path ? "active" : ""}`}
-                  onClick={(e) => handleNavClick(e, link.name, hasChildren)}
-                >
-                  {link.name}
-                  {hasChildren && <span className="nav-arrow">▾</span>}
-                </a>
-
-                {hasChildren && isOpen && (
-                  <AnimatePresence>
-                    {renderDropdown(link.children, 1, [link.name])}
-                  </AnimatePresence>
-                )}
-              </motion.div>
-            );
-          })}
+              {/* render dropdown when top-level name matches openPath[0] */}
+              {link.children && openPath[0] === link.name && (
+                <AnimatePresence>{renderDropdown(link.children, 1, [link.name])}</AnimatePresence>
+              )}
+            </motion.div>
+          ))}
         </nav>
 
         <div className="enquire-now-desktop">
@@ -234,20 +228,14 @@ export default function Header() {
             href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`enquire-now-desktop highlighted ${location.pathname === "/contact" ? "active" : ""}`}
+            className={`enquire-now-desktop highlighted ${currentPath === "/contact" ? "active" : ""}`}
           >
             Enquire Now
           </motion.a>
         </div>
 
         {/* Mobile button */}
-        <button
-          className="mobile-menu-btn"
-          onClick={() => {
-            setIsMobileMenuOpen((s) => !s);
-            setOpenPath([]);
-          }}
-        >
+        <button className="mobile-menu-btn" onClick={() => { setIsMobileMenuOpen((s) => !s); setOpenPath([]); }}>
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
@@ -266,11 +254,11 @@ export default function Header() {
               <div className="mobile-contact">
                 <div className="contact-item">
                   <FaPhone className="contact-icon" />
-                  <span>+971 55 272 8339</span>
+                  <span>+1 (555) 123-4567</span>
                 </div>
                 <div className="contact-item">
                   <FaEnvelope className="contact-icon" />
-                  <span>divya@engagehub.me</span>
+                  <span>info@engagehub.com</span>
                 </div>
               </div>
             </motion.div>

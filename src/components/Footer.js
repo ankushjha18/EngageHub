@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+// Updated Footer.jsx - With linked services and exam preparations section
+import React, { useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { 
   FaFacebook, FaTwitter, FaInstagram, FaLinkedin,
@@ -20,60 +21,54 @@ function Footer() {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const sections = {
-    quickLinks: [
-      { name: 'Home', path: '/' },
-      { name: 'About Us', path: '/about' },
-      { name: 'Event & Workshops', path: '/workshops' },
-      { name: 'Blogs', path: '/blogs' },
-      { name: 'Newsletter', path: '/newsletter' },
-      { name: 'Contact', path: '/contact' }
-    ],
-    services: [
-      { name: 'Admission Consulting', icon: FaGraduationCap, path: '/consultancy' },
-      { name: 'Internship', icon: FaBook, path: '/internship' },
-      { name: 'Research', icon: FaUsers, path: '/research' },
-      { name: 'Essay Editing', icon: FaCalendar, path: '/essay' }
-    ],
-    exams: [
-      { name: 'SAT Preparation', path: '/sat-prep' },
-      { name: 'ACT Preparation', path: '/act-prep' },
-      { name: 'GMAT Preparation', path: '/gmat-prep' },
-      { name: 'GRE Preparation', path: '/gre-prep' }
-    ],
-    academics: [
-      { name: 'AP Courses', path: '/ap-prep' },
-      { name: 'MYP Preparation', path: '/myp-prep' },
-      { name: 'AMC Preparation', path: '/amc-prep' },
-      { name: 'IGCSE Preparation', path: '/igcse-prep' },
-      { name: 'A Level Preparation', path: '/alevel-prep' },
-      { name: 'IB Preparation', path: '/ib-prep' }
-    ],
-    social: [
-      { name: 'Facebook', icon: FaFacebook, url: 'https://facebook.com' },
-      { name: 'Twitter', icon: FaTwitter, url: 'https://twitter.com' },
-      { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/engagehub_llc/' },
-      { name: 'LinkedIn', icon: FaLinkedin, url: 'https://linkedin.com' }
-    ]
-  };
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Event & Workshops', path: '/workshops' },
+    { name: 'Blogs', path: '/blogs' },
+    { name: 'Newsletter', path: '/newsletter' },
+    { name: 'Contact', path: '/contact' }
+  ];
 
-  const FooterSection = ({ title, delay, children }) => (
-    <motion.div 
-      className="footer-section"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
-    >
-      {title && <h3>{title}</h3>}
-      {children}
-    </motion.div>
-  );
+  // Updated services with paths
+  const services = [
+    { name: 'Admission Consulting', icon: <FaGraduationCap />, path: '/consultancy' },
+    { name: 'Internship', icon: <FaBook />, path: '/internship' },
+    { name: 'Research', icon: <FaUsers />, path: '/research' },
+    { name: 'Essay Editing Services', icon: <FaCalendar />, path: '/essay' }
+  ];
+
+  // New exam preparations section
+  const examPreparations = [
+    { name: 'SAT Preparation', icon: <FaPencilAlt />, path: '/sat-prep' },
+    { name: 'ACT Preparation', icon: <FaPencilAlt />, path: '/act-prep' },
+    { name: 'AP Preparation', icon: <FaPencilAlt />, path: '/ap-prep' },
+    { name: 'MYP Preparation', icon: <FaPencilAlt />, path: '/myp-prep' },
+    { name: 'AMC Preparation', icon: <FaPencilAlt />, path: '/amc-prep' },
+    { name: 'IGCSE Preparation', icon: <FaPencilAlt />, path: '/igcse-prep' },
+    { name: 'A LEVEL Preparation', icon: <FaPencilAlt />, path: '/alevel-prep' },
+    { name: 'GMAT Preparation', icon: <FaPencilAlt />, path: '/gmat-prep' },
+    { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre-prep' },
+    { name: 'IB Preparation', icon: <FaPencilAlt />, path: '/ib-prep' }
+  ];
+
+  const socialLinks = [
+    { name: 'Facebook', icon: <FaFacebook />, url: 'https://facebook.com' },
+    { name: 'Twitter', icon: <FaTwitter />, url: 'https://twitter.com' },
+    { name: 'Instagram', icon: <FaInstagram />, url: 'https://www.instagram.com/engagehub_llc/' },
+    { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://linkedin.com' }
+  ];
 
   return (
     <footer ref={footerRef} className="footer">
       <div className="footer-container">
-        {/* Company Info */}
-        <FooterSection delay={0}>
+        {/* Company information section */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
           <div className="company-info">
             <div className="footer-logo">
               <img src="/logo.png" alt="EngageHub Logo" />
@@ -99,10 +94,16 @@ function Footer() {
               ))}
             </div>
           </div>
-        </FooterSection>
+        </motion.div>
 
-        {/* Quick Links */}
-        <FooterSection title="Quick Links" delay={0.1}>
+        {/* Quick links section */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <h3>Quick Links</h3>
           <ul className="footer-links">
             {sections.quickLinks.map(({ name, path }) => (
               <li key={name}>
@@ -112,20 +113,14 @@ function Footer() {
           </ul>
         </FooterSection>
 
-        {/* Services */}
-        <FooterSection title="Our Services" delay={0.2}>
-          <div className="footer-info">
-            {sections.services.map(({ name, icon: Icon, path }) => (
-              <a key={name} href={path} className="footer-item footer-service-link">
-                <span className="service-icon-wrapper"><Icon /></span>
-                <span className="service-text">{name}</span>
-              </a>
-            ))}
-          </div>
-        </FooterSection>
-
-        {/* Exam Prep */}
-        <FooterSection title="Exam Preparation" delay={0.3}>
+        {/* Our Services section - NOW WITH LINKS */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h3>Our Services</h3>
           <div className="footer-info">
             {sections.exams.map(({ name, path }) => (
               <a key={name} href={path} className="footer-item footer-exam-link">
@@ -136,20 +131,38 @@ function Footer() {
           </div>
         </FooterSection>
 
-        {/* Academics */}
-        <FooterSection title="Academic Programs" delay={0.4}>
+        {/* NEW: Exam Preparations section */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3>Exam Preparations</h3>
           <div className="footer-info">
-            {sections.academics.map(({ name, path }) => (
-              <a key={name} href={path} className="footer-item footer-exam-link">
-                <span className="exam-icon-wrapper"><FaPencilAlt /></span>
-                <span className="exam-text">{name}</span>
+            {examPreparations.map((exam) => (
+              <a 
+                key={exam.name}
+                href={exam.path}
+                className="footer-item footer-exam-link"
+              >
+                <span className="exam-icon-wrapper">
+                  {exam.icon}
+                </span>
+                <span className="exam-text">{exam.name}</span>
               </a>
             ))}
           </div>
         </FooterSection>
 
-        {/* Contact Info */}
-        <FooterSection title="Contact Info" delay={0.5}>
+        {/* Contact information section */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3>Contact Info</h3>
           <div className="contact-info">
             <div className="contact-item">
               <FaPhone className="contact-icon-phone" />
