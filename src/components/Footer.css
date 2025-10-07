@@ -42,8 +42,10 @@
 }
 
 .footer-logo img {
-  height: 100px;
+  height: 300px;
   width: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
   object-fit: contain;
 }
 
@@ -99,6 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
   width: 40px;
   height: 40px;
   background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
