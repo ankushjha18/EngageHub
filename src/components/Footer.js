@@ -1,4 +1,4 @@
-// Updated Footer.jsx - With linked services and exam preparations section
+// Fixed Footer.jsx - Corrected duplicate sections and structure
 import React, { useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { 
@@ -53,7 +53,7 @@ function Footer() {
     { name: 'Contact Us', path: '/contact' }
   ];
 
-  // Updated services with paths
+  // Services with paths
   const services = [
     { name: 'Admission Counselling', icon: <FaGraduationCap />, path: '/consultancy' },
     { name: 'Internship', icon: <FaBook />, path: '/internship' },
@@ -61,20 +61,15 @@ function Footer() {
     { name: 'Essay Editing Services', icon: <FaCalendar />, path: '/essay' }
   ];
 
-  // New exam preparations section
+  // Exam preparations section
   const examPreparation = [
     { name: 'SAT Preparation', icon: <FaPencilAlt />, path: '/sat-prep' },
     { name: 'ACT Preparation', icon: <FaPencilAlt />, path: '/act-prep' },
-    { name: 'AP Preparation', icon: <FaPencilAlt />, path: '/ap-prep' },
-    { name: 'MYP Preparation', icon: <FaPencilAlt />, path: '/myp-prep' },
-    { name: 'AMC Preparation', icon: <FaPencilAlt />, path: '/amc-prep' },
-    { name: 'IGCSE Preparation', icon: <FaPencilAlt />, path: '/igcse-prep' },
-    { name: 'A LEVEL Preparation', icon: <FaPencilAlt />, path: '/alevel-prep' },
     { name: 'GMAT Preparation', icon: <FaPencilAlt />, path: '/gmat-prep' },
-    { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre-prep' },
-    { name: 'IB Preparation', icon: <FaPencilAlt />, path: '/ib-prep' }
+    { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre-prep' }
   ];
 
+  // Academic programs section
   const academics = [
     { name: 'AP Courses', icon: <FaPencilAlt />, path: '/ap-prep' },
     { name: 'MYP Preparation', icon: <FaPencilAlt />, path: '/myp-prep' },
@@ -147,7 +142,7 @@ function Footer() {
           </ul>
         </motion.div>
 
-        {/* Our Services section - NOW WITH LINKS */}
+        {/* Our Services section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
@@ -171,7 +166,7 @@ function Footer() {
           </div>
         </motion.div>
 
-        {/* NEW: Exam Preparations section */}
+        {/* Exam Preparations section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
@@ -195,25 +190,25 @@ function Footer() {
           </div>
         </motion.div>
 
-{/* Academics section */}
-<motion.div 
+        {/* Academic Programs section - FIXED: Changed heading from duplicate "Exam Preparations" */}
+        <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3>Exam Preparations</h3>
+          <h3>Academic Programs</h3>
           <div className="footer-info">
-            {academics.map((exam) => (
+            {academics.map((program) => (
               <a 
-                key={exam.name}
-                href={exam.path}
+                key={program.name}
+                href={program.path}
                 className="footer-item footer-exam-link"
               >
                 <span className="exam-icon-wrapper">
-                  {exam.icon}
+                  {program.icon}
                 </span>
-                <span className="exam-text">{exam.name}</span>
+                <span className="exam-text">{program.name}</span>
               </a>
             ))}
           </div>
@@ -224,7 +219,7 @@ function Footer() {
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           <h3>Contact Info</h3>
           <div className="contact-info">
