@@ -128,29 +128,30 @@ const EssayEditingServices = () => {
 
             <div className="essay-types-grid">
               <div className="essay-type">
-                <h3>Extended Essay</h3>
+                <h3>Common Application Essay</h3>
                 <p>
-                  The editing service is for IB or A-Level IGCSE/GCE essays. The editing includes basic statement
-                  editing and proofreading of conclusions, topic sentences, and supporting details. The editing service
-                  also includes checking for consistency in writing style, tone, and approach. The expert editors at
-                  EngageHub Education also feedback on content quality to ensure students understand the weak points in their
-                  writing and improve their writing skills. The editing service also includes checking what is general
-                  and contextually. The essay editing services offered at EngageHub cover the spectrum of proofreading that
-                  ensure the quality and accuracy of the essay. The editing service also includes checking the hundreds
-                  of students to gain credible improvement in their grade points.
+                  The common application essay editing service is perfect for students applying their SAT for American
+                  University application essay from different countries. The editing service covers all aspects of
+                  common application essay writing. The editing service also includes checking for excellent educational
+                  and experiential records that can help you with your college application essay. They understand the
+                  dynamics of American college admissions and what they are looking for in terms of being fit for
+                  success too. The experts at EngageHub have mastered the perfect essay. They understand the various crucial
+                  elements that make up a successful common application essay. The editing service also includes writing
+                  being the crux of thoughts, removing redundancy or improving the questions asked, they understand
+                  essay writing service at EngageHub covers all aspects of common application essay writing. The editing
+                  service also includes checking the personal and purpose of important answers.
                 </p>
 
                 <h4>Perfect for:</h4>
                 <ul>
-                  <li>IB, A-Level, IGCSE/GCE and other related essays</li>
+                  <li>American university applications</li>
                 </ul>
 
                 <h4>Includes:</h4>
                 <ul>
-                  <li>Review of structure and logical progression</li>
-                  <li>Review of bibliography</li>
-                  <li>Matching grammar, diction and syntax</li>
-                  <li>Punctuation, grammar and spelling</li>
+                  <li>Working with an expert editor</li>
+                  <li>Structural review, reference list support and review</li>
+                  <li>Grammar, diction and syntax review</li>
                 </ul>
               </div>
 
@@ -183,34 +184,7 @@ const EssayEditingServices = () => {
             </div>
 
             <div className="essay-types-grid">
-              <div className="essay-type">
-                <h3>Common Application Essay</h3>
-                <p>
-                  The common application essay editing service is perfect for students applying their SAT for American
-                  University application essay from different countries. The editing service covers all aspects of
-                  common application essay writing. The editing service also includes checking for excellent educational
-                  and experiential records that can help you with your college application essay. They understand the
-                  dynamics of American college admissions and what they are looking for in terms of being fit for
-                  success too. The experts at EngageHub have mastered the perfect essay. They understand the various crucial
-                  elements that make up a successful common application essay. The editing service also includes writing
-                  being the crux of thoughts, removing redundancy or improving the questions asked, they understand
-                  essay writing service at EngageHub covers all aspects of common application essay writing. The editing
-                  service also includes checking the personal and purpose of important answers.
-                </p>
-
-                <h4>Perfect for:</h4>
-                <ul>
-                  <li>American university applications</li>
-                </ul>
-
-                <h4>Includes:</h4>
-                <ul>
-                  <li>Working with an expert editor</li>
-                  <li>Structural review, reference list support and review</li>
-                  <li>Grammar, diction and syntax review</li>
-                </ul>
-              </div>
-
+              
               <div className="essay-type">
                 <h3>Personal Statement</h3>
                 <p>

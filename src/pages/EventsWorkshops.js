@@ -1,111 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaUsers } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUsers } from 'react-icons/fa';
 import './Events.css';
 import './Workshops.css';
 
 const EventsWorkshops = () => {
-  const [eventsRef, eventsInView] = useInView({ threshold: 0.3, triggerOnce: true });
-  const [workshopsRef, workshopsInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [pastRef, pastInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
- /* const events = [
+  // If you have upcoming event data, you can store it. For now, we assume none.
+  const upcomingEvent = null;
+
+  // Example past events — replace with your actual data
+  const pastEvents = [
     {
-      title: 'College Application Workshop',
-      date: 'December 15, 2024',
-      time: '2:00 PM - 4:00 PM',
-      location: 'EngageHub Center',
-      description: 'Learn the ins and outs of college applications, essay writing, and interview preparation.',
-      attendees: '25/30',
-      category: 'Workshop'
-    },
-    {
-      title: 'SAT Preparation Bootcamp',
-      date: 'December 20-22, 2024',
-      time: '9:00 AM - 5:00 PM',
+      title: 'Boost your college profile with Research',
+      date: 'September 20, 2025',
+      time: '4:00 PM',
       location: 'Online',
-      description: 'Intensive 3-day SAT preparation program with practice tests and strategy sessions.',
-      attendees: '15/20',
-      category: 'Bootcamp'
+      poster: '/eventbanner.jpg',
+      attendees: '',
     },
     {
-      title: 'Parent Information Session',
-      date: 'January 5, 2025',
-      time: '6:00 PM - 7:30 PM',
-      location: 'EngageHub Center',
-      description: "Information session for parents about our programs and how to support their children's education.",
-      attendees: '40/50',
-      category: 'Information Session'
-    },
-    {
-      title: 'Study Skills Seminar',
-      date: 'January 12, 2025',
-      time: '10:00 AM - 12:00 PM',
-      location: 'EngageHub Center',
-      description: 'Learn effective study techniques, time management, and note-taking strategies.',
-      attendees: '30/35',
-      category: 'Seminar'
-    }
-  ]; */
-
-  const upcomingEvent = {
-    title: 'Boost Your College Profile with Research!',
-    speaker: 'Mr. Alok Bansal',
-    date: '20th September 2025',
-    time: '4:00 PM (GST)',
-    location: 'Online (Live Webinar)',
-    capacity: 'Unlimited (Open to High School Students & Parents)',
-    description:
-      '📢 Big News for Students & Parents! 📢 Struggling to make your college application stand out? Join our FREE Live Webinar with expert Mr. Alok Bansal and learn how to Boost Your College Profile with Research!',
-    highlights: [
-      '✅ Clarity on the admissions process',
-      '✅ Expert guidance',
-      '✅ A global perspective',
-    ],
-    contact: '📞 +971552728339',
-    registerLink: 'http://bit.ly/3HVTNEs',
-    banner: './eventbanner.jpg',
-  };
-  
-
-  const workshops = [
-    {
-      title: 'Study Skills Mastery',
-      duration: '2 hours',
-      location: 'EngageHub Center',
-      capacity: '15 students',
-      description: 'Learn effective study techniques, note-taking methods, and time management strategies.',
-      topics: ['Note-taking strategies', 'Memory techniques', 'Time management', 'Goal setting']
-    },
-    {
-      title: 'College Essay Writing',
-      duration: '3 hours',
-      location: 'EngageHub Center',
-      capacity: '12 students',
-      description: 'Master the art of writing compelling college application essays that stand out.',
-      topics: ['Essay structure', 'Personal statement', 'Common App', 'Editing techniques']
-    },
-    {
-      title: 'Math Problem Solving',
-      duration: '2.5 hours',
+      title: 'How to make your college application work',
+      date: '',
+      time: '',
       location: 'Online',
-      capacity: '20 students',
-      description: 'Develop critical thinking and problem-solving skills in mathematics.',
-      topics: ['Algebra strategies', 'Geometry concepts', 'Calculus basics', 'Test strategies']
+      poster: '/eventbanner2.jpg',
+      attendees: '',
     },
     {
-      title: 'Public Speaking Confidence',
-      duration: '2 hours',
-      location: 'EngageHub Center',
-      capacity: '10 students',
-      description: 'Build confidence and improve public speaking skills for academic presentations.',
-      topics: ['Speech preparation', 'Body language', 'Voice projection', 'Audience engagement']
-    }
+      title: 'Demystifying Study Abroad after 12th',
+      date: 'January 25, 2025',
+      time: '4:00 PM',
+      location: 'Online',
+      poster: '/eventbanner3.jpg',
+      attendees: '',
+    },
+    {
+      title: 'How to make your college application work',
+      date: 'July 21, 2025',
+      time: '4:00 PM',
+      location: 'Online',
+      poster: '/eventbanner4.jpg',
+      attendees: '',
+    },
+    {
+      title: 'Demystifying Study Abroad after 12th',
+      date: 'June 29, 2025',
+      time: '6:30 PM',
+      location: 'Online',
+      poster: '/eventbanner5.jpg',
+      attendees: '',
+    },
+    {
+      title: 'Demystifying Study Abroad after 12th',
+      date: 'July 14, 2025',
+      time: '2:00 PM',
+      location: 'Online',
+      poster: '/eventbanner6.jpg',
+      attendees: '',
+    },
   ];
 
   return (
     <div className="events-page">
-      {/* Unified Hero Section */}
+      {/* Hero Section */}
       <section className="events-hero section">
         <div className="container">
           <motion.div
@@ -123,169 +83,73 @@ const EventsWorkshops = () => {
         </div>
       </section>
 
+      {/* Upcoming Event / No Upcoming */}
       <section className="upcoming-event section">
-  <div className="container">
-    <motion.div
-      className="section-header"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h2 className="section-title">Upcoming Event</h2>
-    </motion.div>
-
-    <motion.div
-      className="event-card card"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Banner */}
-      <div className="event-banner">
-        <img src={upcomingEvent.banner} alt={upcomingEvent.title} />
-      </div>
-
-      {/* Details */}
-      <div className="event-content">
-        <h3 className="event-title">{upcomingEvent.title}</h3>
-        <p className="event-speaker">Speaker: {upcomingEvent.speaker}</p>
-
-        <div className="event-details">
-          <div className="event-info">
-            <FaCalendarAlt /> <span>{upcomingEvent.date}</span>
-          </div>
-          <div className="event-info">
-            <FaClock /> <span>{upcomingEvent.time}</span>
-          </div>
-          <div className="event-info">
-            <FaMapMarkerAlt /> <span>{upcomingEvent.location}</span>
-          </div>
-          <div className="event-info">
-            <FaUsers /> <span>{upcomingEvent.capacity}</span>
-          </div>
+        <div className="container">
+          {upcomingEvent ? (
+            // If you want to display an upcoming event, keep structure
+            <motion.div
+              className="event-card card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* your event card JSX here */}
+            </motion.div>
+          ) : (
+            <motion.div
+              className="no-upcoming"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="section-title">No Upcoming Events</h2>
+            </motion.div>
+          )}
         </div>
+      </section>
 
-        <p className="event-description">{upcomingEvent.description}</p>
-
-        <ul className="event-highlights">
-          {upcomingEvent.highlights.map((point, index) => (
-            <li key={index}>{point}</li>
-          ))}
-        </ul>
-
-        <a
-          href={upcomingEvent.registerLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary"
-        >
-          Register for Free
-        </a>
-
-        <p className="event-contact">Got questions? {upcomingEvent.contact}</p>
-      </div>
-    </motion.div>
-  </div>
-</section>
-
-
-      {/* Events Grid 
-      <section className="events-grid section" ref={eventsRef}>
+      {/* Past Events */}
+      <section className="past-events section" ref={pastRef}>
         <div className="container">
           <motion.div
             className="section-header"
             initial={{ opacity: 0, y: 20 }}
-            animate={eventsInView ? { opacity: 1, y: 0 } : {}}
+            animate={pastInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">Upcoming Events</h2>
+            <h2 className="section-title">Past Events</h2>
           </motion.div>
-          <div className="events-container">
-            {events.map((event, index) => (
-              <motion.div
-                key={index}
-                className="event-card card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={eventsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="event-header">
-                  <span className="event-category">{event.category}</span>
-                  <h3 className="event-title">{event.title}</h3>
-                </div>
-                <div className="event-details">
-                  <div className="event-info">
-                    <FaCalendarAlt />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="event-info">
-                    <FaClock />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="event-info">
-                    <FaMapMarkerAlt />
-                    <span>{event.location}</span>
-                  </div>
-                  <div className="event-info">
-                    <FaUsers />
-                    <span>{event.attendees} registered</span>
-                  </div>
-                </div>
-                <p className="event-description">{event.description}</p>
-                <button className="btn btn-primary">Register Now</button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
-      {/* Workshops Grid }
-      <section className="workshops-grid section" ref={workshopsRef}>
-        <div className="container">
-          <motion.div
-            className="section-header"
-            initial={{ opacity: 0, y: 20 }}
-            animate={workshopsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="section-title">Workshops</h2>
-          </motion.div>
-          <div className="workshops-container">
-            {workshops.map((workshop, index) => (
+          <div className="past-events-grid">
+            {pastEvents.map((evt, idx) => (
               <motion.div
-                key={index}
-                className="workshop-card card"
+                key={idx}
+                className="past-event-card card"
                 initial={{ opacity: 0, y: 30 }}
-                animate={workshopsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                animate={pastInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
               >
-                <div className="workshop-header">
-                  <h3 className="workshop-title">{workshop.title}</h3>
+                <div className="poster-wrapper">
+                  <img src={evt.poster} alt={evt.title} className="poster-img" />
                 </div>
-                <div className="workshop-details">
-                  <div className="workshop-info">
-                    <FaClock />
-                    <span>{workshop.duration}</span>
-                  </div>
-                  <div className="workshop-info">
-                    <FaMapMarkerAlt />
-                    <span>{workshop.location}</span>
-                  </div>
-                  <div className="workshop-info">
-                    <FaUsers />
-                    <span>{workshop.capacity}</span>
+                <div className="past-event-content">
+                  <h3 className="event-title">{evt.title}</h3>
+                  <div className="event-details">
+                    <div className="event-info">
+                      <FaCalendarAlt /> <span>{evt.date}</span>
+                    </div>
+                    <div className="event-info">
+                      <FaClock /> <span>{evt.time}</span>
+                    </div>
+                    <div className="event-info">
+                      <FaMapMarkerAlt /> <span>{evt.location}</span>
+                    </div>
+                    <div className="event-info">
+                      <FaUsers /> <span>{evt.attendees}</span>
+                    </div>
                   </div>
                 </div>
-                <p className="workshop-description">{workshop.description}</p>
-                <div className="workshop-topics">
-                  <h4>Topics Covered:</h4>
-                  <ul>
-                    {workshop.topics.map((topic, i) => (
-                      <li key={i}>{topic}</li>
-                    ))}
-                  </ul>
-                </div>
-                <button className="btn btn-primary">Register for Workshop</button>
               </motion.div>
             ))}
           </div>
@@ -313,5 +177,3 @@ const EventsWorkshops = () => {
 };
 
 export default EventsWorkshops;
-
-

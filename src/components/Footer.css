@@ -15,7 +15,7 @@
   padding: 0 var(--spacing-md);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: var(--spacing-xl);
+  gap: 20px !important;
 }
 
 /* Individual footer sections */
@@ -60,6 +60,7 @@
   margin-bottom: -100px;
   margin-top: -70px;
   margin-left: -80px;
+  justify-content: center;
 }
 
 /* Company description */
@@ -401,6 +402,7 @@
     width: 250px;
     margin-top: -70px;
     margin-bottom: -70px;
+    margin-left: 80px;
   }
   
   .social-links {
@@ -426,6 +428,7 @@
     width: 200px;
     margin-top: -50px;
     margin-bottom: -50px;
+    margin-left: 80px;
   }
   
   .footer-bottom-container {

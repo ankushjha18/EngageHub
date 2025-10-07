@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
@@ -7,13 +7,10 @@ import "./Header.css";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // NEW: path array to keep track of open menu chain, e.g. ['Services','Exam Preparation','SAT']
   const [openPath, setOpenPath] = useState([]);
-
-  // Mobile accordion open keys (strings like "Services" or "Services>Exam Preparation")
   const [mobileOpenKeys, setMobileOpenKeys] = useState([]);
-
+  
+  const headerRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,14 +19,48 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setOpenPath([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     {
-      name: "Services",
-      path: "",
+      name: "Exam Preparation",
+      path: "#",
       children: [
-        { name: "Admission Consulting", path: "/consultancy" },
+        { name: "SAT", path: "/sat" },
+        { name: "ACT", path: "/act" },
+        { name: "GMAT", path: "/gmat" },
+        { name: "GRE", path: "/gre" },
+      ]
+    },
+    {
+      name: "Academics",
+      path: "#",
+      children: [
+        { name: "AP Courses", path: "/ap" },
+        { name: "MYP", path: "/myp" },
+        { name: "AMC", path: "/amc" },
+        { name: "IGCSE", path: "/igcse" },
+        { name: "A LEVEL", path: "/alevel" },
+        { name: "IB", path: "/ib" },
+      ]
+    },
+    {
+      name: "Services",
+      path: "#",
+      children: [
+        { name: "Admission Counselling", path: "/consultancy" },
         { name: "Internship", path: "/internship" },
         { name: "Research", path: "/research" },
         { name: "Essay Editing Services", path: "/essay" }
@@ -37,35 +68,31 @@ export default function Header() {
     },
     { name: "Events & Workshops", path: "/events" },
     { name: "Blogs", path: "/blogs" },
-    {
-      name: "Exam Preparation",
-      path: "#",
-      children: [
-        { name: "SAT", path: "/sat" },
-        { name: "ACT", path: "/act" },
-        { name: "AP", path: "/ap" },
-        { name: "MYP", path: "/myp" },
-        { name: "AMC", path: "/amc" },
-        { name: "IGCSE", path: "/igcse" },
-        { name: "A LEVEL", path: "/alevel" },
-        { name: "GMAT", path: "gmat" },
-        { name: "GRE", path: "/gre" },
-        { name: "IB", path: "/ib" },
-      ]
-    },
     { name: "Newsletter", path: "/newsletter" }
   ];
 
   const mobileNavLinks = [...navLinks, { name: "Enquire Now", path: "/contact", isHighlighted: true }];
 
-  // Desktop: when mouse enters a top-level nav item, set openPath to [name]
-  const handleNavMouseEnter = (name) => setOpenPath([name]);
-  const handleNavMouseLeave = () => setOpenPath([]);
+  // Desktop: Toggle dropdown on click
+  const handleNavClick = (e, name, hasChildren) => {
+    if (hasChildren) {
+      e.preventDefault();
+      setOpenPath((prev) => (prev[0] === name ? [] : [name]));
+    }
+  };
 
-  // When entering a dropdown item at any depth, set full path
-  const handleDropdownEnter = (pathArray) => setOpenPath(pathArray);
+  // Handle nested dropdown clicks
+  const handleDropdownClick = (e, pathArray, hasChildren) => {
+    if (hasChildren) {
+      e.preventDefault();
+      e.stopPropagation();
+      setOpenPath(pathArray);
+    } else {
+      setOpenPath([]);
+    }
+  };
 
-  // Mobile open toggle (keys like "Services" or "Services>Exam Preparation")
+  // Mobile toggle
   const toggleMobileKey = (key) => {
     setMobileOpenKeys((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
   };
@@ -77,7 +104,6 @@ export default function Header() {
 
   // Recursive renderer for desktop dropdowns
   const renderDropdown = (links, level = 1, parentPath = []) => {
-    // level 1 = first dropdown under a top-level nav
     return (
       <motion.div
         className="dropdown"
@@ -85,27 +111,25 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -6 }}
         transition={{ duration: 0.14 }}
-        // add data-level for CSS targeting if you want
         data-level={level}
       >
         {links.map((child) => {
-          const currentPath = [...parentPath, child.name]; // e.g. ['Services','Exam Preparation']
+          const currentPath = [...parentPath, child.name];
+          const hasChildren = !!child.children?.length;
+          const isOpen = openPath[level] === child.name;
+
           return (
-            <div
-              key={child.name}
-              className="dropdown-item"
-              onMouseEnter={() => handleDropdownEnter(currentPath)}
-              onMouseLeave={() => {}}
-            >
+            <div key={child.name} className="dropdown-item">
               <a
                 href={child.path}
                 className={`dropdown-link ${location.pathname === child.path ? "active" : ""}`}
+                onClick={(e) => handleDropdownClick(e, currentPath, hasChildren)}
               >
                 {child.name}
+                {hasChildren && <span className="dropdown-arrow">›</span>}
               </a>
 
-              {/* If this child has children, show nested dropdown when openPath[level] === child.name */}
-              {child.children && openPath[level] === child.name && (
+              {hasChildren && isOpen && (
                 <AnimatePresence>
                   {renderDropdown(child.children, level + 1, currentPath)}
                 </AnimatePresence>
@@ -117,7 +141,7 @@ export default function Header() {
     );
   };
 
-  // Recursive renderer for mobile menu (accordion)
+  // Recursive renderer for mobile menu
   const renderMobileLinks = (links, parentKey = "") => {
     return links.map((link) => {
       const key = parentKey ? `${parentKey}>${link.name}` : link.name;
@@ -153,12 +177,11 @@ export default function Header() {
         );
       }
 
-      // simple link (no children)
       return (
         <a
           key={key}
           href={link.path}
-          className={`mobile-link ${(location.pathname === link.path) ? "active" : ""} ${link.isHighlighted ? "highlighted" : ""}`}
+          className={`mobile-link ${location.pathname === link.path ? "active" : ""} ${link.isHighlighted ? "highlighted" : ""}`}
           onClick={closeMobileMenu}
         >
           {link.name}
@@ -168,7 +191,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+    <header ref={headerRef} className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-container">
         <div className="logo">
           <img src="/logoengage.png" alt="EngageHub Logo" />
@@ -176,25 +199,34 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="nav-desktop">
-          {navLinks.map((link) => (
-            <motion.div
-              key={link.name}
-              className="nav-item"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onMouseEnter={() => handleNavMouseEnter(link.name)}
-              onMouseLeave={handleNavMouseLeave}
-            >
-              <a href={link.path} className={`${location.pathname === link.path ? "active" : ""}`}>
-                {link.name}
-              </a>
+          {navLinks.map((link) => {
+            const hasChildren = !!link.children?.length;
+            const isOpen = openPath[0] === link.name;
 
-              {/* render dropdown when top-level name matches openPath[0] */}
-              {link.children && openPath[0] === link.name && (
-                <AnimatePresence>{renderDropdown(link.children, 1, [link.name])}</AnimatePresence>
-              )}
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={link.name}
+                className="nav-item"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <a
+                  href={link.path}
+                  className={`${location.pathname === link.path ? "active" : ""}`}
+                  onClick={(e) => handleNavClick(e, link.name, hasChildren)}
+                >
+                  {link.name}
+                  {hasChildren && <span className="nav-arrow">▾</span>}
+                </a>
+
+                {hasChildren && isOpen && (
+                  <AnimatePresence>
+                    {renderDropdown(link.children, 1, [link.name])}
+                  </AnimatePresence>
+                )}
+              </motion.div>
+            );
+          })}
         </nav>
 
         <div className="enquire-now-desktop">
@@ -209,7 +241,13 @@ export default function Header() {
         </div>
 
         {/* Mobile button */}
-        <button className="mobile-menu-btn" onClick={() => { setIsMobileMenuOpen((s) => !s); setOpenPath([]); }}>
+        <button
+          className="mobile-menu-btn"
+          onClick={() => {
+            setIsMobileMenuOpen((s) => !s);
+            setOpenPath([]);
+          }}
+        >
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
@@ -228,11 +266,11 @@ export default function Header() {
               <div className="mobile-contact">
                 <div className="contact-item">
                   <FaPhone className="contact-icon" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+971 55 272 8339</span>
                 </div>
                 <div className="contact-item">
                   <FaEnvelope className="contact-icon" />
-                  <span>info@engagehub.com</span>
+                  <span>divya@engagehub.me</span>
                 </div>
               </div>
             </motion.div>

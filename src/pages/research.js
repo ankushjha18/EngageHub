@@ -1,5 +1,6 @@
 import React from 'react';
 import './research.css';
+import { Brain, Sparkles, Target, FileText, Microscope, BookOpen, Briefcase, Palette, Lightbulb, Globe } from 'lucide-react';
 
 const Research = () => {
   const researchBenefits = [
@@ -7,49 +8,49 @@ const Research = () => {
       number: "1",
       title: "Shows Intellectual Curiosity",
       description: "Research demonstrates genuine interest in learning and exploring new ideas beyond standard coursework.",
-      icon: "🧠"
+      Icon: Brain
     },
     {
       number: "2", 
       title: "Adds Originality to the Application",
       description: "It sets students apart and highlights creativity, showing admissions committees something unique.",
-      icon: "✨"
+      Icon: Sparkles
     },
     {
       number: "3",
       title: "Demonstrates Academic Rigor", 
       description: "Top universities value challenging work that showcases a student's ability to handle complex projects.",
-      icon: "🎯"
+      Icon: Target
     },
     {
       number: "4",
       title: "Builds a Cohesive Narrative",
       description: "Research helps tie together a student's academic goals and creates a compelling story for applications.",
-      icon: "📝"
+      Icon: FileText
     }
   ];
 
   const researchTypes = [
     {
-      icon: "🔬",
+      Icon: Microscope,
       field: "Science",
       description: "Laboratory research, data analysis, and scientific methodology",
       color: "#3b82f6"
     },
     {
-      icon: "📚", 
+      Icon: BookOpen, 
       field: "Humanities",
       description: "Historical analysis, literary criticism, and cultural studies",
       color: "#8b5cf6"
     },
     {
-      icon: "💼",
+      Icon: Briefcase,
       field: "Business", 
       description: "Market research, case studies, and economic analysis",
       color: "#10b981"
     },
     {
-      icon: "🎨",
+      Icon: Palette,
       field: "Art",
       description: "Creative projects, artistic analysis, and cultural research",
       color: "#f59e0b"
@@ -176,33 +177,6 @@ const Research = () => {
     }
   ];
 
- /* const statistics = [
-    {
-      number: "85%",
-      label: "Higher Acceptance Rate",
-      description: "Students with research experience",
-      icon: "📊"
-    },
-    {
-      number: "3x",
-      label: "More Scholarship Offers", 
-      description: "Compared to students without research",
-      icon: "🏆"
-    },
-    {
-      number: "92%",
-      label: "Student Satisfaction",
-      description: "Rate their research experience as valuable",
-      icon: "⭐"
-    },
-    {
-      number: "200+",
-      label: "Projects Completed",
-      description: "Successful research projects guided",
-      icon: "🎓"
-    }
-  ]; */
-
   return (
     <div className="research-container">
       {/* Hero Section */}
@@ -212,39 +186,20 @@ const Research = () => {
             <span className="research-highlight">Research Projects</span> That Transform Applications
           </h1>
           <p className="research-hero-subtitle">
-            💡 Whether it's science, humanities, business, or art – research highlights your academic depth and commitment.
+            <Lightbulb size={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />
+            Whether it's science, humanities, business, or art – research highlights your academic depth and commitment.
           </p>
           <div className="research-hero-highlight">
             <p className="research-hero-text">
-              🌍 For top  universities, a strong research project can make your application truly stand out!
+              <Globe size={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />
+              For top universities, a strong research project can make your application truly stand out!
             </p>
           </div>
           <a href='/contact'>
-          <button className="research-cta-button">
-            Start Your Research Journey
-          </button>
+            <button className="research-cta-button">
+              Start Your Research Journey
+            </button>
           </a>
-        </div>
-      </section>
-
-      {/* Research Impact Statistics }
-      <section className="research-section research-statistics">
-        <div className="research-section-header">
-          <h2 className="research-section-title">Research Impact by Numbers</h2>
-          <p className="research-section-subtitle">
-            See how research transforms college applications
-          </p>
-        </div>
-
-        <div className="research-stats-grid">
-          {statistics.map((stat, index) => (
-            <div key={index} className="research-stat-card">
-              <div className="research-stat-icon">{stat.icon}</div>
-              <div className="research-stat-number">{stat.number}</div>
-              <div className="research-stat-label">{stat.label}</div>
-              <div className="research-stat-description">{stat.description}</div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -258,14 +213,19 @@ const Research = () => {
         </div>
 
         <div className="research-benefits-grid">
-          {researchBenefits.map((benefit, index) => (
-            <div key={index} className="research-benefit-card">
-              <div className="research-benefit-icon">{benefit.icon}</div>
-              <div className="research-benefit-number">{benefit.number}</div>
-              <h3 className="research-benefit-title">{benefit.title}</h3>
-              <p className="research-benefit-description">{benefit.description}</p>
-            </div>
-          ))}
+          {researchBenefits.map((benefit, index) => {
+            const IconComponent = benefit.Icon;
+            return (
+              <div key={index} className="research-benefit-card">
+                <div className="research-benefit-icon">
+                  <IconComponent size={28} />
+                </div>
+                <div className="research-benefit-number">{benefit.number}</div>
+                <h3 className="research-benefit-title">{benefit.title}</h3>
+                <p className="research-benefit-description">{benefit.description}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -279,13 +239,18 @@ const Research = () => {
         </div>
 
         <div className="research-fields-grid">
-          {researchTypes.map((type, index) => (
-            <div key={index} className="research-field-card" style={{'--field-color': type.color}}>
-              <div className="research-field-icon">{type.icon}</div>
-              <h3 className="research-field-title">{type.field}</h3>
-              <p className="research-field-description">{type.description}</p>
-            </div>
-          ))}
+          {researchTypes.map((type, index) => {
+            const IconComponent = type.Icon;
+            return (
+              <div key={index} className="research-field-card" style={{'--field-color': type.color}}>
+                <div className="research-field-icon">
+                  <IconComponent size={32} />
+                </div>
+                <h3 className="research-field-title">{type.field}</h3>
+                <p className="research-field-description">{type.description}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -305,7 +270,6 @@ const Research = () => {
               <div className="research-step-content">
                 <div className="research-step-header">
                   <h3 className="research-step-title">{step.title}</h3>
-                  {/*<span className="research-step-duration">{step.duration}</span> */}
                 </div>
                 <p className="research-step-description">{step.description}</p>
                 <div className="research-step-tips">
@@ -322,110 +286,19 @@ const Research = () => {
         </div>
       </section>
 
-      {/* Current Research Opportunities }
-      <section className="research-section research-opportunities">
-        <div className="research-section-header">
-          <h2 className="research-section-title">Current Research Opportunities</h2>
-          <p className="research-section-subtitle">
-            Join ongoing research projects or start your own
-          </p>
-        </div>
-
-        <div className="research-opportunities-grid">
-          {researchOpportunities.map((opportunity, index) => (
-            <div key={index} className="research-opportunity-card">
-              <div className="research-opportunity-header">
-                <h3 className="research-opportunity-title">{opportunity.title}</h3>
-                <span className="research-opportunity-type">{opportunity.type}</span>
-              </div>
-              <p className="research-opportunity-description">
-                {opportunity.description}
-              </p>
-              <div className="research-opportunity-details">
-                <div className="research-opportunity-detail">
-                  <span className="research-opportunity-label">Duration:</span>
-                  <span className="research-opportunity-value">{opportunity.duration}</span>
-                </div>
-                <div className="research-opportunity-detail">
-                  <span className="research-opportunity-label">Level:</span>
-                  <span className="research-opportunity-value">{opportunity.level}</span>
-                </div>
-                <div className="research-opportunity-detail">
-                  <span className="research-opportunity-label">Available Spots:</span>
-                  <span className="research-opportunity-value">{opportunity.spots}</span>
-                </div>
-              </div>
-              <button className="research-opportunity-button">Apply Now</button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Success Stories }
-      <section className="research-section research-success-stories">
-        <div className="research-section-header">
-          <h2 className="research-section-title">Student Success Stories</h2>
-          <p className="research-section-subtitle">
-            See how research projects transformed their academic journey
-          </p>
-        </div>
-
-        <div className="research-stories-grid">
-          {successStories.map((story, index) => (
-            <div key={index} className="research-story-card">
-              <div className="research-story-header">
-                <h3 className="research-story-name">{story.name}</h3>
-                <div className="research-story-university">{story.university}</div>
-              </div>
-              <div className="research-story-project">
-                <strong>Project:</strong> {story.project}
-              </div>
-              <div className="research-story-outcome">
-                <strong>Outcome:</strong> {story.outcome}
-              </div>
-              <blockquote className="research-story-quote">
-                "{story.quote}"
-              </blockquote>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ Section }
-      <section className="research-section research-faq">
-        <div className="research-section-header">
-          <h2 className="research-section-title">Frequently Asked Questions</h2>
-          <p className="research-section-subtitle">
-            Get answers to common research-related questions
-          </p>
-        </div>
-
-        <div className="research-faq-container">
-          {faqItems.map((item, index) => (
-            <div key={index} className="research-faq-item">
-              <h3 className="research-faq-question">{item.question}</h3>
-              <p className="research-faq-answer">{item.answer}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="research-section research-final-cta">
         <div className="research-cta-content">
           <h2 className="research-cta-title">Ready to Start Your Research Project?</h2>
           <p className="research-cta-description">
-            Don't just chase names , look for right fit.
+            Don't just chase names, look for right fit.
           </p>
           
           <div className="research-cta-buttons">
-          <a href='/contact'>
-            <button className="research-cta-primary">Get Started Today</button>
-           {/*} <button className="research-cta-secondary">Learn More</button>*/}
-           </a>
+            <a href='/contact'>
+              <button className="research-cta-primary">Get Started Today</button>
+            </a>
           </div>
-         
-         
         </div>
       </section>
     </div>
