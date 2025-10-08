@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'; 
+import { motion } from 'framer-motion';
 import './research.css';
 import { Brain, Sparkles, Target, FileText, Microscope, BookOpen, Briefcase, Palette, Lightbulb, Globe } from 'lucide-react';
 
@@ -183,7 +184,7 @@ const Research = () => {
       <section className="research-hero">
         <div className="research-hero-content">
           <h1 className="research-hero-title">
-            <span className="research-highlight">Research Projects</span> That Transform Applications
+            Research Projects that transform applications
           </h1>
           <p className="research-hero-subtitle">
             <Lightbulb size={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />
@@ -203,7 +204,56 @@ const Research = () => {
         </div>
       </section>
 
-      {/* Why Research Matters */}
+       {/* Process */}
+      <section className="tutoring-section how-it-works">
+  <div className="section-header">
+    <h2 className="section-title">How It Works</h2>
+    <p className="section-subtitle">
+      Your journey to academic success in five simple steps
+    </p>
+  </div>
+
+  <div className="steps-container">
+    {[
+      {
+        num: "1",
+        title: "Shows Intellectual Curiosity",
+        desc: "Research demonstrates genuine interest in learning and exploring new ideas beyond standard coursework.",
+      },
+      {
+        num: "2",
+        title: "Adds Originality to the Application",
+        desc: "It sets students apart and highlights creativity, showing admissions committees something unique.",
+      },
+      {
+        num: "3",
+        title: "Demonstrates Academic Rigor",
+        desc: "Top universities value challenging work that showcases a student's ability to handle complex projects.",
+      },
+      {
+        num: "4",
+        title: "Builds a Cohesive Narrative",
+        desc: "Research helps tie together a student's academic goals and creates a compelling story for applications.",
+      },
+      
+    ].map((step, i) => (
+      <motion.div
+        className="step-card"
+        key={i}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: i * 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="step-number">{step.num}</div>
+        <h3 className="step-title">{step.title}</h3>
+        <p className="step-desc">{step.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+      {/* Why Research Matters /}
       <section className="research-section research-benefits">
         <div className="research-section-header">
           <h2 className="research-section-title">Why Research Projects Matter in College Admissions</h2>
@@ -284,7 +334,9 @@ const Research = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> 
+     
+
 
       {/* Call to Action */}
       <section className="research-section research-final-cta">

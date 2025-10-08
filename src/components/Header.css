@@ -37,7 +37,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 700;
@@ -54,14 +54,14 @@
 }
 
 .logo img {
-  height: 90px;
+  height: 100px;
   width: auto;
 }
 
 /* Centered navigation with premium styling */
 .nav-desktop {
   display: flex;
-  gap: 6px;
+  gap: 2px;
   align-items: center;
   justify-content: center;
   flex: 1;
