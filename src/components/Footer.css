@@ -15,7 +15,7 @@
   padding: 0 var(--spacing-md);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: var(--spacing-xl);
+  gap: 10px;
 }
 
 /* Individual footer sections - COMPACT */

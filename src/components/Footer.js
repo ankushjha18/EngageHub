@@ -1,5 +1,7 @@
-// Updated Footer.jsx - With linked services and exam preparations section
-import React, { useState } from 'react';
+"use client";
+
+// Updated Footer.jsx - With linked services, exam preparations, and academics section
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { 
   FaFacebook, FaTwitter, FaInstagram, FaLinkedin,
@@ -27,10 +29,10 @@ function Footer() {
     { name: 'Event & Workshops', path: '/workshops' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Newsletter', path: '/newsletter' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact Us', path: '/contact' }
   ];
 
-  // Updated services with paths
+  // Services section
   const services = [
     { name: 'Admission Consulting', icon: <FaGraduationCap />, path: '/consultancy' },
     { name: 'Internship', icon: <FaBook />, path: '/internship' },
@@ -38,18 +40,22 @@ function Footer() {
     { name: 'Essay Editing Services', icon: <FaCalendar />, path: '/essay' }
   ];
 
-  // New exam preparations section
+  // Exam preparations section
   const examPreparations = [
-    { name: 'SAT Preparation', icon: <FaPencilAlt />, path: '/sat-prep' },
-    { name: 'ACT Preparation', icon: <FaPencilAlt />, path: '/act-prep' },
-    { name: 'AP Preparation', icon: <FaPencilAlt />, path: '/ap-prep' },
-    { name: 'MYP Preparation', icon: <FaPencilAlt />, path: '/myp-prep' },
-    { name: 'AMC Preparation', icon: <FaPencilAlt />, path: '/amc-prep' },
-    { name: 'IGCSE Preparation', icon: <FaPencilAlt />, path: '/igcse-prep' },
-    { name: 'A LEVEL Preparation', icon: <FaPencilAlt />, path: '/alevel-prep' },
-    { name: 'GMAT Preparation', icon: <FaPencilAlt />, path: '/gmat-prep' },
-    { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre-prep' },
-    { name: 'IB Preparation', icon: <FaPencilAlt />, path: '/ib-prep' }
+    { name: 'SAT Preparation', icon: <FaPencilAlt />, path: '/sat' },
+    { name: 'ACT Preparation', icon: <FaPencilAlt />, path: '/act' },
+    { name: 'GMAT Preparation', icon: <FaPencilAlt />, path: '/gmat' },
+    { name: 'GRE Preparation', icon: <FaPencilAlt />, path: '/gre' }
+  ];
+
+  // Academics section
+  const academics = [
+    { name: 'AP Courses', icon: <FaPencilAlt />, path: '/ap' },
+    { name: 'MYP', icon: <FaPencilAlt />, path: '/myp' },
+    { name: 'AMC', icon: <FaPencilAlt />, path: '/amc' },
+    { name: 'IGCSE', icon: <FaPencilAlt />, path: '/igcse' },
+    { name: 'A LEVEL', icon: <FaPencilAlt />, path: '/alevel' },
+    { name: 'IB', icon: <FaPencilAlt />, path: '/ib' }
   ];
 
   const socialLinks = [
@@ -78,7 +84,7 @@ function Footer() {
               We are committed to academic excellence and personal growth.
             </p>
             <div className="social-links">
-              {sections.social.map(({ name, icon: Icon, url }) => (
+              {socialLinks.map(({ name, icon, url }) => (
                 <motion.a
                   key={name}
                   href={url}
@@ -89,7 +95,7 @@ function Footer() {
                   className="social-link"
                   aria-label={name}
                 >
-                  <Icon />
+                  {icon}
                 </motion.a>
               ))}
             </div>
@@ -105,15 +111,15 @@ function Footer() {
         >
           <h3>Quick Links</h3>
           <ul className="footer-links">
-            {sections.quickLinks.map(({ name, path }) => (
+            {quickLinks.map(({ name, path }) => (
               <li key={name}>
                 <a href={path}>{name}</a>
               </li>
             ))}
           </ul>
-        </FooterSection>
+        </motion.div>
 
-        {/* Our Services section - NOW WITH LINKS */}
+        {/* Our Services section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
@@ -122,45 +128,65 @@ function Footer() {
         >
           <h3>Our Services</h3>
           <div className="footer-info">
-            {sections.exams.map(({ name, path }) => (
+            {services.map(({ name, icon, path }) => (
               <a key={name} href={path} className="footer-item footer-exam-link">
-                <span className="exam-icon-wrapper"><FaPencilAlt /></span>
+                <span className="exam-icon-wrapper">{icon}</span>
                 <span className="exam-text">{name}</span>
               </a>
             ))}
           </div>
-        </FooterSection>
+        </motion.div>
 
-        {/* NEW: Exam Preparations section */}
+        {/* Exam Preparations section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h3>Exam Preparations</h3>
+          <h3>Exam Preparation</h3>
           <div className="footer-info">
-            {examPreparations.map((exam) => (
+            {examPreparations.map(({ name, icon, path }) => (
               <a 
-                key={exam.name}
-                href={exam.path}
+                key={name}
+                href={path}
                 className="footer-item footer-exam-link"
               >
-                <span className="exam-icon-wrapper">
-                  {exam.icon}
-                </span>
-                <span className="exam-text">{exam.name}</span>
+                <span className="exam-icon-wrapper">{icon}</span>
+                <span className="exam-text">{name}</span>
               </a>
             ))}
           </div>
-        </FooterSection>
+        </motion.div>
+
+        {/* Academics section */}
+        <motion.div 
+          className="footer-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3>Academics</h3>
+          <div className="footer-info">
+            {academics.map(({ name, icon, path }) => (
+              <a 
+                key={name}
+                href={path}
+                className="footer-item footer-exam-link"
+              >
+                <span className="exam-icon-wrapper">{icon}</span>
+                <span className="exam-text">{name}</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Contact information section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           <h3>Contact Info</h3>
           <div className="contact-info">
@@ -179,7 +205,7 @@ function Footer() {
               </div>
             </div>
           </div>
-        </FooterSection>
+        </motion.div>
       </div>
 
       {/* Bottom Bar */}
