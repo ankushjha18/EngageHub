@@ -285,16 +285,7 @@ export default function Header() {
             >
               {renderMobileLinks(mobileNavLinks)}
 
-              <div className="mobile-contact">
-                <div className="contact-item">
-                  
-                  
-                </div>
-                <div className="contact-item">
-                  
-                 
-                </div>
-              </div>
+              
             </motion.div>
           )}
         </AnimatePresence>

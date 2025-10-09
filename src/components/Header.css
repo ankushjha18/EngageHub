@@ -54,14 +54,14 @@
 }
 
 .logo img {
-  height: 100px;
+  height: 110px;
   width: auto;
 }
 
 /* Centered navigation with premium styling */
 .nav-desktop {
   display: flex;
-  gap: 2px;
+  gap: -1px;
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -428,7 +428,7 @@
   }
   
   .logo img {
-    height: 50px;
+    height: 60px;
   }
   
   /* Hide desktop navigation on mobile */
@@ -476,7 +476,7 @@
   }
   
   .logo img {
-    height: 45px;
+    height: 90px;
   }
   
   .mobile-menu {

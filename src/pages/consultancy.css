@@ -447,3 +447,8 @@
     width: 90%;
   }
 }
+@media (max-width: 480px){
+  .hero-title{
+    padding-top: 45px;
+  }
+}

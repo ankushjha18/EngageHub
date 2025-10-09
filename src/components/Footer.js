@@ -1,6 +1,6 @@
 "use client";
 
-// Updated Footer.jsx - With linked services, exam preparations, and academics section
+// Updated Footer.jsx - Social links centered at bottom
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { 
@@ -68,46 +68,12 @@ function Footer() {
   return (
     <footer ref={footerRef} className="footer">
       <div className="footer-container">
-        {/* Company information section */}
-        <motion.div 
-          className="footer-section"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="company-info">
-            <div className="footer-logo">
-              <img src="/logo.png" alt="EngageHub Logo" />
-            </div>
-            <p className="company-description">
-              Empowering students through quality education and comprehensive learning experiences. 
-              We are committed to academic excellence and personal growth.
-            </p>
-            <div className="social-links">
-              {socialLinks.map(({ name, icon, url }) => (
-                <motion.a
-                  key={name}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="social-link"
-                  aria-label={name}
-                >
-                  {icon}
-                </motion.a>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
         {/* Quick links section */}
         <motion.div 
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6 }}
         >
           <h3>Quick Links</h3>
           <ul className="footer-links">
@@ -124,7 +90,7 @@ function Footer() {
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           <h3>Our Services</h3>
           <div className="footer-info">
@@ -142,7 +108,7 @@ function Footer() {
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h3>Exam Preparation</h3>
           <div className="footer-info">
@@ -164,7 +130,7 @@ function Footer() {
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <h3>Academics</h3>
           <div className="footer-info">
@@ -186,7 +152,7 @@ function Footer() {
           className="footer-section"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h3>Contact Info</h3>
           <div className="contact-info">
@@ -208,12 +174,38 @@ function Footer() {
         </motion.div>
       </div>
 
+      {/* Social Links - Centered in a row */}
+      <motion.div 
+        className="social-links-section"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <div className="social-links-grid">
+          {socialLinks.map(({ name, icon, url }) => (
+            <motion.a
+              key={name}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="social-link"
+              aria-label={name}
+            >
+              {icon}
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="footer-bottom-container">
           <div className="copyright">
             <p>&copy; 2025 EngageHub. All rights reserved.</p>
           </div>
+
           <AnimatePresence>
             {isScrollVisible && (
               <motion.button

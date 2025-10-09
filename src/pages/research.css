@@ -878,6 +878,9 @@ body {
   .research-section {
     padding: 80px 15px;
   }
+   .research-hero-title{
+  padding-top: 45px;
+}
   
   .research-section-header {
     margin-bottom: 60px;
@@ -947,7 +950,9 @@ body {
   .research-hero {
     padding: 60px 10px 50px;
   }
-
+ .research-hero-title{
+  padding-top: 45px;
+}
   .research-hero-highlight {
     padding: 30px 20px;
     margin: 30px auto;

@@ -245,6 +245,7 @@
   @media (max-width: 768px) {
     .essay-editing-page .hero-content h1 {
       font-size: 2rem;
+      padding-top: 40px;
     }
   
     .essay-editing-page.hero-content p {
@@ -290,6 +291,7 @@
   
     .essay-editing-page .hero-content h1 {
       font-size: 1.8rem;
+      padding-top: 45px;
     }
   
     .essay-editing-page .main-content {
