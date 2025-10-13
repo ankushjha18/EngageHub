@@ -8,7 +8,7 @@ const Consultancy = () => {
   return (
     <div className="consultancy-page">
       {/* Hero Section */}
-      <section className="consultancy-hero" style={{backgroundImage: "url('/harvard.jpg')"}}>
+      <section className="consultancy-hero" style={{backgroundImage: "url('/c.jpg')"}}>
         <div className="hero-content">
           <h1 className="hero-title">
           University Education <span className="highlight">counselling</span> for
