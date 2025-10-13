@@ -4,8 +4,9 @@
   }
   
   /* Hero Section */
-.consultancy-page .consultancy-hero {
-  background-image: url('/harvard.jpg'); /* Change 'bannerpic.jpg' to your image filename */
+/* Add this CSS to your consultancy.css file */
+
+.consultancy-hero {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -20,15 +21,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity: 0.3 to 0.7 */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
   .consultancy-page .consultancy-hero {
-    background-image: url('/harvard.jpg');
     color: white;
     padding: 100px 20px;
     text-align: center;
