@@ -4,8 +4,30 @@
   }
   
   /* Hero Section */
+.consultancy-hero {
+  background-image: url('/harvard.jpeg'); /* Change 'bannerpic.jpg' to your image filename */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Optional: Add overlay for better text readability */
+.consultancy-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity: 0.3 to 0.7 */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
   .consultancy-page .consultancy-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 100px 20px;
     text-align: center;
