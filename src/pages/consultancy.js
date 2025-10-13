@@ -4,75 +4,11 @@ import "./consultancy.css";
 
 
 const Consultancy = () => {
- /* const services = [
-    {
-      title: "University Applications",
-      description:
-        "Guidance on choosing the right universities, preparing strong applications, and maximizing acceptance chances.",
-      icon: "🎓",
-    },
-    {
-      title: "Study Abroad Programs",
-      description:
-        "End-to-end support for admissions, visas, scholarships, and adapting to new academic environments.",
-      icon: "🌍",
-    },
-    {
-      title: "Career Counseling",
-      description:
-        "Personalized mentorship to align academic pathways with future career goals.",
-      icon: "💼",
-    },
-    {
-      title: "Exam Preparation",
-      description:
-        "Training and resources for SAT, ACT, GRE, GMAT, IELTS, and TOEFL to achieve top scores.",
-      icon: "📘",
-    },
-    {
-      title: "Scholarship Assistance",
-      description:
-        "Expert guidance in finding and applying for scholarships, grants, and funding opportunities.",
-      icon: "💰",
-    },
-    {
-      title: "Research Guidance",
-      description:
-        "Help with structuring research proposals, thesis preparation, and academic writing.",
-      icon: "📝",
-    },
-  ]; */
-
-  /*const process = [
-    "Initial Consultation & Profile Evaluation",
-    "Goal Setting and Personalized Roadmap",
-    "Application & Exam Preparation Support",
-    "Submission and Follow-Up Assistance",
-    "Pre-Departure Guidance & Career Mentorship",
-  ];
-
-/*  const testimonials = [
-    {
-      name: "Ananya Gupta",
-      feedback:
-        "The counselling guided me step-by-step for my master's application in the US. I received 3 admits with scholarships!",
-    },
-    {
-      name: "Rohan Mehta",
-      feedback:
-        "Their SAT preparation plan and mentorship were amazing. I scored 1500 and got into my dream university.",
-    },
-    {
-      name: "Sophia Khan",
-      feedback:
-        "The career counseling sessions gave me so much clarity about my academic path. Highly recommend them!",
-    },
-  ]; */
 
   return (
     <div className="consultancy-page">
       {/* Hero Section */}
-      <section className="consultancy-hero">
+      <section className="consultancy-hero" style={{backgroundImage: "url('/harvard.jpg')"}}>
         <div className="hero-content">
           <h1 className="hero-title">
           University Education <span className="highlight">counselling</span> for
@@ -98,16 +34,11 @@ const Consultancy = () => {
           >
             <div className="ceo-text">
               <h2>Education counselling</h2>
-              {/*<p className="ceo-quote">18 Years of Excellence, 10,000+ Success Stories,Your Future,Powered Here</p> */}
               <p className="ceo-message-text">
-              Guidance from experienced professionals and expert counselling is essential to finalize the stream to pursue or the higher education field to choose. Advises from the educational counsellors will be pivotal in designing a student’s future. They will comprehend the flaws, strengths, and interests of the aspirant, and help accordingly.
+              Guidance from experienced professionals and expert counselling is essential to finalize the stream to pursue or the higher education field to choose. Advises from the educational counsellors will be pivotal in designing a student's future. They will comprehend the flaws, strengths, and interests of the aspirant, and help accordingly.
 Instituted to enhance and prepare students to perform exceptionally well during various international competitive and entrance exams, and guide them to select the right higher education course, EngageHub Education Services has been successfully elevating the lives of students. The field of education witnesses constant changes, hence, an approach oriented to analyse the arena is vital to obtain the right insight and avoid precarious moves.
 EngageHub is one of the leading education counselling  and across the UAE providing overseas education counselling services in UAE for the progress of the students and their bright future. Our handpicked professional tutors, educational counsellors, and counsellors ensure that each student, who reaches out to us, succeeds in the path of life by choosing the right field of education and enrolment to the elite universities around the world.
               </p>
-             {/*} <p className="ceo-message-text">
-              This isn’t just your opportunity,it’s your breakthrough. With the weight of our legacy behind you and your potential 
-              lighting the way, the impossible is now within reach.
-              </p> */}
             </div>
             <div className="ceo-image">
               <div className="ceo-image-container">
@@ -160,7 +91,7 @@ EngageHub is one of the leading education counselling  and across the UAE provid
     <article className="ucas-card4">
       <h2>Thorough Analysis for Selection of the University </h2>
       <p>
-      As an abroad education counselling, we do not just provide a list of universities. On the other hand, we will examine the student’s 
+      As an abroad education counselling, we do not just provide a list of universities. On the other hand, we will examine the student's 
       performance in various subjects, extracurricular activities, tastes in different fields and subjects, budget limitations, climatic options by the students, 
       and similar aspects. A complete list of optional universities will be proposed to the student, from the best universities in the UAE, US, UK, Canada, Europe, and Asia.
        The apt university will be finalized post discussion with the students and parents.
@@ -172,7 +103,7 @@ EngageHub is one of the leading education counselling  and across the UAE provid
       <h2>Concerted Efforts to Obtain Admission </h2>
       <p>
       Obtaining admissions in the most sought after universities is not an easy task. It necessitates concerted and calculated steps to narrate the eminence of the student and state 
-      why he or she deserves to be admitted. Our professionals will sit down to prepare a pen picture of the student after detailed and in-depth discussion sessions. The CVs, letters, narratives, recommendations, and interviews will illustrate the student’s unique qualities and will be instrumental in gaining admission
+      why he or she deserves to be admitted. Our professionals will sit down to prepare a pen picture of the student after detailed and in-depth discussion sessions. The CVs, letters, narratives, recommendations, and interviews will illustrate the student's unique qualities and will be instrumental in gaining admission
       </p>
     </article>
 
@@ -190,21 +121,6 @@ EngageHub is one of the leading education counselling  and across the UAE provid
 </section>
 
 
-      {/* Services *
-      <section className="services">
-        <h2 className="section-title">Our Services</h2>
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <div className="service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Process */}
       <section className="tutoring-section how-it-works">
   <div className="section-header">
     <h2 className="section-title">How It Works</h2>
@@ -258,20 +174,6 @@ EngageHub is one of the leading education counselling  and across the UAE provid
 </section>
 
 
-      {/* Testimonials }
-      <section className="testimonials">
-        <h2 className="section-title">What Students Say</h2>
-        <div className="testimonial-grid">
-          {testimonials.map((t, index) => (
-            <div className="testimonial-card" key={index}>
-              <p className="feedback">“{t.feedback}”</p>
-              <p className="student">- {t.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
       <section className="cta-section">
         <h2>Ready to Begin Your Journey?</h2>
         <p>
