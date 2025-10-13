@@ -113,7 +113,7 @@ EngageHub is one of the leading education counselling  and across the UAE provid
             <div className="ceo-image">
               <div className="ceo-image-container">
                 <img 
-                  src="/education-counsellor.jpg" 
+                  src="/founderspic.jpg" 
                   alt="CEO Speaking at Event" 
                   className="ceo-image-actual"
                 />
