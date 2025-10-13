@@ -7,6 +7,7 @@
 /* Add this CSS to your consultancy.css file */
 
 .consultancy-hero {
+     height: 500px
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -33,7 +34,6 @@
     color: white;
     padding: 100px 20px;
     text-align: center;
-      height: 500px
   }
   
   .consultancy-page .hero-title {
