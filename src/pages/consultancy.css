@@ -4,7 +4,7 @@
   }
   
   /* Hero Section */
-.consultancy-hero {
+.consultancy-page .consultancy-hero {
   background-image: url('/harvard.jpeg'); /* Change 'bannerpic.jpg' to your image filename */
   background-size: cover;
   background-position: center;
