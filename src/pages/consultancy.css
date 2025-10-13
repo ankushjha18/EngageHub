@@ -1,6 +1,5 @@
 .consultancy-page {
     font-family: "Poppins", sans-serif;
-    height: 700px;
     color: #1e293b;
   }
   
@@ -34,6 +33,7 @@
     color: white;
     padding: 100px 20px;
     text-align: center;
+      height: 500px
   }
   
   .consultancy-page .hero-title {
