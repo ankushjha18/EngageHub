@@ -91,7 +91,7 @@ const itemsPerSlide = 3;
     {
       step: 1,
       title: "Private Tutoring",
-      description: "EnageHub specializes in one-on-one teaching, empowering students with online personalized SAT prep",
+      description: "EngageHub specializes in one-on-one teaching, empowering students with online personalized SAT prep",
       
     },
     {
@@ -326,8 +326,7 @@ const itemsPerSlide = 3;
             >
               <h2 className="section-title">Why Choose Our SAT Prep?</h2>
               <p className="section-subtitle">
-                Our proven methodology combines personalized learning, expert instruction, 
-                and cutting-edge technology to maximize your score improvement.
+                Our proven methodology combines personalized learning, expert instruction, and cutting-edge technology to maximize your score improvement.
               </p>
             </motion.div>
 
