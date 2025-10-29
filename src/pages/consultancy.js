@@ -11,7 +11,7 @@ const Consultancy = () => {
       <section className="consultancy-hero" style={{backgroundImage: "url('/c.jpg')"}}>
         <div className="hero-content">
           <h1 className="hero-title">
-          University Education <span className="highlight">counselling</span> for
+          University Education <span className="highlight">Consultants</span> for
           Top Universities
           </h1>
           <p className="hero-subtitle">
