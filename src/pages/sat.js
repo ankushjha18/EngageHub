@@ -262,8 +262,7 @@ const itemsPerSlide = 3;
                   <span className="highlight"> Expert Guidance</span>
                 </h1>
                 <p className="hero-subtitle">
-                  Achieve your dream score with our comprehensive SAT prep program. 
-                  Join thousands of students who have improved their scores by 200+ points.
+                  Achieve your dream score with our comprehensive SAT prep program. Join thousands of students who have improved their scores by 200+ points.
                 </p>
                 <div className="hero-actions">
                   <a href='/contact'>
