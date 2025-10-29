@@ -75,7 +75,7 @@ function Home() {
       description: 'access to opportunities and resources that open doors worldwide' },
     { icon: <FaAward />, 
       title: 'Complete Ecosystem', 
-      description: 'With EngageHub, you don’t just receive support,you gain a complete ecosystem for success.' }
+      description: 'With EngageHub, you don’t just receive support, you gain a complete ecosystem for success.' }
   ];
 
   const navigate = useNavigate();
@@ -432,9 +432,8 @@ function Home() {
           <motion.div className="section-header" initial={{ opacity: 0, y: 30 }} animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <h2 className="section-title">Why Choose EngageHub?</h2>
             <p className="section-subtitle">
-            At EngageHub, we are committed to delivering world-class educational guidance and support.
-            Through our strategic collaborations we combine expertise, innovation, and global best practices to provide unmatched value to our students.
-           <br/><p><b>Our customers benefit from: </b></p>
+           At EngageHub, we are committed to delivering world-class educational guidance and support. Through our strategic collaborations we combine expertise, innovation, and global best practices to provide unmatched value to our students.
+           <br/><p><b>Our students benefit from: </b></p>
             </p>
           </motion.div>
 
