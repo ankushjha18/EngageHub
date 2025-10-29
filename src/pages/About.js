@@ -75,7 +75,7 @@ const About = () => {
           >
             <h1 className="section-title1">About EngageHub</h1>
             <p className="section-subtitle1">
-             Empowering students to achieve their academic dreams through personalized education and comprehensive support.
+            Empowering students to achieve their academic dreams through personalized education and comprehensive support.
             </p>
           </motion.div>
         </div>
