@@ -75,7 +75,7 @@ const About = () => {
           >
             <h1 className="section-title1">About EngageHub</h1>
             <p className="section-subtitle1">
-              Empowering students to achieve their academic dreams through personalized education and comprehensive support.
+             Empowering students to achieve their academic dreams through personalized education and comprehensive support.
             </p>
           </motion.div>
         </div>
@@ -135,8 +135,7 @@ const About = () => {
               <h2>Founder's Message</h2>
               {/*<p className="ceo-quote">18 Years of Excellence, 10,000+ Success Stories,Your Future,Powered Here</p> */}
               <p className="ceo-message-text">
-              At Engage Hub, we aspire to empower every student to reach their dream university. Our passion lies in guiding, supporting, and illuminating each individual 
-              journey—helping students turn ambitions into achievements and building futures filled with possibility.
+              At EngageHub, we aspire to empower every student to reach their dream university. Our passion lies in guiding, supporting, and illuminating each individual journey—helping students turn ambitions into achievements and building futures filled with possibility.
 
               </p>
              {/*} <p className="ceo-message-text">
@@ -170,14 +169,10 @@ const About = () => {
             >
               <h2>Our Mission</h2>
               <p>
-                At EngageHub, we believe that every student deserves access to quality education that nurtures their unique talents and potential. 
-                Our mission is to provide comprehensive educational services that go beyond traditional tutoring, creating a supportive environment 
-                where students can thrive academically and personally.
+                At EngageHub, we believe that every student deserves access to quality education that nurtures their unique talents and potential. Our mission is to provide comprehensive educational services that go beyond traditional tutoring, creating a supportive environment where students can thrive academically and personally.
               </p>
               <p>
-                We are committed to fostering a love for learning, building confidence, and equipping students with the skills they need to succeed 
-                in their academic journey and beyond. Through personalized attention, innovative teaching methods, and a dedicated team of educators, 
-                we help students unlock their full potential.
+                We are committed to fostering a love for learning, building confidence, and equipping students with the skills they need to succeed in their academic journey and beyond. Through personalized attention, innovative teaching methods, and a dedicated team of educators, we help students unlock their full potential.
               </p>
             </motion.div>
           </div>
