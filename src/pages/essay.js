@@ -21,17 +21,10 @@ const EssayEditingServices = () => {
               <div className="text-content">
                 <h2>How Important is the College Essay in the Selection Process?</h2>
                 <p>
-                  College essays are one of the most important parts of the college application process. This is a must
-                  for admissions in various colleges and universities in Europe and America. Students realize these have
-                  been a global shift in the beginning of College Essays in an acceptance process. The college essay is
-                  considered as one of the most important factors that they actually feel the knowledge gaps, the
-                  maturity of thought and the overall mental ability of the applicants. Further there is no one of the
-                  most difficult comes to college essays. There is no fixed pattern to write a college essay. The
-                  college essay is written in a detailed and explanatory format.
+                  College essays are one of the most important parts of the college application process. This is a must for admissions in various colleges and universities in Europe and America. Students realize these have been a global shift in the beginning of College Essays in an acceptance process. The college essay is considered as one of the most important factors that they actually feel the knowledge gaps, the maturity of thought and the overall mental ability of the applicants. Further there is no one of the most difficult comes to college essays. There is no fixed pattern to write a college essay. The college essay is written in a detailed and explanatory format.
                 </p>
                 <p>
-                  The college essay is important - they have more details answering the question asked in a personal
-                  manner through a well-structured and logical response.
+                  The college essay is important - they have more details answering the question asked in a personal manner through a well-structured and logical response.
                 </p>
               </div>
               <div className="image-content">
@@ -45,11 +38,7 @@ const EssayEditingServices = () => {
             <div className="column">
               <h3>College Essays - An overview</h3>
               <p>
-                The college is extremely provides the essay prompt or guidance for students to write their college
-                essays. The college essays are statement specific courses. These questions are designed to test the
-                candidates abilities and be judged for course admissions. The college essay is extremely important as it
-                provides the admissions an elimination phase of the admission process. This is why it is a highly
-                crucial step in the admission process.
+                The colleges provides the essay prompt or guidance for students to write their college essays. The college essays are statement specific courses. These questions are designed to test the candidates’ abilities and be judged for course admissions. The college essay is extremely important as it provides the admissions an elimination phase of the admission process. This is why it is a highly crucial step in the admission process.
               </p>
 
               <h4>Types of Essays</h4>
@@ -76,9 +65,7 @@ const EssayEditingServices = () => {
             <div className="column">
               <h3>Why do we need to edit the college admissions essay?</h3>
               <p>
-                Most of the students make mistakes while writing essays such as having the fear of thought or choosing a
-                completely inappropriate direction. Students often get confused about what to write and how to write.
-                Writing Essay writing services is one thing that should not be ignored.
+                Most of the students make mistakes while writing essays such as having the fear of thought or choosing a completely inappropriate direction. Students often get confused about what to write and how to write. Writing Essay writing services is one thing that should not be ignored.
               </p>
 
               <h4>Reasons to go for essay editing help:</h4>
@@ -90,19 +77,16 @@ const EssayEditingServices = () => {
               </ul>
 
               <p>
-                EngageHub Education provides a complete admission consultancy service and offers the best essay writing
-                services . With a team of experienced consultants, EngageHub Education has been a pioneer in a
-                business that has covered a highly detailed niche for itself.
+                EngageHub provides a complete admission consultancy service and offers the best essay writing services. With a team of experienced consultants, EngageHub has been a pioneer in a business that has covered a highly detailed niche for itself.
               </p>
             </div>
           </section>
 
           {/* Services Section */}
           <section className="services-section">
-            <h2>EngageHub Essay Editing Services  - What can we edit for you?</h2>
+            <h2>EngageHub Essay Editing Services - What can we edit for you?</h2>
             <p>
-              We help students apply editing help on all university colleges and courses seeking for various application
-              levels in mind. Our college essay editing services span beyond grammar and spelling.
+              We help students apply editing help on all university colleges and courses seeking for various application levels in mind. Our college essay editing services span beyond grammar and spelling.
             </p>
             <p>The college essay editing services at EngageHub comprises:</p>
 
@@ -123,23 +107,14 @@ const EssayEditingServices = () => {
 
           {/* Essay Types Section */}
           <section className="essay-types-section">
-            <h2>Essay Editing Services  from EngageHub Education</h2>
+            <h2>Essay Editing Services from EngageHub</h2>
             <p>At EngageHub, we offer editing services for different types of essays.</p>
 
             <div className="essay-types-grid">
               <div className="essay-type">
                 <h3>Common Application Essay</h3>
                 <p>
-                  The common application essay editing service is perfect for students applying their SAT for American
-                  University application essay from different countries. The editing service covers all aspects of
-                  common application essay writing. The editing service also includes checking for excellent educational
-                  and experiential records that can help you with your college application essay. They understand the
-                  dynamics of American college admissions and what they are looking for in terms of being fit for
-                  success too. The experts at EngageHub have mastered the perfect essay. They understand the various crucial
-                  elements that make up a successful common application essay. The editing service also includes writing
-                  being the crux of thoughts, removing redundancy or improving the questions asked, they understand
-                  essay writing service at EngageHub covers all aspects of common application essay writing. The editing
-                  service also includes checking the personal and purpose of important answers.
+                  The common application essay editing service is perfect for students applying their SAT for American University application essay from different countries. The editing service covers all aspects of common application essay writing. The editing service also includes checking for excellent educational and experiential records that can help you with your college application essay. They understand the dynamics of American college admissions and what they are looking for in terms of being fit for success too. The experts at EngageHub have mastered the perfect essay. They understand the various crucial elements that make up a successful common application essay. The editing service also includes writing being the crux of thoughts, removing redundancy or improving the questions asked, they understand essay writing service at EngageHub covers all aspects of common application essay writing. The editing service also includes checking the personal and purpose of important answers.
                 </p>
 
                 <h4>Perfect for:</h4>
@@ -158,20 +133,13 @@ const EssayEditingServices = () => {
               <div className="essay-type">
                 <h3>Research Paper (Dissertation)</h3>
                 <p>
-                  The essay editing and proofreading services offered by EngageHub for Research Papers (Dissertation) are
-                  flexible, covering all aspects that make a research paper comprehensive and well-structured. The
-                  editing service covers all aspects of research paper writing. The editing services is broadly provided
-                  to ensure that the entire write-up is coherent and well-formed. The editing services of dissertations
-                  at EngageHub covers all aspects of research paper writing. The editing service also includes checking for
-                  consistency in writing style, tone, and approach. The expert editors at EngageHub have helped hundreds of
-                  scholars with their paper submissions in our time period, we have also developed the knack of
-                  understanding what academic institutions expect from research papers submitted in their portals.
+                  The essay editing and proofreading services offered by EngageHub for Research Papers (Dissertation) are flexible, covering all aspects that make a research paper comprehensive and well-structured. The editing service covers all aspects of research paper writing. The editing services is broadly provided to ensure that the entire write-up is coherent and well-formed. The editing services of dissertations at EngageHub covers all aspects of research paper writing. The editing service also includes checking for consistency in writing style, tone, and approach. The expert editors at EngageHub have helped hundreds of scholars with their paper submissions in our time period, we have also developed the knack of understanding what academic institutions expect from research papers submitted in their portals.
                 </p>
 
                 <h4>Perfect for:</h4>
                 <ul>
                   <li>Undergraduate dissertation for Masters Programs</li>
-                  <li>Masters dissertation</li>
+                  <li>Master’s dissertation</li>
                 </ul>
 
                 <h4>Includes:</h4>
@@ -188,16 +156,7 @@ const EssayEditingServices = () => {
               <div className="essay-type">
                 <h3>Personal Statement</h3>
                 <p>
-                  The personal statement is required for admissions for the UK UCAS university portal. The Personal
-                  Statement should represent what you are as a person and what you want to achieve in your career. The
-                  personal statement is a crucial part of your university application. The personal statement should be
-                  written in the course you are applying for. The UCAS personal statement varies from the common essays
-                  in many key criteria, but also they have to follow the entire thought process consolidated. The
-                  personal statement writing requires an expert guidance and expert assistance. The personal statement
-                  should represent what you are as a person and what you want to achieve in your career. The personal
-                  statement is a crucial part of your university application. The personal statement should be written
-                  in the course you are applying for. The UCAS writing style and understand what makes real writing
-                  credible and admission worthy.
+                 The personal statement is required for admissions for the UK UCAS university portal. The Personal Statement should represent what you are as a person and what you want to achieve in your career. The personal statement is a crucial part of your university application. The personal statement should be written in the course you are applying for. The UCAS personal statement varies from the common essays in many key criteria, but also they have to follow the entire thought process consolidated. The personal statement writing requires an expert guidance and expert assistance. The personal statement should represent what you are as a person and what you want to achieve in your career. The personal statement is a crucial part of your university application. The personal statement should be written in the course you are applying for. The UCAS writing style and understand what makes real writing credible and admission worthy.
                 </p>
 
                 <h4>Perfect for:</h4>
