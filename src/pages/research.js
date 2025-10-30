@@ -82,14 +82,14 @@ const Research = () => {
     },
     {
       step: 4,
-      title: "Data Collection & Analysis",
+      title: "Data Collection and Analysis",
       description: "Gather the data and analyze them with statistical or thematic tools.",
       tips: ["Maintain data accuracy", "Use appropriate analysis tools", "Create meaningful visualizations"],
       
     },
     {
       step: 5,
-      title: "Drafting & Publishing",
+      title: "Drafting and Publishing",
       description: "Write, peer review, revise, and aim for publication or presentation.",
       tips: ["Follow academic formatting", "Get feedback from mentors", "Consider conference presentations"],
       
@@ -184,11 +184,11 @@ const Research = () => {
       <section className="research-hero">
         <div className="research-hero-content">
           <h1 className="research-hero-title">
-            Research Projects that transform applications
+            Research Projects That Transform Applications
           </h1>
           <p className="research-hero-subtitle">
             <Lightbulb size={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />
-            Whether it's science, humanities, business, or art – research highlights your academic depth and commitment.
+           Whether it's science, humanities, business, or art – research highlights your academic depth and commitment.
           </p>
           <div className="research-hero-highlight">
             <p className="research-hero-text">
