@@ -51,7 +51,7 @@ const ContactSuccess = () => {
           <div className="contact-reminder">
             <p>
               <strong>Need immediate assistance?</strong><br />
-              Call us at <a href="tel:+1234567890">+1 (234) 567-890</a> or 
+              Call us at <a href="tel:+971552728339">+971 55 272 8339</a> or 
               email us at <a href="mailto:info@engagehub.com">info@engagehub.com</a>
             </p>
           </div>
